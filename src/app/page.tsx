@@ -2,6 +2,16 @@
 
 const agents = [
   {
+    name: "indycar-data",
+    domain: "Sports & Racing",
+    description: "Real-time IndyCar racing data: schedules, race events, news, and season reports via ESPN",
+    dataSource: "ESPN IndyCar API",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://indycar-data-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/indycar-data",
+  },
+  {
     name: "treasury-data-agent",
     domain: "Finance & Economics",
     description: "US Treasury data: national debt, interest rates, and exchange rates from official FiscalData API",
@@ -37,7 +47,7 @@ const agents = [
     description: "Real-time space launch data: rockets, astronauts, agencies, and events",
     dataSource: "SpaceDevs API",
     endpoints: { free: 1, paid: 5 },
-    status: "building",
+    status: "offline",
     apiUrl: "",
     githubUrl: "https://github.com/langoustine69/space-launch-tracker",
   },
