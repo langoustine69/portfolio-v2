@@ -41,6 +41,16 @@ const agents = [
     apiUrl: "https://tennis-data-production.up.railway.app",
     githubUrl: "https://github.com/langoustine69/tennis-data",
   },
+  {
+    name: "tech-pulse",
+    domain: "Social Signals",
+    description: "Real-time tech trends aggregator: Hacker News, GitHub trending, Dev.to hot articles in one API",
+    dataSource: "HN + GitHub + Dev.to",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://tech-pulse-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/tech-pulse",
+  },
 ]
 
 function StatusBadge({ status }: { status: string }) {
