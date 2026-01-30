@@ -2,6 +2,16 @@
 
 const agents = [
   {
+    name: "books-agent",
+    domain: "Library & Research",
+    description: "Open Library book data API: search, lookup by ISBN, authors, subjects, and cover images for millions of books",
+    dataSource: "Open Library API",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://books-agent-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/books-agent",
+  },
+  {
     name: "f1-racing-agent",
     domain: "Sports & Racing",
     description: "Formula 1 racing data: standings, schedules, drivers, circuits, and race results via Jolpica Ergast API",
