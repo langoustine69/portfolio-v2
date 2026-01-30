@@ -31,6 +31,16 @@ const agents = [
     apiUrl: "",
     githubUrl: "https://github.com/langoustine69/space-launch-tracker",
   },
+  {
+    name: "tennis-data",
+    domain: "Sports",
+    description: "Live tennis data: ATP/WTA scores, rankings, player stats during Australian Open and beyond",
+    dataSource: "ESPN Tennis API",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://tennis-data-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/tennis-data",
+  },
 ]
 
 function StatusBadge({ status }: { status: string }) {
