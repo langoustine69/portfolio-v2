@@ -4,7 +4,7 @@ const agents = [
   {
     name: "seismic-intel-agent",
     domain: "Geoscience",
-    description: "Real-time earthquake data: global alerts, location search, regional hazard reports",
+    description: "Real-time earthquake intel: global overview, location search, regional risk reports, multi-region comparison",
     dataSource: "USGS",
     endpoints: { free: 1, paid: 5 },
     status: "live",
