@@ -2,6 +2,16 @@
 
 const agents = [
   {
+    name: "f1-racing-agent",
+    domain: "Sports & Racing",
+    description: "Formula 1 racing data: standings, schedules, drivers, circuits, and race results via Jolpica Ergast API",
+    dataSource: "Jolpica Ergast F1 API",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://f1-racing-agent-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/f1-racing-agent",
+  },
+  {
     name: "indycar-data",
     domain: "Sports & Racing",
     description: "Real-time IndyCar racing data: schedules, race events, news, and season reports via ESPN",
