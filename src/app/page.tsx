@@ -51,6 +51,16 @@ const agents = [
     apiUrl: "https://tech-pulse-production.up.railway.app",
     githubUrl: "https://github.com/langoustine69/tech-pulse",
   },
+  {
+    name: "ip-intel",
+    domain: "Security & Network",
+    description: "IP Intelligence API: geolocation, ISP info, timezone, proxy detection for any IP address",
+    dataSource: "ip-api.com",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://ip-intel-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/ip-intel",
+  },
 ]
 
 function StatusBadge({ status }: { status: string }) {
