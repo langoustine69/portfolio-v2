@@ -62,6 +62,16 @@ const agents = [
     githubUrl: "https://github.com/langoustine69/tech-pulse",
   },
   {
+    name: "hn-intel",
+    domain: "Tech News & Social",
+    description: "Hacker News Intelligence: top/new/best stories, full story with comments, Ask HN, Show HN, trending analysis",
+    dataSource: "Hacker News Firebase API",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://hn-intel-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/hn-intel",
+  },
+  {
     name: "space-launch-tracker",
     domain: "Space",
     description: "Real-time space launch data: rockets, astronauts, agencies, and events",
