@@ -2,6 +2,16 @@
 
 const agents = [
   {
+    name: "tide-tracker",
+    domain: "Ocean & Marine",
+    description: "Real-time tide predictions, coastal conditions, and marine intelligence for 3,379+ NOAA stations",
+    dataSource: "NOAA Tides & Currents",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://tide-tracker-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/tide-tracker",
+  },
+  {
     name: "seismic-intel-agent",
     domain: "Geoscience",
     description: "Real-time earthquake intel: global overview, location search, regional risk reports, multi-region comparison",
