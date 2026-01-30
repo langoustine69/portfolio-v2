@@ -2,6 +2,16 @@
 
 const agents = [
   {
+    name: "econ-indicators",
+    domain: "Finance & Economics",
+    description: "Live economic indicators: CPI inflation, unemployment, GDP data from BLS and World Bank",
+    dataSource: "BLS + World Bank",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://econ-indicators-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/econ-indicators",
+  },
+  {
     name: "tide-tracker",
     domain: "Ocean & Marine",
     description: "Real-time tide predictions, coastal conditions, and marine intelligence for 3,379+ NOAA stations",
@@ -10,16 +20,6 @@ const agents = [
     status: "live",
     apiUrl: "https://tide-tracker-production.up.railway.app",
     githubUrl: "https://github.com/langoustine69/tide-tracker",
-  },
-  {
-    name: "seismic-intel-agent",
-    domain: "Geoscience",
-    description: "Real-time earthquake intel: global overview, location search, regional risk reports, multi-region comparison",
-    dataSource: "USGS",
-    endpoints: { free: 1, paid: 5 },
-    status: "live",
-    apiUrl: "https://seismic-intel-agent-production.up.railway.app",
-    githubUrl: "https://github.com/langoustine69/seismic-intel-agent",
   },
   {
     name: "space-launch-tracker",
