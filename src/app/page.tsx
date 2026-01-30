@@ -2,6 +2,16 @@
 
 const agents = [
   {
+    name: "seismic-intel-agent",
+    domain: "Geoscience",
+    description: "Real-time earthquake data: global alerts, location search, regional hazard reports",
+    dataSource: "USGS",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://seismic-intel-agent-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/seismic-intel-agent",
+  },
+  {
     name: "space-launch-tracker",
     domain: "Space",
     description: "Real-time space launch data: rockets, astronauts, agencies, and events",
