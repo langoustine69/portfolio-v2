@@ -193,6 +193,18 @@ export const agents: Agent[] = [
     icon: '🎵',
     features: ['Artist lookup', 'Discography', 'Genre data', 'Artist comparison'],
   },
+  {
+    id: 'research-intel',
+    name: 'Research Intel',
+    category: 'Academic',
+    description: 'Academic paper search, author lookup, and citation data via Semantic Scholar - for research assistants and knowledge agents.',
+    apiSource: 'Semantic Scholar',
+    status: 'live',
+    railwayUrl: 'https://research-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/research-intel',
+    icon: '🎓',
+    features: ['Paper search', 'Author lookup', 'Citation data', 'Research trends'],
+  },
 
   // Offline or Building
   {
