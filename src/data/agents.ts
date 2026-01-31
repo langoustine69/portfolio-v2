@@ -513,6 +513,7 @@ export const agents: Agent[] = [
     status: 'live',
     railwayUrl: 'https://air-quality-intel-production.up.railway.app',
     githubUrl: 'https://github.com/langoustine69/air-quality-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0xe7ce3b9068d90bc5806788610ad3f859dc8d2c36646df203d96a3a6bbd0aab8d',
     icon: '🌬️',
     features: ['Global AQI', 'City lookup', 'Geo search', 'PM2.5/PM10 data', 'Forecasts', 'City comparison'],
   },
