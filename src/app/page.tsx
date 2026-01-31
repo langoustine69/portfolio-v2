@@ -2,6 +2,7 @@ import Link from 'next/link';
 import AgentGrid from '@/components/AgentGrid';
 import FeaturedCarousel from '@/components/FeaturedCarousel';
 import Testimonials from '@/components/Testimonials';
+import ContactForm from '@/components/ContactForm';
 import { agents, getLiveAgents } from '@/data/agents';
 
 export default function Home() {
@@ -161,6 +162,11 @@ export default function Home() {
             </a>
           </div>
         </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="bg-shell-900/30">
+        <ContactForm />
       </section>
     </div>
   );
