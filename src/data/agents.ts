@@ -407,6 +407,18 @@ export const agents: Agent[] = [
     icon: '📡',
     features: ['HN top stories', 'News headlines', 'Topic search', 'Multi-source aggregation'],
   },
+  {
+    id: 'live-sports-hub',
+    name: 'Live Sports Hub',
+    category: 'Sports',
+    description: 'Multi-sport live scores aggregator - real-time data from ESPN for tennis, UFC, NBA, NFL, NHL, MLB, soccer, and golf.',
+    apiSource: 'ESPN API',
+    status: 'live',
+    railwayUrl: 'https://live-sports-hub-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/live-sports-hub',
+    icon: '🏆',
+    features: ['Multi-sport scores', 'Live events', 'Upcoming schedules', 'Athlete search'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
