@@ -1,3 +1,131 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --foreground-rgb: 241, 245, 249;
+  --background-start-rgb: 15, 23, 42;
+  --background-end-rgb: 2, 6, 23;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Status badge animations */
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-live {
+  animation: pulse-live 2s ease-in-out infinite;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(56, 189, 248, 0.15);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* MDX content styling */
+.prose-custom {
+  @apply text-slate-300 leading-relaxed;
+}
+
+.prose-custom h1 {
+  @apply text-3xl font-bold text-slate-100 mb-6 mt-8;
+}
+
+.prose-custom h2 {
+  @apply text-2xl font-semibold text-slate-100 mb-4 mt-6;
+}
+
+.prose-custom h3 {
+  @apply text-xl font-semibold text-slate-100 mb-3 mt-5;
+}
+
+.prose-custom p {
+  @apply mb-4;
+}
+
+.prose-custom a {
+  @apply text-sky-400 hover:text-sky-300 underline;
+}
+
+.prose-custom code {
+  @apply bg-slate-800 px-1.5 py-0.5 rounded text-sky-400 text-sm;
+}
+
+.prose-custom pre {
+  @apply bg-slate-900 p-4 rounded-lg overflow-x-auto mb-4 border border-slate-700;
+}
+
+.prose-custom pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose-custom ul {
+  @apply list-disc list-inside mb-4 space-y-1;
+}
+
+.prose-custom ol {
+  @apply list-decimal list-inside mb-4 space-y-1;
+}
+
+.prose-custom blockquote {
+  @apply border-l-4 border-sky-500 pl-4 italic text-slate-400 my-4;
+}
+
+.prose-custom img {
+  @apply rounded-lg my-6;
+}
+
+.prose-custom hr {
+  @apply border-slate-700 my-8;
+}
