@@ -2,39 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 241, 245, 249;
-  --background-start-rgb: 15, 23, 42;
-  --background-end-rgb: 2, 6, 23;
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 346.8 77.2% 49.8%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 346.8 77.2% 49.8%;
+    --radius: 0.75rem;
+  }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-    to bottom,
-    rgb(var(--background-start-rgb)),
-    rgb(var(--background-end-rgb))
-  );
-  min-height: 100vh;
+@layer base {
+  * {
+    @apply border-shell-800;
+  }
+  body {
+    @apply bg-shell-950 text-shell-100;
+    background: linear-gradient(
+      180deg,
+      hsl(0 0% 3.9%) 0%,
+      hsl(0 0% 2%) 100%
+    );
+    min-height: 100vh;
+  }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - crustacean theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #18181b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: #3f3f46;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #fb7185;
 }
 
 /* Status badge animations */
@@ -47,19 +71,19 @@ body {
   animation: pulse-live 2s ease-in-out infinite;
 }
 
-/* Card hover effects */
+/* Card hover effects - lobster glow */
 .card-hover {
   transition: all 0.3s ease;
 }
 
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px -15px rgba(56, 189, 248, 0.15);
+  box-shadow: 0 20px 40px -15px rgba(244, 63, 94, 0.25);
 }
 
-/* Gradient text */
+/* Gradient text - lobster gradient */
 .gradient-text {
-  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+  background: linear-gradient(135deg, #fb7185 0%, #f43f5e 50%, #e11d48 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -68,26 +92,35 @@ body {
 /* Grid pattern background */
 .grid-pattern {
   background-image: 
-    linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(244, 63, 94, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 63, 94, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
+}
+
+/* Lobster glow effect */
+.lobster-glow {
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.15);
+}
+
+.lobster-glow:hover {
+  box-shadow: 0 0 30px rgba(244, 63, 94, 0.3);
 }
 
 /* MDX content styling */
 .prose-custom {
-  @apply text-slate-300 leading-relaxed;
+  @apply text-shell-300 leading-relaxed;
 }
 
 .prose-custom h1 {
-  @apply text-3xl font-bold text-slate-100 mb-6 mt-8;
+  @apply text-3xl font-bold text-shell-100 mb-6 mt-8;
 }
 
 .prose-custom h2 {
-  @apply text-2xl font-semibold text-slate-100 mb-4 mt-6;
+  @apply text-2xl font-semibold text-shell-100 mb-4 mt-6;
 }
 
 .prose-custom h3 {
-  @apply text-xl font-semibold text-slate-100 mb-3 mt-5;
+  @apply text-xl font-semibold text-shell-100 mb-3 mt-5;
 }
 
 .prose-custom p {
@@ -95,15 +128,15 @@ body {
 }
 
 .prose-custom a {
-  @apply text-sky-400 hover:text-sky-300 underline;
+  @apply text-lobster-400 hover:text-lobster-300 underline;
 }
 
 .prose-custom code {
-  @apply bg-slate-800 px-1.5 py-0.5 rounded text-sky-400 text-sm;
+  @apply bg-shell-800 px-1.5 py-0.5 rounded text-lobster-400 text-sm;
 }
 
 .prose-custom pre {
-  @apply bg-slate-900 p-4 rounded-lg overflow-x-auto mb-4 border border-slate-700;
+  @apply bg-shell-900 p-4 rounded-lg overflow-x-auto mb-4 border border-shell-700;
 }
 
 .prose-custom pre code {
@@ -119,7 +152,7 @@ body {
 }
 
 .prose-custom blockquote {
-  @apply border-l-4 border-sky-500 pl-4 italic text-slate-400 my-4;
+  @apply border-l-4 border-lobster-500 pl-4 italic text-shell-400 my-4;
 }
 
 .prose-custom img {
@@ -127,5 +160,5 @@ body {
 }
 
 .prose-custom hr {
-  @apply border-slate-700 my-8;
+  @apply border-shell-700 my-8;
 }

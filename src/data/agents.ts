@@ -145,6 +145,18 @@ export const agents: Agent[] = [
     icon: '🌌',
     features: ['Solar flares', 'Geomagnetic storms', 'Aurora forecast', 'Satellite data'],
   },
+  {
+    id: 'nhl-stats-agent',
+    name: 'NHL Stats',
+    category: 'Sports',
+    description: 'Live NHL hockey data - standings, player stats, team rosters, and game schedules.',
+    apiSource: 'NHL Official API',
+    status: 'live',
+    railwayUrl: 'https://nhl-stats-agent-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/nhl-stats-agent',
+    icon: '🏒',
+    features: ['Live standings', 'Player stats', 'Team rosters', 'League leaders'],
+  },
 
   // Offline or Building
   {
