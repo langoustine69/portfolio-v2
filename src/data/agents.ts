@@ -530,6 +530,19 @@ export const agents: Agent[] = [
     icon: '🐙',
     features: ['Trending repos', 'Release tracker', 'Repo stats', 'Search', 'Compare repos'],
   },
+  {
+    id: 'country-intel',
+    name: 'Country Intel',
+    category: 'Geolocation',
+    description: 'Country & region intelligence - ISO codes, currencies, languages, borders, timezones, and more. Essential B2A data for international context.',
+    apiSource: 'REST Countries',
+    status: 'live',
+    railwayUrl: 'https://agile-rejoicing-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/country-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0xeb4a1ec33c97972a6ae926ee0b14ff6dc3d43f363549d122d5a96925e503b31e',
+    icon: '🌍',
+    features: ['ISO codes', 'Currency lookup', 'Language search', 'Border countries', 'Region data', 'Country comparison'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
