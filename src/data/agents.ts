@@ -517,6 +517,19 @@ export const agents: Agent[] = [
     icon: '🌬️',
     features: ['Global AQI', 'City lookup', 'Geo search', 'PM2.5/PM10 data', 'Forecasts', 'City comparison'],
   },
+  {
+    id: 'github-dev-intel',
+    name: 'GitHub Dev Intel',
+    category: 'Developer Tools',
+    description: 'GitHub intelligence for AI agents - trending repos, release tracking, repository stats and comparison.',
+    apiSource: 'GitHub API',
+    status: 'live',
+    railwayUrl: 'https://github-dev-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/github-dev-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0x7eb465992fad6bfb2f6e29a526854f6b4ef84bfd55097379d94ccb5b3b35acc2',
+    icon: '🐙',
+    features: ['Trending repos', 'Release tracker', 'Repo stats', 'Search', 'Compare repos'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
