@@ -419,6 +419,18 @@ export const agents: Agent[] = [
     icon: '🏆',
     features: ['Multi-sport scores', 'Live events', 'Upcoming schedules', 'Athlete search'],
   },
+  {
+    id: 'congress-intel',
+    name: 'Congress Intel',
+    category: 'Politics',
+    description: 'US Congress legislative intelligence - bills, members, votes, and policy tracking via Congress.gov API.',
+    apiSource: 'Congress.gov',
+    status: 'live',
+    railwayUrl: 'https://congress-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/congress-intel',
+    icon: '🏛️',
+    features: ['Bill search', 'Member lookup', 'Recent legislation', 'Policy reports'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
