@@ -504,6 +504,18 @@ export const agents: Agent[] = [
     icon: '🏆',
     features: ['Live scores', 'League standings', 'Team rosters', 'Full reports'],
   },
+  {
+    id: 'air-quality-intel',
+    name: 'Air Quality Intel',
+    category: 'Environment',
+    description: 'Real-time air quality data - AQI, pollutants, forecasts from 30k+ stations worldwide.',
+    apiSource: 'WAQI',
+    status: 'live',
+    railwayUrl: 'https://air-quality-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/air-quality-intel',
+    icon: '🌬️',
+    features: ['Global AQI', 'City lookup', 'Geo search', 'PM2.5/PM10 data', 'Forecasts', 'City comparison'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
