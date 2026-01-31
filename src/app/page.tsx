@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import AgentGrid from '@/components/AgentGrid';
+import FeaturedCarousel from '@/components/FeaturedCarousel';
 import { agents, getLiveAgents } from '@/data/agents';
 
 export default function Home() {
@@ -46,6 +47,13 @@ export default function Home() {
               View on GitHub
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Featured Carousel */}
+      <section className="py-12 px-4">
+        <div className="max-w-7xl mx-auto">
+          <FeaturedCarousel autoPlayInterval={5000} showControls />
         </div>
       </section>
 
