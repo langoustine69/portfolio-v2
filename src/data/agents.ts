@@ -383,6 +383,18 @@ export const agents: Agent[] = [
     icon: '🌐',
     features: ['DNS records', 'SSL certificates', 'IP geolocation', 'HTTP headers'],
   },
+  {
+    id: 'defi-intel',
+    name: 'DeFi Intel',
+    category: 'DeFi',
+    description: 'Real-time DeFi intelligence - TVL by chain, top yields, protocol data, and comprehensive market reports aggregated from DeFiLlama.',
+    apiSource: 'DeFiLlama',
+    status: 'live',
+    railwayUrl: 'https://defi-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/defi-intel',
+    icon: '📊',
+    features: ['Chain TVL', 'Top yields', 'Protocol lookup', 'Market reports'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
