@@ -7,49 +7,53 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://langoustine-portfolio.vercel.app'),
+  metadataBase: new URL('https://langoustine69.dev'),
   title: {
-    default: 'AI Agents Portfolio | langoustine69',
+    default: 'Langoustine69 | x402 AI Agent Portfolio',
     template: '%s | langoustine69',
   },
-  description: 'A collection of specialized AI agents for data analysis, sports, finance, space weather, and more. Built with modern APIs and deployed on Railway.',
+  description: 'x402 micropayment AI agents for sports, finance, space weather, and more. Pay per request. Built with Lucid Agents SDK.',
   keywords: [
+    'x402',
+    'micropayments',
     'AI agents',
-    'data analysis',
-    'sports scores',
+    'Lucid Agents',
+    'sports API',
+    'finance API',
+    'space weather',
+    'NHL stats',
+    'F1 racing',
     'cryptocurrency',
     'DeFi',
-    'space weather',
-    'economics',
-    'F1 racing',
-    'steam analytics',
-    'hacker news',
-    'MCP tools',
-    'Railway deployment',
+    'pay per request',
+    'Base chain',
+    'USDC',
   ],
-  authors: [{ name: 'langoustine69', url: 'https://github.com/langoustine69' }],
+  authors: [{ name: 'langoustine69', url: 'https://x.com/langoustine69A' }],
   creator: 'langoustine69',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://langoustine-portfolio.vercel.app',
-    title: 'AI Agents Portfolio | langoustine69',
-    description: 'A collection of specialized AI agents for data analysis, sports, finance, space weather, and more.',
-    siteName: 'langoustine69 Portfolio',
+    url: 'https://langoustine69.dev',
+    title: 'Langoustine69 | x402 AI Agent Portfolio',
+    description: 'x402 micropayment AI agents for sports, finance, space weather, and more. Pay per request.',
+    siteName: 'langoustine69',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'AI Agents Portfolio',
+        alt: 'Langoustine69 - x402 AI Agent Portfolio',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Agents Portfolio | langoustine69',
-    description: 'A collection of specialized AI agents for data analysis, sports, finance, and more.',
-    images: ['/og-image.png'],
+    site: '@langoustine69A',
+    creator: '@langoustine69A',
+    title: 'Langoustine69 | x402 AI Agent Portfolio',
+    description: 'x402 micropayment AI agents for sports, finance, space weather, and more. Pay per request.',
+    images: ['/og-image.svg'],
   },
   robots: {
     index: true,
@@ -62,8 +66,8 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
+  icons: {
+    icon: '/favicon.svg',
   },
 };
 
@@ -75,20 +79,25 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <link rel="canonical" href="https://langoustine-portfolio.vercel.app" />
+        <link rel="canonical" href="https://langoustine69.dev" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
-              name: 'langoustine69 Portfolio',
-              description: 'A collection of specialized AI agents for data analysis',
-              url: 'https://langoustine-portfolio.vercel.app',
+              name: 'Langoustine69',
+              description: 'x402 micropayment AI agents for sports, finance, space weather, and more.',
+              url: 'https://langoustine69.dev',
               author: {
                 '@type': 'Person',
                 name: 'langoustine69',
-                url: 'https://github.com/langoustine69',
+                url: 'https://x.com/langoustine69A',
+                sameAs: [
+                  'https://github.com/langoustine69',
+                  'https://x.com/langoustine69A',
+                  'https://moltbook.com/a/langoustine69',
+                ],
               },
             }),
           }}
