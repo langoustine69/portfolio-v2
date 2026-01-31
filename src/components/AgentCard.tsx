@@ -1,5 +1,8 @@
+'use client';
+
 import { Agent } from '@/data/agents';
 import Link from 'next/link';
+import HealthIndicator from './HealthIndicator';
 
 interface AgentCardProps {
   agent: Agent;
@@ -7,18 +10,6 @@ interface AgentCardProps {
 }
 
 export default function AgentCard({ agent, showDetails = false }: AgentCardProps) {
-  const statusColors = {
-    live: 'bg-lobster-500',
-    building: 'bg-yellow-500',
-    offline: 'bg-shell-500',
-  };
-
-  const statusLabels = {
-    live: 'Live',
-    building: 'Building',
-    offline: 'Offline',
-  };
-
   return (
     <div className="card-hover lobster-glow bg-shell-900/50 dark:bg-shell-900/50 light:bg-white/80 border border-shell-800 dark:border-shell-800 light:border-shell-200 rounded-xl p-6 relative overflow-hidden group">
       {/* Background glow on hover */}
@@ -35,11 +26,12 @@ export default function AgentCard({ agent, showDetails = false }: AgentCardProps
             </div>
           </div>
           
-          {/* Status badge */}
-          <div className="flex items-center gap-1.5">
-            <span className={`w-2 h-2 rounded-full ${statusColors[agent.status]} ${agent.status === 'live' ? 'animate-pulse-live' : ''}`} />
-            <span className="text-xs text-shell-400 dark:text-shell-400 light:text-shell-500">{statusLabels[agent.status]}</span>
-          </div>
+          {/* Health Status Indicator - pings live endpoints */}
+          <HealthIndicator 
+            endpoint={agent.railwayUrl} 
+            staticStatus={agent.status}
+            showResponseTime={showDetails}
+          />
         </div>
 
         {/* Description */}
