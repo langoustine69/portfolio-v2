@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Newsletter from './Newsletter';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -6,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-shell-800 dark:border-shell-800 light:border-shell-200 bg-shell-950/50 dark:bg-shell-950/50 light:bg-shell-100/50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
@@ -76,6 +77,11 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <Newsletter variant="inline" />
           </div>
         </div>
 
