@@ -359,6 +359,18 @@ export const agents: Agent[] = [
     icon: '⚡',
     features: ['Story filtering', 'Trend analysis', 'Topic clustering', 'Smart alerts'],
   },
+  {
+    id: 'domain-intel',
+    name: 'Domain Intel',
+    category: 'Infrastructure',
+    description: 'Domain intelligence for AI agents - DNS records, SSL certificates, GeoIP, and HTTP headers in one API.',
+    apiSource: 'Google DNS, crt.sh, ip-api',
+    status: 'live',
+    railwayUrl: 'https://domain-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/domain-intel',
+    icon: '🌐',
+    features: ['DNS records', 'SSL certificates', 'IP geolocation', 'HTTP headers'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
