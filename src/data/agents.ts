@@ -158,6 +158,18 @@ export const agents: Agent[] = [
     features: ['Live standings', 'Player stats', 'Team rosters', 'League leaders'],
   },
   {
+    id: 'nba-stats-agent',
+    name: 'NBA Stats',
+    category: 'Sports',
+    description: 'Live NBA basketball data - scores, player stats, team rosters, and league leaders via ESPN.',
+    apiSource: 'ESPN NBA API',
+    status: 'live',
+    railwayUrl: 'https://nba-stats-agent-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/nba-stats-agent',
+    icon: '🏀',
+    features: ['Live scores', 'Player profiles', 'Team rosters', 'League leaders'],
+  },
+  {
     id: 'ai-model-registry',
     name: 'AI Model Registry',
     category: 'AI/ML',
