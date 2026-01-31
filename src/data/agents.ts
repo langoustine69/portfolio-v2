@@ -157,6 +157,18 @@ export const agents: Agent[] = [
     icon: '🏒',
     features: ['Live standings', 'Player stats', 'Team rosters', 'League leaders'],
   },
+  {
+    id: 'ai-model-registry',
+    name: 'AI Model Registry',
+    category: 'AI/ML',
+    description: 'Real-time AI model database - pricing, capabilities, and comparison across 300+ models from 50+ providers.',
+    apiSource: 'OpenRouter API',
+    status: 'live',
+    railwayUrl: 'https://ai-model-registry-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/ai-model-registry',
+    icon: '🤖',
+    features: ['Model lookup', 'Price comparison', 'Context lengths', 'Provider data'],
+  },
 
   // Offline or Building
   {
