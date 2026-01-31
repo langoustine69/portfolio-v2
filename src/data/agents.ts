@@ -205,6 +205,18 @@ export const agents: Agent[] = [
     icon: '🎓',
     features: ['Paper search', 'Author lookup', 'Citation data', 'Research trends'],
   },
+  {
+    id: 'package-registry-intel',
+    name: 'Package Registry Intel',
+    category: 'Developer Tools',
+    description: 'Aggregated npm + PyPI package intelligence - search, compare, and analyze packages across ecosystems for code assistant agents.',
+    apiSource: 'npm + PyPI',
+    status: 'live',
+    railwayUrl: 'https://package-registry-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/package-registry-intel',
+    icon: '📦',
+    features: ['Package lookup', 'Cross-ecosystem search', 'Download stats', 'Comparison reports'],
+  },
 
   // Offline or Building
   {
