@@ -111,6 +111,16 @@ const agents = [
     apiUrl: "",
     githubUrl: "https://github.com/langoustine69/ip-intel",
   },
+  {
+    name: "sports-data-agent",
+    domain: "Sports",
+    description: "Live sports data from ESPN: scores, standings, schedules, team info for NBA, NFL, NHL, MLB",
+    dataSource: "ESPN API",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://sports-data-agent-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/sports-data-agent",
+  },
 ]
 
 function StatusBadge({ status }: { status: string }) {
