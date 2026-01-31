@@ -28,15 +28,27 @@
 }
 
 @layer base {
-  * {
+  .dark * {
     @apply border-shell-800;
   }
-  body {
+  .light * {
+    @apply border-shell-200;
+  }
+  .dark body {
     @apply bg-shell-950 text-shell-100;
     background: linear-gradient(
       180deg,
       hsl(0 0% 3.9%) 0%,
       hsl(0 0% 2%) 100%
+    );
+    min-height: 100vh;
+  }
+  .light body {
+    @apply bg-shell-50 text-shell-900;
+    background: linear-gradient(
+      180deg,
+      hsl(0 0% 98%) 0%,
+      hsl(0 0% 96%) 100%
     );
     min-height: 100vh;
   }
@@ -48,12 +60,25 @@
   height: 8px;
 }
 
-::-webkit-scrollbar-track {
+.dark ::-webkit-scrollbar-track,
+.dark::-webkit-scrollbar-track {
   background: #18181b;
 }
 
-::-webkit-scrollbar-thumb {
+.light ::-webkit-scrollbar-track,
+.light::-webkit-scrollbar-track {
+  background: #f4f4f5;
+}
+
+.dark ::-webkit-scrollbar-thumb,
+.dark::-webkit-scrollbar-thumb {
   background: #3f3f46;
+  border-radius: 4px;
+}
+
+.light ::-webkit-scrollbar-thumb,
+.light::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
   border-radius: 4px;
 }
 
