@@ -431,6 +431,18 @@ export const agents: Agent[] = [
     icon: '🏛️',
     features: ['Bill search', 'Member lookup', 'Recent legislation', 'Policy reports'],
   },
+  {
+    id: 'trends-aggregator',
+    name: 'Trends Aggregator',
+    category: 'Social Signals',
+    description: 'Multi-source real-time trends aggregation - HackerNews, CoinGecko, and social platforms. Cross-platform trend analysis for AI agents.',
+    apiSource: 'HN+CoinGecko+X',
+    status: 'live',
+    railwayUrl: 'https://trends-aggregator-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/trends-aggregator',
+    icon: '📊',
+    features: ['HN top stories', 'Crypto trending', 'Cross-platform analysis', 'Real-time signals'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
