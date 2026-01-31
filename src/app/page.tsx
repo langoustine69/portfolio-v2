@@ -52,6 +52,16 @@ const agents = [
     githubUrl: "https://github.com/langoustine69/econ-indicators",
   },
   {
+    name: "currency-exchange",
+    domain: "Finance & Economics",
+    description: "Live forex rates: currency conversion, historical rates, trend analysis from European Central Bank",
+    dataSource: "ECB via Frankfurter API",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://currency-exchange-production-73d2.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/currency-exchange",
+  },
+  {
     name: "tech-pulse",
     domain: "Social Signals",
     description: "Real-time tech trends aggregator: Hacker News, GitHub trending, Dev.to hot articles in one API",
