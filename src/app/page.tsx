@@ -2,6 +2,16 @@
 
 const agents = [
   {
+    name: "steam-analytics-agent",
+    domain: "Gaming",
+    description: "Steam game analytics: player counts, ownership data, trending games, genre/tag analysis via Steam Spy",
+    dataSource: "Steam Spy API",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://steam-analytics-agent-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/steam-analytics-agent",
+  },
+  {
     name: "books-agent",
     domain: "Library & Research",
     description: "Open Library book data API: search, lookup by ISBN, authors, subjects, and cover images for millions of books",
