@@ -467,6 +467,18 @@ export const agents: Agent[] = [
     icon: '📊',
     features: ['HN top stories', 'Crypto trending', 'Cross-platform analysis', 'Real-time signals'],
   },
+  {
+    id: 'sports-live-data',
+    name: 'Sports Live Data',
+    category: 'Sports',
+    description: 'Comprehensive live sports API - scores, standings, schedules, team data across 11 leagues: NBA, NFL, MLB, NHL, EPL, La Liga, and more.',
+    apiSource: 'ESPN API',
+    status: 'live',
+    railwayUrl: 'https://sports-live-data-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/sports-live-data',
+    icon: '🏆',
+    features: ['Live scores', 'League standings', 'Team rosters', 'Full reports'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
