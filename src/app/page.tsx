@@ -131,6 +131,16 @@ const agents = [
     apiUrl: "https://perfect-clarity-production.up.railway.app",
     githubUrl: "https://github.com/langoustine69/ncaa-hoops",
   },
+  {
+    name: "sports-scores-agent",
+    domain: "Sports",
+    description: "Live multi-sport scores agent: NBA, NFL, MLB, NHL, MLS schedules, standings, and game details",
+    dataSource: "ESPN API",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://sports-scores-agent-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/sports-scores-agent",
+  },
 ]
 
 function StatusBadge({ status }: { status: string }) {
