@@ -121,6 +121,16 @@ const agents = [
     apiUrl: "https://sports-data-agent-production.up.railway.app",
     githubUrl: "https://github.com/langoustine69/sports-data-agent",
   },
+  {
+    name: "ncaa-hoops",
+    domain: "Sports",
+    description: "NCAA Men's College Basketball: live scores, AP Top 25 rankings, team stats, game schedules, and betting odds",
+    dataSource: "ESPN NCAAM API",
+    endpoints: { free: 1, paid: 5 },
+    status: "live",
+    apiUrl: "https://perfect-clarity-production.up.railway.app",
+    githubUrl: "https://github.com/langoustine69/ncaa-hoops",
+  },
 ]
 
 function StatusBadge({ status }: { status: string }) {
