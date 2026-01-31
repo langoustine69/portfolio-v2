@@ -38,21 +38,21 @@ export default function AgentGrid({ showFilters = true, limit, showDetails = fal
         <div className="mb-8">
           {/* Stats */}
           <div className="flex flex-wrap gap-4 mb-6">
-            <div className="bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-2">
-              <span className="text-2xl font-bold text-white">{agents.length}</span>
-              <span className="text-slate-400 ml-2">Total Agents</span>
+            <div className="bg-shell-800/50 border border-shell-700 rounded-lg px-4 py-2">
+              <span className="text-2xl font-bold text-shell-100">{agents.length}</span>
+              <span className="text-shell-400 ml-2">Total Agents</span>
             </div>
-            <div className="bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-2">
-              <span className="text-2xl font-bold text-green-400">{liveCount}</span>
-              <span className="text-slate-400 ml-2">Live</span>
+            <div className="bg-shell-800/50 border border-shell-700 rounded-lg px-4 py-2">
+              <span className="text-2xl font-bold text-lobster-400">{liveCount}</span>
+              <span className="text-shell-400 ml-2">Live</span>
             </div>
-            <div className="bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-2">
+            <div className="bg-shell-800/50 border border-shell-700 rounded-lg px-4 py-2">
               <span className="text-2xl font-bold text-yellow-400">{buildingCount}</span>
-              <span className="text-slate-400 ml-2">Building</span>
+              <span className="text-shell-400 ml-2">Building</span>
             </div>
-            <div className="bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-2">
-              <span className="text-2xl font-bold text-slate-400">{offlineCount}</span>
-              <span className="text-slate-400 ml-2">Offline</span>
+            <div className="bg-shell-800/50 border border-shell-700 rounded-lg px-4 py-2">
+              <span className="text-2xl font-bold text-shell-400">{offlineCount}</span>
+              <span className="text-shell-400 ml-2">Offline</span>
             </div>
           </div>
 
@@ -60,11 +60,11 @@ export default function AgentGrid({ showFilters = true, limit, showDetails = fal
           <div className="flex flex-wrap gap-4">
             {/* Category filter */}
             <div className="flex items-center gap-2">
-              <span className="text-sm text-slate-400">Category:</span>
+              <span className="text-sm text-shell-400">Category:</span>
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+                className="bg-shell-800 border border-shell-700 rounded-lg px-3 py-1.5 text-sm text-shell-100 focus:outline-none focus:ring-2 focus:ring-lobster-500"
               >
                 <option value="all">All Categories</option>
                 {categories.map((cat) => (
@@ -75,11 +75,11 @@ export default function AgentGrid({ showFilters = true, limit, showDetails = fal
 
             {/* Status filter */}
             <div className="flex items-center gap-2">
-              <span className="text-sm text-slate-400">Status:</span>
+              <span className="text-sm text-shell-400">Status:</span>
               <select
                 value={selectedStatus}
                 onChange={(e) => setSelectedStatus(e.target.value)}
-                className="bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+                className="bg-shell-800 border border-shell-700 rounded-lg px-3 py-1.5 text-sm text-shell-100 focus:outline-none focus:ring-2 focus:ring-lobster-500"
               >
                 <option value="all">All Status</option>
                 <option value="live">Live</option>
@@ -100,7 +100,7 @@ export default function AgentGrid({ showFilters = true, limit, showDetails = fal
 
       {filteredAgents.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-slate-400">No agents found matching your filters.</p>
+          <p className="text-shell-400">No agents found matching your filters.</p>
         </div>
       )}
     </div>

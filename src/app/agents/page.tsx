@@ -4,10 +4,10 @@ import { agents } from '@/data/agents';
 
 export const metadata: Metadata = {
   title: 'All Agents',
-  description: 'Browse all AI agents - live deployments, building in progress, and planned agents for data analysis.',
+  description: 'Browse all x402 micropayment AI agents - live deployments for sports, finance, space weather and more.',
   openGraph: {
     title: 'All Agents | langoustine69',
-    description: 'Browse all AI agents for data analysis, sports, finance, and more.',
+    description: 'Browse all x402 AI agents for data analysis, sports, finance, and more.',
   },
 };
 
@@ -49,9 +49,9 @@ export default function AgentsPage() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">All Agents</h1>
-          <p className="text-xl text-slate-400 max-w-2xl">
-            Explore all {agents.length} specialized AI agents. Filter by category or status to find what you need.
+          <h1 className="text-4xl font-bold text-shell-100 mb-4">All Agents</h1>
+          <p className="text-xl text-shell-400 max-w-2xl">
+            Explore all {agents.length} x402 micropayment agents. Filter by category or status.
           </p>
         </div>
 
