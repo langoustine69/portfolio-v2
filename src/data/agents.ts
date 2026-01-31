@@ -395,6 +395,18 @@ export const agents: Agent[] = [
     icon: '📊',
     features: ['Chain TVL', 'Top yields', 'Protocol lookup', 'Market reports'],
   },
+  {
+    id: 'social-signals-agent',
+    name: 'Social Signals',
+    category: 'Tech Trends',
+    description: 'Aggregated social signals from Hacker News and news sources - trending intelligence for AI agents.',
+    apiSource: 'HN+News APIs',
+    status: 'live',
+    railwayUrl: 'https://social-signals-agent-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/social-signals-agent',
+    icon: '📡',
+    features: ['HN top stories', 'News headlines', 'Topic search', 'Multi-source aggregation'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
