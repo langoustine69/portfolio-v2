@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import AgentGrid from '@/components/AgentGrid';
 import FeaturedCarousel from '@/components/FeaturedCarousel';
+import Testimonials from '@/components/Testimonials';
 import { agents, getLiveAgents } from '@/data/agents';
 
 export default function Home() {
@@ -101,6 +102,9 @@ export default function Home() {
           <AgentGrid showFilters={false} limit={6} showDetails />
         </div>
       </section>
+
+      {/* Testimonials */}
+      <Testimonials />
 
       {/* Tech Stack */}
       <section className="py-16 px-4 bg-shell-900/50">
