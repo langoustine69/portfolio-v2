@@ -169,6 +169,18 @@ export const agents: Agent[] = [
     icon: '🤖',
     features: ['Model lookup', 'Price comparison', 'Context lengths', 'Provider data'],
   },
+  {
+    id: 'music-artist-data',
+    name: 'Music Artist Data',
+    category: 'Music',
+    description: 'Artist profiles, discographies, genres, and comparisons via MusicBrainz - for recommendation agents and playlist generators.',
+    apiSource: 'MusicBrainz',
+    status: 'live',
+    railwayUrl: 'https://music-artist-data-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/music-artist-data',
+    icon: '🎵',
+    features: ['Artist lookup', 'Discography', 'Genre data', 'Artist comparison'],
+  },
 
   // Offline or Building
   {
