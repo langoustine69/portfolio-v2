@@ -5,6 +5,7 @@ import ApiPlayground from '@/components/ApiPlayground';
 import PricingCalculator from '@/components/PricingCalculator';
 import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
+import PerformanceMetrics from '@/components/PerformanceMetrics';
 import { agents, getLiveAgents } from '@/data/agents';
 
 export default function Home() {
@@ -113,6 +114,11 @@ export default function Home() {
           </div>
           <AgentGrid showFilters={false} limit={6} showDetails />
         </div>
+      </section>
+
+      {/* Performance Metrics */}
+      <section className="bg-shell-900/30">
+        <PerformanceMetrics />
       </section>
 
       {/* API Playground */}
