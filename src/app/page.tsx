@@ -5,7 +5,6 @@ import ApiPlayground from '@/components/ApiPlayground';
 import PricingCalculator from '@/components/PricingCalculator';
 import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
-import PerformanceMetrics from '@/components/PerformanceMetrics';
 import RecentActivity from '@/components/RecentActivity';
 import { agents, getLiveAgents } from '@/data/agents';
 
@@ -160,11 +159,6 @@ export default function Home() {
       {/* Recent Activity Feed */}
       <section className="bg-shell-900/30">
         <RecentActivity limit={6} />
-      </section>
-
-      {/* Performance Metrics */}
-      <section className="bg-shell-900/30">
-        <PerformanceMetrics />
       </section>
 
       {/* API Playground */}

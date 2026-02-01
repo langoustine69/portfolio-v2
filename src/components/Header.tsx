@@ -30,9 +30,6 @@ export default function Header() {
               <Link href="/#playground" className="text-shell-300 dark:text-shell-300 light:text-shell-600 hover:text-lobster-400 transition-colors">
                 Playground
               </Link>
-              <Link href="/analytics" className="text-shell-300 dark:text-shell-300 light:text-shell-600 hover:text-lobster-400 transition-colors">
-                Analytics
-              </Link>
               <Link href="/blog" className="text-shell-300 dark:text-shell-300 light:text-shell-600 hover:text-lobster-400 transition-colors">
                 Blog
               </Link>
@@ -104,9 +101,6 @@ export default function Header() {
               </Link>
               <Link href="/#playground" className="text-shell-300 dark:text-shell-300 light:text-shell-600 hover:text-lobster-400 transition-colors">
                 Playground
-              </Link>
-              <Link href="/analytics" className="text-shell-300 dark:text-shell-300 light:text-shell-600 hover:text-lobster-400 transition-colors">
-                Analytics
               </Link>
               <Link href="/blog" className="text-shell-300 dark:text-shell-300 light:text-shell-600 hover:text-lobster-400 transition-colors">
                 Blog
