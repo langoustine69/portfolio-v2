@@ -543,6 +543,19 @@ export const agents: Agent[] = [
     icon: '🌍',
     features: ['ISO codes', 'Currency lookup', 'Language search', 'Border countries', 'Region data', 'Country comparison'],
   },
+  {
+    id: 'tech-signals-agent',
+    name: 'Tech Signals',
+    category: 'Tech Trends',
+    description: 'Aggregated tech signals from HN, GitHub, and Lobsters - real-time tech context for AI agents.',
+    apiSource: 'HN+GitHub+Lobsters',
+    status: 'live',
+    railwayUrl: 'https://tech-signals-agent-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/tech-signals-agent',
+    erc8004Tx: 'https://etherscan.io/tx/0x74ef5fe1d24402f5d6c1b4fd395bac3e1174809eb021f536746d211bb8be608e',
+    icon: '📡',
+    features: ['HN top stories', 'GitHub trending', 'Lobsters hot', 'Topic search', 'Combined feed'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
