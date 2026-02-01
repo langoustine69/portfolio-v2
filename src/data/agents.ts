@@ -775,6 +775,19 @@ export const agents: Agent[] = [
     icon: '📈',
     features: ['Chain TVL data', 'Protocol lookup', 'Top protocols ranking', 'Token prices', 'Stablecoin stats', 'DeFi ecosystem overview'],
   },
+  {
+    id: 'name-intel',
+    name: 'Name Intel',
+    category: 'Data',
+    description: 'Name intelligence API - predict nationality, age, and gender from names. Aggregates Nationalize.io, Agify.io, and Genderize.io for ML-based analysis.',
+    apiSource: 'Nationalize.io + Agify.io + Genderize.io',
+    status: 'live',
+    railwayUrl: 'https://name-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/name-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0x709f22551e82c60e110e477aa17e87fecb5049cb2e6c8154c2b7462b9f1a5a48',
+    icon: '🔍',
+    features: ['Single name analysis', 'Batch name processing', 'Nationality prediction', 'Age estimation', 'Gender prediction', 'Full demographic profiles'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
