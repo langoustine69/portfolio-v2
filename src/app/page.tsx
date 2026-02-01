@@ -6,53 +6,16 @@ import PricingCalculator from '@/components/PricingCalculator';
 import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
 import RecentActivity from '@/components/RecentActivity';
+import { HomePageJsonLd } from '@/components/JsonLd';
 import { agents, getLiveAgents } from '@/data/agents';
-
-// Generate JSON-LD for the agent collection
-function generateCollectionJsonLd() {
-  const baseUrl = 'https://langoustine69.dev';
-  const liveAgents = getLiveAgents();
-  
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'Langoustine69 x402 AI Agent Portfolio',
-    description: 'Collection of x402 micropayment AI agents for sports, finance, space weather, and more.',
-    url: baseUrl,
-    mainEntity: {
-      '@type': 'ItemList',
-      numberOfItems: liveAgents.length,
-      itemListElement: liveAgents.slice(0, 10).map((agent, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        item: {
-          '@type': 'SoftwareApplication',
-          name: agent.name,
-          description: agent.description,
-          url: `${baseUrl}/agents/${agent.id}`,
-          applicationCategory: 'WebApplication',
-          offers: {
-            '@type': 'Offer',
-            price: '0.001',
-            priceCurrency: 'USD',
-          },
-        },
-      })),
-    },
-  };
-}
 
 export default function Home() {
   const liveAgents = getLiveAgents();
-  const jsonLd = generateCollectionJsonLd();
 
   return (
     <div className="min-h-screen">
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {/* JSON-LD Structured Data - Organization, WebSite, Service, FAQ */}
+      <HomePageJsonLd />
       {/* Hero Section */}
       <section className="relative py-20 px-4 overflow-hidden">
         <div className="absolute inset-0 grid-pattern opacity-50" />
