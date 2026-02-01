@@ -20,9 +20,35 @@ export async function generateMetadata({ params }: Props) {
     return { title: 'Agent Not Found' };
   }
   
+  const ogImageUrl = `https://langoustine69.dev/agents/${agent.id}/opengraph-image`;
+  
   return {
     title: `${agent.name} | Langoustine69`,
     description: agent.description,
+    openGraph: {
+      title: `${agent.name} - x402 AI Agent`,
+      description: agent.description,
+      url: `https://langoustine69.dev/agents/${agent.id}`,
+      siteName: 'langoustine69',
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${agent.name} - ${agent.category}`,
+        },
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${agent.name} - x402 AI Agent`,
+      description: agent.description,
+      images: [ogImageUrl],
+      site: '@langoustine69A',
+      creator: '@langoustine69A',
+    },
   };
 }
 

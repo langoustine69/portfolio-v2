@@ -697,6 +697,19 @@ export const agents: Agent[] = [
     icon: '☀️',
     features: ['Solar potential overview', 'PV system estimation', 'Solar resource data', 'Radiation forecasts', 'Optimal tilt calculator', 'Location comparison'],
   },
+  {
+    id: 'geo-intel-agent',
+    name: 'Geo Intel',
+    category: 'Geolocation',
+    description: 'Geolocation intelligence - IP lookup, geocoding, weather, country data. Essential context for location-aware AI agents.',
+    apiSource: 'ip-api + Nominatim + Open-Meteo + restcountries',
+    status: 'live',
+    railwayUrl: 'https://geo-intel-agent-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/geo-intel-agent',
+    erc8004Tx: 'https://etherscan.io/tx/0x45c5361e2ed71c068421884d73920b95212ee98d999ff986e4d38c259719ada5',
+    icon: '🌍',
+    features: ['IP to location', 'Address geocoding', 'Weather lookup', 'Country data', 'Full geo profiles', 'Timezone info'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
