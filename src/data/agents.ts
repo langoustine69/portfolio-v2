@@ -554,6 +554,19 @@ export const agents: Agent[] = [
     icon: '📡',
     features: ['HN top stories', 'GitHub trending', 'Lobsters hot', 'Topic search', 'Combined feed'],
   },
+  {
+    id: 'calendar-intel',
+    name: 'Calendar Intel',
+    category: 'Scheduling',
+    description: 'Public holiday data for scheduling agents - country holidays, business day calculations, and calendar intelligence.',
+    apiSource: 'Nager.Date API',
+    status: 'live',
+    railwayUrl: 'https://calendar-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/calendar-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0x701c5604373d9b41090edfcabc0beefbde82eb503fc9b5f65e5918288c091e42',
+    icon: '📅',
+    features: ['Country holidays', 'Business days', 'Is-holiday check', 'Next holiday', 'Multi-country compare', 'Add business days'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
