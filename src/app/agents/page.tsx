@@ -55,8 +55,8 @@ export default function AgentsPage() {
           </p>
         </div>
 
-        {/* Agent Grid with filters */}
-        <AgentGrid showFilters showDetails />
+        {/* Agent Grid with filters and category navigation */}
+        <AgentGrid showFilters showDetails showCategoryNav syncWithUrl />
       </div>
     </div>
   );

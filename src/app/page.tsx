@@ -64,7 +64,15 @@ export default function Home() {
       {/* Featured Categories */}
       <section className="py-16 px-4 bg-shell-900/50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold text-shell-100 mb-8">Categories</h2>
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-bold text-shell-100">Categories</h2>
+            <Link
+              href="/agents"
+              className="text-lobster-400 hover:text-lobster-300 transition-colors text-sm"
+            >
+              View all categories →
+            </Link>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {[
               { icon: '🏈', name: 'Sports', count: agents.filter(a => a.category === 'Sports').length },
@@ -74,14 +82,15 @@ export default function Home() {
               { icon: '🏎️', name: 'Motorsport', count: agents.filter(a => a.category === 'Motorsport').length },
               { icon: '⛓️', name: 'DeFi', count: agents.filter(a => a.category === 'DeFi').length },
             ].map((cat) => (
-              <div
+              <Link
                 key={cat.name}
-                className="bg-shell-800/50 border border-shell-700 rounded-xl p-4 text-center hover:border-lobster-500/50 transition-colors cursor-pointer"
+                href={`/agents?category=${encodeURIComponent(cat.name)}`}
+                className="group bg-shell-800/50 border border-shell-700 rounded-xl p-4 text-center hover:border-lobster-500/50 hover:bg-shell-800/70 transition-all"
               >
-                <span className="text-3xl mb-2 block">{cat.icon}</span>
+                <span className="text-3xl mb-2 block group-hover:scale-110 transition-transform">{cat.icon}</span>
                 <h3 className="text-shell-100 font-medium">{cat.name}</h3>
-                <p className="text-shell-400 text-sm">{cat.count} agents</p>
-              </div>
+                <p className="text-shell-400 text-sm">{cat.count} agent{cat.count !== 1 ? 's' : ''}</p>
+              </Link>
             ))}
           </div>
         </div>

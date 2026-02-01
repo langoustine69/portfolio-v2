@@ -1,19 +1,84 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { agents, categories, Agent } from '@/data/agents';
 import AgentCard from './AgentCard';
+import CategoryNav from './CategoryNav';
 
 interface AgentGridProps {
   showFilters?: boolean;
   limit?: number;
   showDetails?: boolean;
+  showCategoryNav?: boolean;
+  initialCategory?: string;
+  /** When enabled, syncs category with URL params. Must be wrapped in Suspense. */
+  syncWithUrl?: boolean;
 }
 
-export default function AgentGrid({ showFilters = true, limit, showDetails = false }: AgentGridProps) {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+// Hook for URL syncing - only used when syncWithUrl is true
+function useUrlSync(enabled: boolean, initialCategory: string) {
+  // Dynamically import to avoid SSR issues when not needed
+  const [searchParams, setSearchParams] = useState<URLSearchParams | null>(null);
+  
+  useEffect(() => {
+    if (enabled && typeof window !== 'undefined') {
+      setSearchParams(new URLSearchParams(window.location.search));
+      
+      // Listen for popstate to sync back button
+      const handlePopState = () => {
+        setSearchParams(new URLSearchParams(window.location.search));
+      };
+      window.addEventListener('popstate', handlePopState);
+      return () => window.removeEventListener('popstate', handlePopState);
+    }
+  }, [enabled]);
+  
+  const urlCategory = searchParams?.get('category');
+  
+  const updateUrl = (category: string) => {
+    if (!enabled || typeof window === 'undefined') return;
+    
+    const params = new URLSearchParams(window.location.search);
+    if (category === 'all') {
+      params.delete('category');
+    } else {
+      params.set('category', category);
+    }
+    const newUrl = params.toString() ? `?${params.toString()}` : window.location.pathname;
+    window.history.pushState({}, '', newUrl);
+  };
+  
+  return { urlCategory: urlCategory || initialCategory, updateUrl };
+}
+
+export default function AgentGrid({ 
+  showFilters = true, 
+  limit, 
+  showDetails = false,
+  showCategoryNav = false,
+  initialCategory = 'all',
+  syncWithUrl = false,
+}: AgentGridProps) {
+  const { urlCategory, updateUrl } = useUrlSync(syncWithUrl, initialCategory);
+  
+  const [selectedCategory, setSelectedCategory] = useState<string>(urlCategory);
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+
+  // Sync with URL changes
+  useEffect(() => {
+    if (syncWithUrl && urlCategory !== selectedCategory) {
+      setSelectedCategory(urlCategory);
+    }
+  }, [urlCategory, syncWithUrl]);
+
+  // Update URL when category changes (only if syncWithUrl is enabled)
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    if (syncWithUrl) {
+      updateUrl(category);
+    }
+  };
 
   const filteredAgents = useMemo(() => {
     let result = agents;
@@ -101,12 +166,13 @@ export default function AgentGrid({ showFilters = true, limit, showDetails = fal
               )}
             </div>
 
-            {/* Category filter */}
+            {/* Category filter (dropdown - hidden when CategoryNav is shown) */}
+            {!showCategoryNav && (
             <div className="flex items-center gap-2">
               <span className="text-sm text-shell-400 dark:text-shell-400 light:text-shell-600">Category:</span>
               <select
                 value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
+                onChange={(e) => handleCategoryChange(e.target.value)}
                 className="bg-shell-800 dark:bg-shell-800 light:bg-white border border-shell-700 dark:border-shell-700 light:border-shell-200 rounded-lg px-3 py-1.5 text-sm text-shell-100 dark:text-shell-100 light:text-shell-900 focus:outline-none focus:ring-2 focus:ring-lobster-500"
               >
                 <option value="all">All Categories</option>
@@ -115,6 +181,7 @@ export default function AgentGrid({ showFilters = true, limit, showDetails = fal
                 ))}
               </select>
             </div>
+            )}
 
             {/* Status filter */}
             <div className="flex items-center gap-2">
@@ -144,13 +211,26 @@ export default function AgentGrid({ showFilters = true, limit, showDetails = fal
           <button
             onClick={() => {
               setSearchQuery('');
-              setSelectedCategory('all');
+              handleCategoryChange('all');
               setSelectedStatus('all');
             }}
             className="text-sm text-lobster-400 hover:text-lobster-300 transition-colors"
           >
             Clear filters
           </button>
+        </div>
+      )}
+
+      {/* Category Navigation Pills */}
+      {showCategoryNav && (
+        <div className="mb-8">
+          <h3 className="text-sm font-medium text-shell-400 mb-3">Browse by Category</h3>
+          <CategoryNav
+            selectedCategory={selectedCategory}
+            onCategoryChange={handleCategoryChange}
+            variant="pills"
+            showCounts
+          />
         </div>
       )}
 
