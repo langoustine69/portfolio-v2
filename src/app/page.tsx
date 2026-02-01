@@ -6,6 +6,7 @@ import PricingCalculator from '@/components/PricingCalculator';
 import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
 import PerformanceMetrics from '@/components/PerformanceMetrics';
+import RecentActivity from '@/components/RecentActivity';
 import { agents, getLiveAgents } from '@/data/agents';
 
 export default function Home() {
@@ -114,6 +115,11 @@ export default function Home() {
           </div>
           <AgentGrid showFilters={false} limit={6} showDetails />
         </div>
+      </section>
+
+      {/* Recent Activity Feed */}
+      <section className="bg-shell-900/30">
+        <RecentActivity limit={6} />
       </section>
 
       {/* Performance Metrics */}
