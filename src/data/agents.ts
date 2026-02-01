@@ -580,6 +580,19 @@ export const agents: Agent[] = [
     icon: '🍎',
     features: ['Barcode lookup', 'Product search', 'Nutriscore grades', 'Brand/category search', 'Detailed nutrition', 'Allergen data'],
   },
+  {
+    id: 'timezone-intel',
+    name: 'Timezone Intel',
+    category: 'Scheduling',
+    description: 'Real-time timezone intelligence - current times, conversions, holiday calendars, DST info. Essential for scheduling agents.',
+    apiSource: 'TimeAPI.io + Nager',
+    status: 'live',
+    railwayUrl: 'https://timezone-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/timezone-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0xa91d02c23a6bc1d45c22b2fb36c371b5f6f727b4cb56b70b207bfea5cac0b45b',
+    icon: '🌐',
+    features: ['Current time lookup', 'Timezone conversion', 'Holiday calendars', 'Multi-zone queries', 'DST status', 'Full reports'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
