@@ -567,6 +567,19 @@ export const agents: Agent[] = [
     icon: '📅',
     features: ['Country holidays', 'Business days', 'Is-holiday check', 'Next holiday', 'Multi-country compare', 'Add business days'],
   },
+  {
+    id: 'food-intel',
+    name: 'Food Intel',
+    category: 'Health & Nutrition',
+    description: 'Food & nutrition intelligence - barcode lookup, product search, nutritional data for diet/grocery agents.',
+    apiSource: 'Open Food Facts',
+    status: 'live',
+    railwayUrl: 'https://food-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/food-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0xb3a192abbde7f67a4b78e2bf38cd3f750b2053dc47c8828850fd89ff1ef474ae',
+    icon: '🍎',
+    features: ['Barcode lookup', 'Product search', 'Nutriscore grades', 'Brand/category search', 'Detailed nutrition', 'Allergen data'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
