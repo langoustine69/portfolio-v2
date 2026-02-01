@@ -762,6 +762,19 @@ export const agents: Agent[] = [
     icon: '📊',
     features: ['Company lookup by ticker', 'SEC filing search', 'Insider trades (Form 4)', '10-K/10-Q/8-K filings', 'Company reports', 'Filing document links'],
   },
+  {
+    id: 'defi-analytics',
+    name: 'DeFi Analytics',
+    category: 'DeFi',
+    description: 'DeFi analytics powered by DeFiLlama - TVL data, protocol stats, token prices, stablecoin supply. Built for crypto agents.',
+    apiSource: 'DeFiLlama API',
+    status: 'live',
+    railwayUrl: 'https://believable-presence-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/defi-analytics',
+    erc8004Tx: 'https://etherscan.io/tx/0xd4e9e73c26d8c6f1e9b951422c8fd1084e1db2f013134fd784fd821e2668281b',
+    icon: '📈',
+    features: ['Chain TVL data', 'Protocol lookup', 'Top protocols ranking', 'Token prices', 'Stablecoin stats', 'DeFi ecosystem overview'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
