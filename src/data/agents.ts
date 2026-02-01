@@ -73,7 +73,7 @@ export const agents: Agent[] = [
     status: 'live',
     railwayUrl: 'https://sports-scores-agent-production.up.railway.app',
     githubUrl: 'https://github.com/langoustine69/sports-scores-agent',
-    erc8004Tx: 'https://etherscan.io/tx/0x00c9da257e70aedda5c7939a4ea0d23b9da8bbd073735a400c408c065b5e35b3',
+    erc8004Tx: 'https://etherscan.io/tx/0xb9f1f9f6af2657e2f23f4d8300ae965d01a5ca2ce1765e06cb9baab8cfd33f48',
     icon: '🏈',
     features: ['Live scores', 'Multi-league dashboard', '8 leagues supported', 'Real-time updates'],
   },
