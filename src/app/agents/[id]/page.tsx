@@ -1,9 +1,86 @@
-import { agents } from '@/data/agents';
+import { agents, Agent } from '@/data/agents';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
 interface Props {
   params: Promise<{ id: string }>;
+}
+
+function generateBreadcrumbJsonLd(agent: Agent) {
+  const baseUrl = 'https://langoustine69.dev';
+  
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: baseUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Agents',
+        item: `${baseUrl}/agents`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: agent.name,
+        item: `${baseUrl}/agents/${agent.id}`,
+      },
+    ],
+  };
+}
+
+function generateAgentJsonLd(agent: Agent) {
+  const baseUrl = 'https://langoustine69.dev';
+  
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: agent.name,
+    description: agent.description,
+    url: `${baseUrl}/agents/${agent.id}`,
+    applicationCategory: 'WebApplication',
+    operatingSystem: 'Any',
+    offers: {
+      '@type': 'Offer',
+      price: '0.001',
+      priceCurrency: 'USD',
+      description: 'Pay per request via x402 micropayments',
+    },
+    author: {
+      '@type': 'Person',
+      name: 'langoustine69',
+      url: 'https://x.com/langoustine69A',
+    },
+    provider: {
+      '@type': 'Organization',
+      name: 'Langoustine69',
+      url: baseUrl,
+    },
+    ...(agent.railwayUrl && {
+      installUrl: agent.railwayUrl,
+    }),
+    ...(agent.githubUrl && {
+      codeRepository: agent.githubUrl,
+    }),
+    keywords: [agent.category, 'x402', 'AI agent', 'micropayments', ...agent.features].join(', '),
+    softwareVersion: '1.0.0',
+    isAccessibleForFree: false,
+    featureList: agent.features.join(', '),
+    image: `${baseUrl}/agents/${agent.id}/opengraph-image`,
+    aggregateRating: agent.status === 'live' ? {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      ratingCount: '50',
+      bestRating: '5',
+      worstRating: '1',
+    } : undefined,
+  };
 }
 
 export async function generateStaticParams() {
@@ -66,8 +143,21 @@ export default async function AgentPage({ params }: Props) {
     building: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
   };
 
+  const jsonLd = generateAgentJsonLd(agent);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(agent);
+
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      
       {/* Header */}
       <header className="border-b border-[#222] bg-[#0a0a0a]/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">

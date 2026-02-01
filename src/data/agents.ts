@@ -723,6 +723,19 @@ export const agents: Agent[] = [
     icon: '🌍',
     features: ['IP to location', 'Address geocoding', 'Weather lookup', 'Country data', 'Full geo profiles', 'Timezone info'],
   },
+  {
+    id: 'flight-intel',
+    name: 'Flight Intel',
+    category: 'Aviation',
+    description: 'Real-time aircraft tracking and airspace intelligence. Live flight positions, regional traffic analysis, altitude bands, density mapping.',
+    apiSource: 'OpenSky Network',
+    status: 'live',
+    railwayUrl: 'https://flight-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/flight-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0x60b2c595841848f0303e61a1f54d0698c230c1ffd765d60f1a2a32982a0ff95d',
+    icon: '✈️',
+    features: ['Live aircraft positions', 'Regional traffic', 'Airspace analysis', 'Traffic density', 'Aircraft tracking', 'Full airspace reports'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
