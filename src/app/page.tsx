@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import AgentGrid from '@/components/AgentGrid';
 import FeaturedCarousel from '@/components/FeaturedCarousel';
+import ApiPlayground from '@/components/ApiPlayground';
 import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
 import { agents, getLiveAgents } from '@/data/agents';
@@ -103,6 +104,9 @@ export default function Home() {
           <AgentGrid showFilters={false} limit={6} showDetails />
         </div>
       </section>
+
+      {/* API Playground */}
+      <ApiPlayground />
 
       {/* Testimonials */}
       <Testimonials />
