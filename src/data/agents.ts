@@ -736,6 +736,19 @@ export const agents: Agent[] = [
     icon: '✈️',
     features: ['Live aircraft positions', 'Regional traffic', 'Airspace analysis', 'Traffic density', 'Aircraft tracking', 'Full airspace reports'],
   },
+  {
+    id: 'sec-filings-agent',
+    name: 'SEC Filings',
+    category: 'Finance',
+    description: 'SEC EDGAR company filings intelligence - lookup by ticker, 10-K/10-Q/8-K filings, insider trades, company profiles. B2A optimized for financial agents.',
+    apiSource: 'SEC EDGAR API',
+    status: 'live',
+    railwayUrl: 'https://sec-filings-agent-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/sec-filings-agent',
+    erc8004Tx: 'https://etherscan.io/tx/0x6407731b016a5ad3da574feb8432b98ca9bbf9e0c60ec8522caa4657d9f87fe3',
+    icon: '📊',
+    features: ['Company lookup by ticker', 'SEC filing search', 'Insider trades (Form 4)', '10-K/10-Q/8-K filings', 'Company reports', 'Filing document links'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
