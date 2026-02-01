@@ -39,6 +39,11 @@ export default function Footer() {
                   Blog
                 </Link>
               </li>
+              <li>
+                <Link href="/guides" className="text-shell-400 dark:text-shell-400 light:text-shell-600 hover:text-lobster-400 transition-colors">
+                  Guides
+                </Link>
+              </li>
             </ul>
           </div>
 
