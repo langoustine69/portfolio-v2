@@ -671,6 +671,19 @@ export const agents: Agent[] = [
     icon: '🥊',
     features: ['Live fight results', 'P4P rankings', 'Fighter search', 'Event details', 'Division rankings', 'Full UFC reports'],
   },
+  {
+    id: 'solar-intel',
+    name: 'Solar Intel',
+    category: 'Energy',
+    description: 'Solar energy intelligence - PV estimation, solar resource data, radiation forecasts, optimal tilt calculations for energy optimization agents.',
+    apiSource: 'NREL + Open-Meteo',
+    status: 'live',
+    railwayUrl: 'https://virtuous-serenity-production-3f10.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/solar-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0x8ce47ae33d26b43afc8a7f6ee4c76ecdfb377bad194b191ad45ea95fc839b80b',
+    icon: '☀️',
+    features: ['Solar potential overview', 'PV system estimation', 'Solar resource data', 'Radiation forecasts', 'Optimal tilt calculator', 'Location comparison'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
