@@ -2,6 +2,7 @@ import Link from 'next/link';
 import AgentGrid from '@/components/AgentGrid';
 import FeaturedCarousel from '@/components/FeaturedCarousel';
 import ApiPlayground from '@/components/ApiPlayground';
+import PricingCalculator from '@/components/PricingCalculator';
 import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
 import { agents, getLiveAgents } from '@/data/agents';
@@ -107,6 +108,11 @@ export default function Home() {
 
       {/* API Playground */}
       <ApiPlayground />
+
+      {/* Pricing Calculator */}
+      <section className="bg-shell-900/30">
+        <PricingCalculator />
+      </section>
 
       {/* Testimonials */}
       <Testimonials />
