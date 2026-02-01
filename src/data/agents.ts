@@ -15,6 +15,19 @@ export interface Agent {
 export const agents: Agent[] = [
   // Live on Railway
   {
+    id: 'premier-league-intel',
+    name: 'Premier League Intel',
+    category: 'Sports',
+    description: 'Real-time Premier League football intelligence - live scores, standings, team/player data via ESPN + TheSportsDB.',
+    apiSource: 'ESPN + TheSportsDB APIs',
+    status: 'live',
+    railwayUrl: 'https://premier-league-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/premier-league-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0x3f5b5b44939b6a320203b6a7686279136f2797d92a01dffdbb0d73ed12726e68',
+    icon: '⚽',
+    features: ['Live scores', 'League standings', 'Team search', 'Player data', 'Full reports'],
+  },
+  {
     id: 'steam-analytics-agent',
     name: 'Steam Analytics',
     category: 'Gaming',
