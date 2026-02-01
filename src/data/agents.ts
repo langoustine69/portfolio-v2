@@ -15,6 +15,19 @@ export interface Agent {
 export const agents: Agent[] = [
   // Live on Railway
   {
+    id: 'golf-intel',
+    name: 'Golf Intel',
+    category: 'Sports',
+    description: 'Real-time golf data from PGA Tour and LPGA - leaderboards, player scorecards, tournament schedules.',
+    apiSource: 'ESPN Golf API',
+    status: 'live',
+    railwayUrl: 'https://golf-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/golf-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0xea5dc916d58b56a34816093358aec0c1bd6bcc8aaa2f62ca550b44f1812471bf',
+    icon: '⛳',
+    features: ['PGA leaderboards', 'LPGA results', 'Player scorecards', 'Tournament schedule', 'Full reports'],
+  },
+  {
     id: 'premier-league-intel',
     name: 'Premier League Intel',
     category: 'Sports',
