@@ -215,7 +215,7 @@ export const agents: Agent[] = [
     status: 'live',
     railwayUrl: 'https://nba-stats-agent-production.up.railway.app',
     githubUrl: 'https://github.com/langoustine69/nba-stats-agent',
-    erc8004Tx: 'https://basescan.org/tx/0x813bba025647e5259c72628920768746ccdf4a80f710c6b40672b64a48bc9b8f',
+    erc8004Tx: 'https://etherscan.io/tx/0x8a2aa102cc5e70410dd6a29d2135380f35b533bef6507e8b8778997246da0320',
     icon: '🏀',
     features: ['Live scores', 'Player profiles', 'Team rosters', 'League leaders'],
   },
