@@ -70,6 +70,11 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.svg',
   },
+  alternates: {
+    types: {
+      'application/rss+xml': '/rss.xml',
+    },
+  },
 };
 
 export default function RootLayout({
