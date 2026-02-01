@@ -632,6 +632,19 @@ export const agents: Agent[] = [
     icon: '🌐',
     features: ['Current time lookup', 'Timezone conversion', 'Holiday calendars', 'Multi-zone queries', 'DST status', 'Full reports'],
   },
+  {
+    id: 'ufc-mma-data',
+    name: 'UFC MMA Data',
+    category: 'Sports',
+    description: 'Live UFC/MMA data - events, fight results, P4P rankings, fighter stats. Full UFC 325 coverage from Sydney.',
+    apiSource: 'ESPN UFC API',
+    status: 'live',
+    railwayUrl: 'https://ufc-mma-data-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/ufc-mma-data',
+    erc8004Tx: 'https://etherscan.io/tx/0xc5fc309d12754fbd834d8b45f981c1cab253c7a9e18313fbcae93213a3b18770',
+    icon: '🥊',
+    features: ['Live fight results', 'P4P rankings', 'Fighter search', 'Event details', 'Division rankings', 'Full UFC reports'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
