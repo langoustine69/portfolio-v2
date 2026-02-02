@@ -827,6 +827,19 @@ export const agents: Agent[] = [
     icon: '🎵',
     features: ['Artist lookup', 'Track search', 'Top charts', 'Similar artists', 'Full artist profiles'],
   },
+  {
+    id: 'academic-research-intel',
+    name: 'Academic Research Intel',
+    category: 'Knowledge',
+    description: 'Academic research intelligence - search 286M+ papers, authors, institutions, citations. OpenAlex-powered scholarly data for AI agents.',
+    apiSource: 'OpenAlex API',
+    status: 'live',
+    railwayUrl: 'https://academic-research-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/academic-research-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0xac8cf3852632a238e271e3994f88ddbeb6f3fdfe60f680b7924235cc197d4abd',
+    icon: '📚',
+    features: ['Paper search', 'Author lookup', 'Institution data', 'Trending topics', 'Citation analysis', 'Full paper reports'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
