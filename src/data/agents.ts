@@ -15,6 +15,19 @@ export interface Agent {
 export const agents: Agent[] = [
   // Live on Railway
   {
+    id: 'word-intel',
+    name: 'Word Intel',
+    category: 'Language',
+    description: 'Language & vocabulary intelligence - definitions, synonyms, antonyms, related words, rhymes. Aggregates Free Dictionary API + Datamuse for text/content agents.',
+    apiSource: 'Free Dictionary API + Datamuse',
+    status: 'live',
+    railwayUrl: 'https://agile-charisma-production-fc6e.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/word-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0xfdcc45bcfe60cd6c2fe25afed6111edfbbb2b8eb230baf5f0d288e982a5b6144',
+    icon: '📖',
+    features: ['Word definitions', 'Synonyms', 'Antonyms', 'Related words', 'Rhymes', 'Batch lookup'],
+  },
+  {
     id: 'security-intel',
     name: 'Security Intel',
     category: 'Security',
