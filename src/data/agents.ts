@@ -866,6 +866,19 @@ export const agents: Agent[] = [
     icon: '📚',
     features: ['Paper search', 'Author lookup', 'Institution data', 'Trending topics', 'Citation analysis', 'Full paper reports'],
   },
+  {
+    id: 'vehicle-intel',
+    name: 'Vehicle Intel',
+    category: 'Data Infrastructure',
+    description: 'Vehicle intelligence from NHTSA - VIN decoding, safety recalls, consumer complaints, makes/models. Official US government vehicle data for AI agents.',
+    apiSource: 'NHTSA (US Gov)',
+    status: 'live',
+    railwayUrl: 'https://vehicle-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/vehicle-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0x4034fd4ca6c607320e6e7815adb70e4f2ce64bf49ec0c824adeb139f2c492aee',
+    icon: '🚗',
+    features: ['VIN decoder', 'Safety recalls', 'Consumer complaints', 'All makes/models', 'Vehicle comparison', 'Full specs'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
