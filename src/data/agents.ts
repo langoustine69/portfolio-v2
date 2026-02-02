@@ -801,6 +801,19 @@ export const agents: Agent[] = [
     icon: '🔍',
     features: ['Single name analysis', 'Batch name processing', 'Nationality prediction', 'Age estimation', 'Gender prediction', 'Full demographic profiles'],
   },
+  {
+    id: 'fda-safety-intel',
+    name: 'FDA Safety Intel',
+    category: 'Health',
+    description: 'FDA Safety Intelligence - drug adverse events, food/drug/device recalls, enforcement actions. Real-time safety data from OpenFDA.',
+    apiSource: 'OpenFDA API',
+    status: 'live',
+    railwayUrl: 'https://loyal-mercy-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/fda-safety-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0xc4eede4affa8e414fe6369a6405f5751afd4ad6208a86fc22e3576c042d68cd6',
+    icon: '🏥',
+    features: ['Drug adverse events', 'Drug recalls', 'Food recalls', 'Device recalls', 'Comprehensive safety reports', 'Real-time FDA data'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
