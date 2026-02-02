@@ -1,6 +1,7 @@
 import { agents, Agent } from '@/data/agents';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import ShareButtons from '@/components/ShareButtons';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -271,6 +272,16 @@ export default async function AgentPage({ params }: Props) {
               </div>
             </a>
           )}
+        </div>
+
+        {/* Share Buttons */}
+        <div className="mb-8">
+          <ShareButtons
+            title={`${agent.name} - x402 AI Agent by Langoustine69`}
+            description={agent.description}
+            url={`https://langoustine69.dev/agents/${agent.id}`}
+            hashtags={['x402', 'AIagent', agent.category.replace(/\s+/g, '')]}
+          />
         </div>
 
         {/* Try It Section (for live agents) */}

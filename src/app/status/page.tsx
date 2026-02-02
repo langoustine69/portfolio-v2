@@ -208,7 +208,10 @@ export default function StatusPage() {
     <div className="min-h-screen py-12 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Breadcrumbs */}
-        <Breadcrumbs items={[{ label: 'System Status' }]} />
+        <Breadcrumbs items={[
+          { label: 'Home', href: '/' },
+          { label: 'System Status', href: '/status' }
+        ]} />
 
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
