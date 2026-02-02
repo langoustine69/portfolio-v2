@@ -47,6 +47,11 @@ export default function Footer() {
                   Guides
                 </Link>
               </li>
+              <li>
+                <Link href="/changelog" className="text-shell-400 dark:text-shell-400 light:text-shell-600 hover:text-lobster-400 transition-colors">
+                  Changelog
+                </Link>
+              </li>
             </ul>
           </div>
 
