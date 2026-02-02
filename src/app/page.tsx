@@ -8,6 +8,7 @@ import ContactForm from '@/components/ContactForm';
 import RecentActivity from '@/components/RecentActivity';
 import { HomePageJsonLd } from '@/components/JsonLd';
 import { agents, getLiveAgents } from '@/data/agents';
+import QuickStartButton from '@/components/QuickStartButton';
 
 export default function Home() {
   const liveAgents = getLiveAgents();
@@ -39,10 +40,11 @@ export default function Home() {
             Built with Lucid Agents SDK. Pay per request.
           </p>
 
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <QuickStartButton />
             <Link
               href="/agents"
-              className="bg-lobster-600 hover:bg-lobster-500 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="bg-shell-800 hover:bg-shell-700 text-white px-6 py-3 rounded-lg font-medium transition-colors border border-shell-700"
             >
               Explore Agents
             </Link>
@@ -50,7 +52,7 @@ export default function Home() {
               href="https://github.com/langoustine69"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-shell-800 hover:bg-shell-700 text-white px-6 py-3 rounded-lg font-medium transition-colors border border-shell-700"
+              className="bg-shell-800/50 hover:bg-shell-700 text-shell-300 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors border border-shell-700"
             >
               View on GitHub
             </a>
