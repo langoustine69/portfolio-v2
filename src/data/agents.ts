@@ -15,6 +15,19 @@ export interface Agent {
 export const agents: Agent[] = [
   // Live on Railway
   {
+    id: 'weather-intel-agent',
+    name: 'Weather Intel',
+    category: 'Weather',
+    description: 'Multi-source weather intelligence - real-time conditions, forecasts, air quality, and severe weather alerts. Aggregates Open-Meteo APIs for location-aware agents.',
+    apiSource: 'Open-Meteo APIs',
+    status: 'live',
+    railwayUrl: 'https://weather-intel-agent-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/weather-intel-agent',
+    erc8004Tx: 'https://etherscan.io/tx/0xdb71690688f91a2138d39f9cdcaf1610ab81fea67c38d4f716c96899be2245aa',
+    icon: '🌤️',
+    features: ['Current weather', 'Multi-day forecast', 'Air quality index', 'Severe weather alerts', 'Full weather reports'],
+  },
+  {
     id: 'word-intel',
     name: 'Word Intel',
     category: 'Language',

@@ -31,6 +31,7 @@ export default function Header() {
     { href: '/', label: 'Home' },
     { href: '/agents', label: 'Agents' },
     { href: '/compare', label: 'Compare' },
+    { href: '/status', label: 'Status' },
     { href: '/#playground', label: 'Playground' },
     { href: '/blog', label: 'Blog' },
     { href: '/guides', label: 'Guides' },
