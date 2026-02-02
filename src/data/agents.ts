@@ -417,15 +417,17 @@ export const agents: Agent[] = [
 
   // Offline or Building
   {
-    id: 'seismic-agent',
-    name: 'Seismic Agent',
+    id: 'earthquake-intel',
+    name: 'Earthquake Intel',
     category: 'Geoscience',
-    description: 'Real-time earthquake monitoring and seismic activity data from USGS.',
+    description: 'Real-time earthquake intelligence from USGS. Track seismic activity worldwide, get alerts for regions, and assess earthquake risk for any location.',
     apiSource: 'USGS',
-    status: 'building',
-    githubUrl: 'https://github.com/langoustine69/seismic-agent',
+    status: 'live',
+    railwayUrl: 'https://earthquake-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/earthquake-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0x8a5e215f0f94d236b2951295c92aaafccbe7dcddd859e7cf8e4041602f6664f5',
     icon: '🌍',
-    features: ['Earthquake alerts', 'Magnitude data', 'Location mapping', 'Historical quakes'],
+    features: ['Recent earthquakes', 'Event lookup', 'Regional search', 'Top quakes ranking', 'Region comparison', 'Risk reports'],
   },
   {
     id: 'asteroid-watch',
