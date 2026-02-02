@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
+import { CommandPaletteButton } from './CommandPalette';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -61,6 +62,7 @@ export default function Header() {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
+            <CommandPaletteButton />
             <ThemeToggle />
             <a
               href="https://x.com/langoustine69A"

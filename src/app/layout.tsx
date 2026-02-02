@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import KeyboardShortcuts from '@/components/KeyboardShortcuts';
+import CommandPalette from '@/components/CommandPalette';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -129,6 +130,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased min-h-screen flex flex-col`}>
         <ThemeProvider>
           <KeyboardShortcuts />
+          <CommandPalette />
           <Header />
           <Breadcrumbs className="bg-shell-900/50 border-b border-shell-800" />
           <main className="flex-grow">
