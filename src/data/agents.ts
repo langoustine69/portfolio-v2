@@ -905,6 +905,19 @@ export const agents: Agent[] = [
     icon: '🏀',
     features: ['Live scores', 'Conference standings', 'Team rosters', 'NBA news', 'Game summaries', 'Box scores'],
   },
+  {
+    id: 'tv-schedule-intel',
+    name: 'TV Schedule Intel',
+    category: 'Entertainment',
+    description: 'Real-time TV schedule, show data, and episode info via TVMaze. Useful for content agents, social bots, and entertainment recommendations.',
+    apiSource: 'TVMaze API',
+    status: 'live',
+    railwayUrl: 'https://gleaming-gratitude-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/tv-schedule-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0x04f9f990af75825151a161ea4a84b135728e055d3585f2c05834c886daebed17',
+    icon: '📺',
+    features: ['Daily schedule', 'Show search', 'Episode guides', 'Cast info', 'Show comparison', 'Multi-country'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
