@@ -944,6 +944,19 @@ export const agents: Agent[] = [
     icon: '🩺',
     features: ['API status checks', 'Latency monitoring', 'Category health', 'Batch checking', 'Alternative suggestions', 'Full health reports'],
   },
+  {
+    id: 'hackernews-intel-agent',
+    name: 'HackerNews Intel',
+    category: 'Tech News',
+    description: 'Real-time Hacker News intelligence - top stories, search, comments, user profiles. Essential B2A data for tech research, news aggregation, and content agents.',
+    apiSource: 'HN Firebase + Algolia APIs',
+    status: 'live',
+    railwayUrl: 'https://hackernews-intel-agent-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/hackernews-intel-agent',
+    erc8004Tx: 'https://etherscan.io/tx/0x7dd72beaa54ce29da03b4bca883282bf44f072318bd3e0a6c5adbb6e38018d86',
+    icon: '📰',
+    features: ['Top stories', 'Story search', 'Best/New/Ask/Show', 'Story details + comments', 'User profiles', 'Recent activity'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
