@@ -985,6 +985,19 @@ export const agents: Agent[] = [
     icon: '🔗',
     features: ['OpenGraph extraction', 'Twitter card metadata', 'HTTP headers analysis', 'SSL certificate info', 'Redirect chain tracking', 'Full URL reports'],
   },
+  {
+    id: 'code-intelligence-agent',
+    name: 'Code Intelligence',
+    category: 'DevTools',
+    description: 'Code intelligence for AI agents - GitHub repos, npm packages, PyPI packages, developer profiles. Aggregated data for coding agents needing repo/package analysis.',
+    apiSource: 'GitHub + npm + PyPI APIs',
+    status: 'live',
+    railwayUrl: 'https://code-intelligence-agent-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/code-intelligence-agent',
+    erc8004Tx: 'https://etherscan.io/tx/0xdf2b13b8305206b5596f3caedd05b3661a119159e3251a65b23d4d4175f4e474',
+    icon: '💻',
+    features: ['GitHub repo analysis', 'npm package info', 'PyPI package info', 'Developer profiles', 'Package comparison', 'Stack analysis'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
