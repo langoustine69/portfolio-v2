@@ -15,6 +15,19 @@ export interface Agent {
 export const agents: Agent[] = [
   // Live on Railway
   {
+    id: 'fx-intel',
+    name: 'FX Intel',
+    category: 'Finance',
+    description: 'Real-time FX/currency intelligence - live ECB rates, conversions, historical data, 30-day volatility analysis. Essential B2A data for financial agents.',
+    apiSource: 'Frankfurter (ECB)',
+    status: 'live',
+    railwayUrl: 'https://fx-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/fx-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0x4b2d38d8726f81d8aa97066cb8c92d53a544b5381f3d76592f893d65d81ff440',
+    icon: '💱',
+    features: ['Live ECB rates', 'Currency conversion', 'Historical rates', 'Timeseries data', '30-day volatility', 'Full FX reports'],
+  },
+  {
     id: 'golf-intel',
     name: 'Golf Intel',
     category: 'Sports',
