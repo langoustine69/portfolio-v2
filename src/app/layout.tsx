@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import KeyboardShortcuts from '@/components/KeyboardShortcuts';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -126,6 +127,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased min-h-screen flex flex-col`}>
         <ThemeProvider>
+          <KeyboardShortcuts />
           <Header />
           <main className="flex-grow">
             {children}

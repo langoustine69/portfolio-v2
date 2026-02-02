@@ -15,6 +15,19 @@ export interface Agent {
 export const agents: Agent[] = [
   // Live on Railway
   {
+    id: 'security-intel',
+    name: 'Security Intel',
+    category: 'Security',
+    description: 'Aggregated security vulnerability data from CISA KEV, OSV, NVD, and Shodan. Package vulns, CVE lookup, IP intel, KEV checks.',
+    apiSource: 'CISA KEV + OSV + NVD + Shodan',
+    status: 'live',
+    railwayUrl: 'https://security-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/security-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0xb234647ad9bd38a92a1b3f5adefc865c21bf286f1bb6731005fb0b14e9192986',
+    icon: '🔒',
+    features: ['CISA KEV catalog', 'Package vulnerabilities', 'CVE lookup', 'IP intelligence', 'Security reports'],
+  },
+  {
     id: 'fx-intel',
     name: 'FX Intel',
     category: 'Finance',

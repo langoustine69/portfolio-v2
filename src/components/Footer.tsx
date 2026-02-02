@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Newsletter from './Newsletter';
+import { KeyboardShortcutsHint } from './KeyboardShortcuts';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -111,6 +114,8 @@ export default function Footer() {
             <span>x402 Protocol</span>
             <span className="text-lobster-500">•</span>
             <span>Railway</span>
+            <span className="text-lobster-500">•</span>
+            <KeyboardShortcutsHint />
           </div>
         </div>
       </div>
