@@ -879,6 +879,19 @@ export const agents: Agent[] = [
     icon: '🚗',
     features: ['VIN decoder', 'Safety recalls', 'Consumer complaints', 'All makes/models', 'Vehicle comparison', 'Full specs'],
   },
+  {
+    id: 'nba-data-agent',
+    name: 'NBA Data',
+    category: 'Sports',
+    description: 'Live NBA basketball data via ESPN - scores, standings, team rosters, news, game summaries. Real-time B2A sports data for fantasy and analytics agents.',
+    apiSource: 'ESPN NBA API',
+    status: 'live',
+    railwayUrl: 'https://nba-data-agent-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/nba-data-agent',
+    erc8004Tx: 'https://etherscan.io/tx/0x0038fa88f6f9187edbf63646cfc1141ccac91bcf90ed62f5404988f35bc0260b',
+    icon: '🏀',
+    features: ['Live scores', 'Conference standings', 'Team rosters', 'NBA news', 'Game summaries', 'Box scores'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
