@@ -931,6 +931,19 @@ export const agents: Agent[] = [
     icon: '📺',
     features: ['Daily schedule', 'Show search', 'Episode guides', 'Cast info', 'Show comparison', 'Multi-country'],
   },
+  {
+    id: 'api-health-intel',
+    name: 'API Health Intel',
+    category: 'Infrastructure',
+    description: 'Real-time health monitoring for popular free APIs (CoinGecko, GitHub, ESPN, etc). Check status, latency, and find alternatives when APIs are down. Essential B2A infrastructure.',
+    apiSource: 'Multi-source health checks',
+    status: 'live',
+    railwayUrl: 'https://api-health-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/api-health-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0x3b00c8e431ebfaf57318aa6eafdd5c632ee4bd43f10bda50b4446bb6c426c2e4',
+    icon: '🩺',
+    features: ['API status checks', 'Latency monitoring', 'Category health', 'Batch checking', 'Alternative suggestions', 'Full health reports'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
