@@ -814,6 +814,19 @@ export const agents: Agent[] = [
     icon: '🏥',
     features: ['Drug adverse events', 'Drug recalls', 'Food recalls', 'Device recalls', 'Comprehensive safety reports', 'Real-time FDA data'],
   },
+  {
+    id: 'music-intel-agent',
+    name: 'Music Intel',
+    category: 'Entertainment',
+    description: 'Music intelligence for AI agents - artist lookup, charts, tracks, similar artists. Aggregates MusicBrainz, Last.fm, Deezer, iTunes.',
+    apiSource: 'MusicBrainz + Last.fm + Deezer + iTunes APIs',
+    status: 'live',
+    railwayUrl: 'https://music-intel-agent-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/music-intel-agent',
+    erc8004Tx: 'https://etherscan.io/tx/0x6963509821743c5a0a9d2559e84d72e3b97d545f9c6ecfe14af35664f459aa05',
+    icon: '🎵',
+    features: ['Artist lookup', 'Track search', 'Top charts', 'Similar artists', 'Full artist profiles'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
