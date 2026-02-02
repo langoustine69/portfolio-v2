@@ -5,14 +5,14 @@ import { getLiveAgents, Agent } from '@/data/agents';
 
 interface PricingTier {
   name: string;
-  satsPerCall: number;
+  usdcPerCall: number;
   description: string;
 }
 
 const pricingTiers: PricingTier[] = [
-  { name: 'Basic', satsPerCall: 1, description: 'Simple lookups, health checks' },
-  { name: 'Standard', satsPerCall: 5, description: 'Data queries, search results' },
-  { name: 'Premium', satsPerCall: 10, description: 'Full reports, batch operations' },
+  { name: 'Basic', usdcPerCall: 0.001, description: 'Simple lookups, health checks' },
+  { name: 'Standard', usdcPerCall: 0.002, description: 'Data queries, search results' },
+  { name: 'Premium', usdcPerCall: 0.005, description: 'Full reports, batch operations' },
 ];
 
 const volumePresets = [
@@ -22,10 +22,6 @@ const volumePresets = [
   { label: '100K/day', daily: 100000 },
 ];
 
-// Approximate BTC price in USD (conservative estimate)
-const BTC_USD = 100000;
-const SATS_PER_BTC = 100_000_000;
-
 export default function PricingCalculator() {
   const liveAgents = getLiveAgents();
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
@@ -34,32 +30,25 @@ export default function PricingCalculator() {
   const [customCalls, setCustomCalls] = useState('1000');
 
   const calculations = useMemo(() => {
-    const dailySats = dailyCalls * selectedTier.satsPerCall;
-    const weeklySats = dailySats * 7;
-    const monthlySats = dailySats * 30;
-    const yearlySats = dailySats * 365;
-
-    const satsToUsd = (sats: number) => (sats / SATS_PER_BTC) * BTC_USD;
+    const dailyUsdc = dailyCalls * selectedTier.usdcPerCall;
+    const weeklyUsdc = dailyUsdc * 7;
+    const monthlyUsdc = dailyUsdc * 30;
+    const yearlyUsdc = dailyUsdc * 365;
 
     return {
-      daily: { sats: dailySats, usd: satsToUsd(dailySats) },
-      weekly: { sats: weeklySats, usd: satsToUsd(weeklySats) },
-      monthly: { sats: monthlySats, usd: satsToUsd(monthlySats) },
-      yearly: { sats: yearlySats, usd: satsToUsd(yearlySats) },
-      perCall: { sats: selectedTier.satsPerCall, usd: satsToUsd(selectedTier.satsPerCall) },
+      daily: { usdc: dailyUsdc },
+      weekly: { usdc: weeklyUsdc },
+      monthly: { usdc: monthlyUsdc },
+      yearly: { usdc: yearlyUsdc },
+      perCall: { usdc: selectedTier.usdcPerCall },
     };
   }, [dailyCalls, selectedTier]);
 
-  const formatSats = (sats: number) => {
-    if (sats >= 1_000_000) return `${(sats / 1_000_000).toFixed(2)}M`;
-    if (sats >= 1_000) return `${(sats / 1_000).toFixed(1)}K`;
-    return sats.toLocaleString();
-  };
-
-  const formatUsd = (usd: number) => {
-    if (usd < 0.01) return `$${usd.toFixed(6)}`;
-    if (usd < 1) return `$${usd.toFixed(4)}`;
-    return `$${usd.toFixed(2)}`;
+  const formatUsdc = (usdc: number) => {
+    if (usdc < 0.01) return `$${usdc.toFixed(4)}`;
+    if (usdc < 1) return `$${usdc.toFixed(3)}`;
+    if (usdc < 100) return `$${usdc.toFixed(2)}`;
+    return `$${usdc.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   };
 
   const handleCustomCallsChange = (value: string) => {
@@ -76,7 +65,7 @@ export default function PricingCalculator() {
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-shell-100 mb-3">💰 Pricing Calculator</h2>
           <p className="text-shell-400 max-w-2xl mx-auto">
-            Estimate your x402 micropayment costs. All agents use Bitcoin Lightning for instant, low-cost payments.
+            Estimate your x402 micropayment costs. All agents accept USDC on Base for instant, low-cost payments.
           </p>
         </div>
 
@@ -120,7 +109,7 @@ export default function PricingCalculator() {
                     } border`}
                   >
                     {tier.name}
-                    <span className="block text-xs opacity-75">{tier.satsPerCall} sat</span>
+                    <span className="block text-xs opacity-75">${tier.usdcPerCall}</span>
                   </button>
                 ))}
               </div>
@@ -186,10 +175,10 @@ export default function PricingCalculator() {
                 <span className="text-shell-400">Per API call</span>
                 <div className="text-right">
                   <span className="text-lobster-400 font-bold text-lg">
-                    {calculations.perCall.sats} sats
+                    {formatUsdc(calculations.perCall.usdc)}
                   </span>
                   <span className="text-shell-500 text-sm ml-2">
-                    ≈ {formatUsd(calculations.perCall.usd)}
+                    USDC
                   </span>
                 </div>
               </div>
@@ -216,10 +205,10 @@ export default function PricingCalculator() {
                   </span>
                   <div className="text-right">
                     <span className={`font-semibold ${row.highlight ? 'text-lobster-400' : 'text-shell-200'}`}>
-                      {formatSats(row.data.sats)} sats
+                      {formatUsdc(row.data.usdc)}
                     </span>
                     <span className="text-shell-500 text-sm ml-2">
-                      ≈ {formatUsd(row.data.usd)}
+                      USDC
                     </span>
                   </div>
                 </div>
@@ -229,8 +218,8 @@ export default function PricingCalculator() {
             {/* Note */}
             <div className="mt-6 p-4 bg-shell-800/30 rounded-lg border border-shell-700">
               <p className="text-shell-500 text-sm">
-                <span className="text-shell-400">💡 Note:</span> Estimates based on BTC @ ${BTC_USD.toLocaleString()}. 
-                Actual costs depend on agent-specific pricing and Bitcoin market rates.
+                <span className="text-shell-400">💡 Note:</span> All payments are in USDC on Base network. 
+                Actual costs depend on agent-specific pricing.
               </p>
             </div>
 
@@ -250,21 +239,14 @@ export default function PricingCalculator() {
 
         {/* Payment Methods */}
         <div className="mt-8 text-center">
-          <p className="text-shell-400 text-sm mb-3">Accepted payment methods</p>
+          <p className="text-shell-400 text-sm mb-3">Payment network</p>
           <div className="flex items-center justify-center gap-6">
             <div className="flex items-center gap-2 text-shell-300">
-              <span className="text-xl">⚡</span>
-              <span className="text-sm">Lightning</span>
-            </div>
-            <div className="flex items-center gap-2 text-shell-300">
               <span className="text-xl">💎</span>
-              <span className="text-sm">USDC (Base)</span>
-            </div>
-            <div className="flex items-center gap-2 text-shell-300">
-              <span className="text-xl">🔷</span>
-              <span className="text-sm">ETH</span>
+              <span className="text-sm font-medium">USDC on Base</span>
             </div>
           </div>
+          <p className="text-shell-500 text-xs mt-2">x402 micropayments via HTTP 402</p>
         </div>
       </div>
     </section>
