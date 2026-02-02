@@ -970,6 +970,19 @@ export const agents: Agent[] = [
     icon: '📰',
     features: ['Top stories', 'Story search', 'Best/New/Ask/Show', 'Story details + comments', 'User profiles', 'Recent activity'],
   },
+  {
+    id: 'url-intel',
+    name: 'URL Intel',
+    category: 'Infrastructure',
+    description: 'URL metadata and web intelligence for AI agents - extract OpenGraph, Twitter cards, HTTP headers, SSL certificates, and redirect chains. Essential B2A data for web-processing agents.',
+    apiSource: 'Live HTTP requests',
+    status: 'live',
+    railwayUrl: 'https://url-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/url-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0xba322147c72bbc63a1c7476235296d094864115dae7fe6991f988ffe4e4ca052',
+    icon: '🔗',
+    features: ['OpenGraph extraction', 'Twitter card metadata', 'HTTP headers analysis', 'SSL certificate info', 'Redirect chain tracking', 'Full URL reports'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
