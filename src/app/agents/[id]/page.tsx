@@ -228,6 +228,20 @@ export default async function AgentPage({ params }: Props) {
             </a>
           )}
           
+          {/* API Documentation Link */}
+          {agent.status === 'live' && (
+            <Link
+              href={`/agents/${agent.id}/docs`}
+              className="flex items-center gap-3 p-4 bg-[#1a1a1a] border border-[#333] rounded-lg hover:border-[#ff6b9d] transition-colors group"
+            >
+              <span className="text-2xl">📖</span>
+              <div>
+                <div className="text-white group-hover:text-[#ff6b9d] transition-colors font-medium">API Documentation</div>
+                <div className="text-[#666] text-sm">Endpoints, examples & code</div>
+              </div>
+            </Link>
+          )}
+          
           {agent.githubUrl && (
             <a
               href={agent.githubUrl}
