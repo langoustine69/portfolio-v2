@@ -15,6 +15,19 @@ export interface Agent {
 export const agents: Agent[] = [
   // Live on Railway
   {
+    id: 'crypto-price-agent',
+    name: 'Crypto Price',
+    category: 'DeFi',
+    description: 'Real-time crypto prices and DeFi TVL data aggregated from CoinGecko & DeFiLlama. B2A optimized for financial agents.',
+    apiSource: 'CoinGecko + DeFiLlama',
+    status: 'live',
+    railwayUrl: 'https://crypto-price-agent-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/crypto-price-agent',
+    erc8004Tx: 'https://etherscan.io/tx/0x0dbefff08c99577a4d5ee48c5b3936633e01ff73ddc11d5cca5593c0325ca0f2',
+    icon: '🪙',
+    features: ['BTC/ETH prices', 'Multi-coin lookup', 'Top coins by market cap', 'DeFi TVL by chain', 'Global market stats', 'Full market reports'],
+  },
+  {
     id: 'weather-intel-agent',
     name: 'Weather Intel',
     category: 'Weather',
