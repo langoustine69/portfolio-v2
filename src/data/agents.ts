@@ -5,6 +5,14 @@ export interface AgentChangelogEntry {
   type: 'major' | 'minor' | 'patch';
 }
 
+export interface RateLimitInfo {
+  requestsPerMinute?: number;
+  requestsPerHour?: number;
+  requestsPerDay?: number;
+  burstLimit?: number;
+  note?: string;
+}
+
 export interface Agent {
   id: string;
   name: string;
@@ -18,6 +26,7 @@ export interface Agent {
   icon: string;
   features: string[];
   changelog?: AgentChangelogEntry[];
+  rateLimit?: RateLimitInfo;
 }
 
 export const agents: Agent[] = [
@@ -34,6 +43,7 @@ export const agents: Agent[] = [
     erc8004Tx: 'https://etherscan.io/tx/0x98943a22196fb01cb3ed383fccb49590da1a0becb9b3ad3af1c45639fba9b2fe',
     icon: '🌋',
     features: ['Active events overview', 'Events by category', 'Recent events', 'Event details', 'Geographic search', 'Full event reports'],
+    rateLimit: { requestsPerMinute: 60, requestsPerHour: 1000, burstLimit: 10 },
   },
   {
     id: 'crypto-price-agent',
@@ -54,6 +64,7 @@ export const agents: Agent[] = [
       { version: '1.1.0', date: '2026-01-15', type: 'minor', changes: ['Added top 100 coins endpoint', 'Market cap sorting options'] },
       { version: '1.0.0', date: '2026-01-10', type: 'major', changes: ['Initial release', 'BTC/ETH price endpoints', 'Multi-coin lookup'] },
     ],
+    rateLimit: { requestsPerMinute: 30, requestsPerHour: 500, burstLimit: 5, note: 'CoinGecko free tier limits apply' },
   },
   {
     id: 'weather-intel-agent',
@@ -73,6 +84,7 @@ export const agents: Agent[] = [
       { version: '1.1.0', date: '2026-01-15', type: 'minor', changes: ['Added 14-day forecast', 'Humidity and wind data'] },
       { version: '1.0.0', date: '2026-01-08', type: 'major', changes: ['Initial release', 'Current weather endpoint', '7-day forecast'] },
     ],
+    rateLimit: { requestsPerMinute: 100, requestsPerHour: 5000, burstLimit: 20 },
   },
   {
     id: 'word-intel',
@@ -106,6 +118,7 @@ export const agents: Agent[] = [
       { version: '1.1.0', date: '2026-01-18', type: 'minor', changes: ['OSV package vulnerability lookups', 'Ecosystem filtering'] },
       { version: '1.0.0', date: '2026-01-12', type: 'major', changes: ['Initial release', 'CISA KEV catalog', 'Basic CVE lookup'] },
     ],
+    rateLimit: { requestsPerMinute: 30, requestsPerHour: 300, burstLimit: 5, note: 'Shodan queries are rate-limited separately' },
   },
   {
     id: 'fx-intel',
@@ -138,6 +151,7 @@ export const agents: Agent[] = [
       { version: '1.1.0', date: '2026-01-12', type: 'minor', changes: ['Player stats with career data', 'League leaders endpoint'] },
       { version: '1.0.0', date: '2026-01-05', type: 'major', changes: ['Initial release', 'Live scores', 'Standings', 'Team rosters'] },
     ],
+    rateLimit: { requestsPerMinute: 60, requestsPerHour: 2000, burstLimit: 15 },
   },
   {
     id: 'golf-intel',
@@ -434,6 +448,7 @@ export const agents: Agent[] = [
     erc8004Tx: 'https://etherscan.io/tx/0xc74e1089a4314e200700d5c7d48369ca947b317fdf93f1493c79a118f33f5433',
     icon: '🤖',
     features: ['Model lookup', 'Price comparison', 'Context lengths', 'Provider data'],
+    rateLimit: { requestsPerMinute: 120, requestsPerHour: 5000, requestsPerDay: 50000, burstLimit: 25 },
   },
   {
     id: 'music-artist-data',

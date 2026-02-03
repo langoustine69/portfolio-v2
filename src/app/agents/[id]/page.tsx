@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import ShareButtons from '@/components/ShareButtons';
 import AgentChangelog from '@/components/AgentChangelog';
+import RateLimitDisplay from '@/components/RateLimitDisplay';
+import UsageExamplesGallery from '@/components/UsageExamplesGallery';
+import IntegrationGuides from '@/components/IntegrationGuides';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -206,6 +209,32 @@ export default async function AgentPage({ params }: Props) {
             ))}
           </div>
         </div>
+
+        {/* Rate Limits */}
+        {agent.status === 'live' && (
+          <div className="mb-8">
+            <RateLimitDisplay rateLimit={agent.rateLimit} variant="detailed" />
+          </div>
+        )}
+
+        {/* Usage Examples Gallery */}
+        {agent.status === 'live' && agent.railwayUrl && (
+          <UsageExamplesGallery
+            agentName={agent.name}
+            agentId={agent.id}
+            railwayUrl={agent.railwayUrl}
+            features={agent.features}
+          />
+        )}
+
+        {/* Integration Guides */}
+        {agent.status === 'live' && agent.railwayUrl && (
+          <IntegrationGuides
+            agentName={agent.name}
+            agentId={agent.id}
+            railwayUrl={agent.railwayUrl}
+          />
+        )}
 
         {/* Version History / Changelog */}
         {agent.changelog && agent.changelog.length > 0 && (

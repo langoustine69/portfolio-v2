@@ -4,6 +4,7 @@ import { Agent } from '@/data/agents';
 import Link from 'next/link';
 import HealthIndicator from './HealthIndicator';
 import FavoriteButton from './FavoriteButton';
+import RateLimitDisplay from './RateLimitDisplay';
 
 interface AgentCardProps {
   agent: Agent;
@@ -53,12 +54,17 @@ export default function AgentCard({ agent, showDetails = false }: AgentCardProps
           {agent.description}
         </p>
 
-        {/* API Source */}
-        <div className="flex items-center gap-2 mb-4">
-          <span className="text-xs text-shell-500 dark:text-shell-500 light:text-shell-400">API:</span>
-          <span className="text-xs bg-shell-800/50 dark:bg-shell-800/50 light:bg-shell-100 px-2 py-1 rounded text-shell-300 dark:text-shell-300 light:text-shell-700">
-            {agent.apiSource}
-          </span>
+        {/* API Source + Rate Limit */}
+        <div className="flex items-center justify-between gap-2 mb-4">
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-shell-500 dark:text-shell-500 light:text-shell-400">API:</span>
+            <span className="text-xs bg-shell-800/50 dark:bg-shell-800/50 light:bg-shell-100 px-2 py-1 rounded text-shell-300 dark:text-shell-300 light:text-shell-700">
+              {agent.apiSource}
+            </span>
+          </div>
+          {agent.status === 'live' && (
+            <RateLimitDisplay rateLimit={agent.rateLimit} variant="compact" />
+          )}
         </div>
 
         {/* Features */}
