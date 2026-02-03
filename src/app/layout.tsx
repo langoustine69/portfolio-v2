@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
@@ -8,8 +8,20 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import KeyboardShortcuts from '@/components/KeyboardShortcuts';
 import CommandPalette from '@/components/CommandPalette';
 import BackToTop from '@/components/BackToTop';
+import PWAInstallPrompt, { OfflineIndicator } from '@/components/PWAInstallPrompt';
 
 const inter = Inter({ subsets: ['latin'] });
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#09090b' },
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+  ],
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: 'cover',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://langoustine69.dev'),
@@ -73,6 +85,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: '/favicon.svg',
+    apple: '/icons/icon-192x192.png',
+  },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Langoustine69',
   },
   alternates: {
     types: {
@@ -130,6 +149,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased min-h-screen flex flex-col`}>
         <ThemeProvider>
+          <OfflineIndicator />
           <KeyboardShortcuts />
           <CommandPalette />
           <Header />
@@ -138,6 +158,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <PWAInstallPrompt />
           <BackToTop />
         </ThemeProvider>
       </body>

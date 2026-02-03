@@ -2,6 +2,7 @@ import { agents, Agent } from '@/data/agents';
 import { getAgentEndpoints, EndpointDoc } from '@/data/agent-endpoints';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import CodeBlock from '@/components/CodeBlock';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -29,14 +30,6 @@ export async function generateMetadata({ params }: Props) {
       description: `Complete API documentation for ${agent.name} x402 agent.`,
     },
   };
-}
-
-function CodeBlock({ code, language = 'bash' }: { code: string; language?: string }) {
-  return (
-    <pre className="bg-[#0a0a0a] border border-[#222] rounded-lg p-4 overflow-x-auto text-sm">
-      <code className={`language-${language} text-[#e0e0e0]`}>{code}</code>
-    </pre>
-  );
 }
 
 function EndpointCard({ endpoint, baseUrl }: { endpoint: EndpointDoc; baseUrl: string }) {
