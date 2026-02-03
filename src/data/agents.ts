@@ -15,6 +15,19 @@ export interface Agent {
 export const agents: Agent[] = [
   // Live on Railway
   {
+    id: 'natural-events-intel',
+    name: 'Natural Events Intel',
+    category: 'Geoscience',
+    description: 'Real-time natural events from NASA EONET - wildfires, floods, storms, volcanoes, earthquakes. B2A optimized for emergency response, news, and risk assessment agents.',
+    apiSource: 'NASA EONET',
+    status: 'live',
+    railwayUrl: 'https://natural-events-intel-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/natural-events-intel',
+    erc8004Tx: 'https://etherscan.io/tx/0x98943a22196fb01cb3ed383fccb49590da1a0becb9b3ad3af1c45639fba9b2fe',
+    icon: '🌋',
+    features: ['Active events overview', 'Events by category', 'Recent events', 'Event details', 'Geographic search', 'Full event reports'],
+  },
+  {
     id: 'crypto-price-agent',
     name: 'Crypto Price',
     category: 'DeFi',
