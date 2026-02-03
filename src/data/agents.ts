@@ -1024,6 +1024,19 @@ export const agents: Agent[] = [
     icon: '💻',
     features: ['GitHub repo analysis', 'npm package info', 'PyPI package info', 'Developer profiles', 'Package comparison', 'Stack analysis'],
   },
+  {
+    id: 'spacex-data',
+    name: 'SpaceX Data',
+    category: 'Space',
+    description: 'Real-time SpaceX launch data, rocket specs, and Starlink satellite tracking. B2A optimized for news agents, space tracking systems, and satellite monitoring.',
+    apiSource: 'SpaceX API',
+    status: 'live',
+    railwayUrl: 'https://spacex-data-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/spacex-data',
+    erc8004Tx: 'https://etherscan.io/tx/0x227fdbee838f02f7ce7aa1a41cbf29979d11e672dacb4304e74dd88ebcf133f7',
+    icon: '🚀',
+    features: ['Latest launches', 'Upcoming launches', 'Rocket specifications', 'Starlink satellites', 'Launchpad data', 'Full SpaceX reports'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
