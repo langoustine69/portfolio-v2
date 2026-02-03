@@ -1050,6 +1050,19 @@ export const agents: Agent[] = [
     icon: '🚀',
     features: ['Latest launches', 'Upcoming launches', 'Rocket specifications', 'Starlink satellites', 'Launchpad data', 'Full SpaceX reports'],
   },
+  {
+    id: 'space-data-agent',
+    name: 'Space Data Agent',
+    category: 'Space',
+    description: 'Aggregated space data - SpaceX launches, rockets, missions + Launch Library upcoming events from all providers. Real-time launch schedules and rocket specifications.',
+    apiSource: 'SpaceX API + Launch Library',
+    status: 'live',
+    railwayUrl: 'https://space-data-agent-production.up.railway.app',
+    githubUrl: 'https://github.com/langoustine69/space-data-agent',
+    erc8004Tx: 'https://etherscan.io/tx/0xcbe969e7bb02e0c01f53e28c30d3e269ebb4af70cf3f45067260c4fccf4e5979',
+    icon: '🛰️',
+    features: ['Launch overview', 'Next SpaceX launch', 'Rocket specifications', 'Historical launches', 'Upcoming from all providers', 'Full space reports'],
+  },
 ];
 
 export const categories = [...new Set(agents.map(a => a.category))].sort();
