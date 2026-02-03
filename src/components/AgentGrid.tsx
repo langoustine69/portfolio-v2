@@ -278,11 +278,24 @@ export default function AgentGrid({
       )}
 
       {/* Agent Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredAgents.map((agent) => (
-          <AgentCard key={agent.id} agent={agent} showDetails={showDetails} />
+      <section 
+        id="agents-grid" 
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        aria-label={`Agent grid showing ${filteredAgents.length} agents`}
+        role="feed"
+        aria-busy="false"
+      >
+        {filteredAgents.map((agent, index) => (
+          <div 
+            key={agent.id} 
+            role="article" 
+            aria-posinset={index + 1} 
+            aria-setsize={filteredAgents.length}
+          >
+            <AgentCard agent={agent} showDetails={showDetails} />
+          </div>
         ))}
-      </div>
+      </section>
 
       {filteredAgents.length === 0 && (
         <div className="text-center py-12">

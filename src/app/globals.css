@@ -227,3 +227,137 @@
 .prose-custom hr {
   @apply border-shell-700 my-8;
 }
+
+/* Accessibility - Focus styles */
+@layer base {
+  /* Enhanced focus-visible for interactive elements */
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    @apply outline-none ring-2 ring-lobster-400 ring-offset-2;
+  }
+
+  /* Dark/light mode ring offset colors */
+  .dark a:focus-visible,
+  .dark button:focus-visible,
+  .dark [role="button"]:focus-visible,
+  .dark input:focus-visible,
+  .dark textarea:focus-visible,
+  .dark select:focus-visible,
+  .dark [tabindex]:focus-visible {
+    @apply ring-offset-shell-950;
+  }
+
+  .light a:focus-visible,
+  .light button:focus-visible,
+  .light [role="button"]:focus-visible,
+  .light input:focus-visible,
+  .light textarea:focus-visible,
+  .light select:focus-visible,
+  .light [tabindex]:focus-visible {
+    @apply ring-offset-white;
+  }
+
+  /* Skip link and main content focus */
+  #main-content:focus {
+    @apply outline-none;
+  }
+
+  /* High contrast focus for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *:focus-visible {
+      @apply transition-none;
+    }
+  }
+}
+
+/* Accessibility - Screen reader utilities */
+.sr-only-focusable:not(:focus):not(:focus-within) {
+  @apply sr-only;
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-pulse-live,
+  .animate-spin,
+  .animate-fade-in,
+  .animate-scale-in,
+  .animate-slide-up {
+    animation: none !important;
+  }
+  
+  .card-hover:hover {
+    transform: none;
+  }
+}
+
+/* Accessibility - High contrast mode */
+@media (prefers-contrast: more) {
+  .dark body,
+  .light body {
+    background: #000 !important;
+  }
+  
+  .dark * {
+    border-color: #fff !important;
+  }
+  
+  .text-shell-400,
+  .text-shell-500 {
+    color: #fff !important;
+  }
+  
+  .bg-shell-800,
+  .bg-shell-900,
+  .bg-shell-950 {
+    background-color: #000 !important;
+  }
+  
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid #fff !important;
+    outline-offset: 3px !important;
+  }
+}
+
+/* Accessibility - Text spacing (WCAG 1.4.12) */
+@supports (line-height: calc(1em + 0.5rem)) {
+  body {
+    line-height: calc(1em + 0.5rem);
+    letter-spacing: 0.12em;
+    word-spacing: 0.16em;
+  }
+  
+  /* Opt-out for code blocks */
+  pre, code {
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+}
+
+/* Accessibility - Target size (WCAG 2.5.8) */
+@layer base {
+  a, button, [role="button"], input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Inline links can be smaller */
+  p a, li a, .prose-custom a {
+    min-height: auto;
+    min-width: auto;
+  }
+}

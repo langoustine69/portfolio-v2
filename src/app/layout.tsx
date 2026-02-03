@@ -9,6 +9,8 @@ import KeyboardShortcuts from '@/components/KeyboardShortcuts';
 import CommandPalette from '@/components/CommandPalette';
 import BackToTop from '@/components/BackToTop';
 import PWAInstallPrompt, { OfflineIndicator } from '@/components/PWAInstallPrompt';
+import SkipLinks from '@/components/SkipLinks';
+import A11yProvider from '@/components/A11yProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -149,17 +151,20 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased min-h-screen flex flex-col`}>
         <ThemeProvider>
-          <OfflineIndicator />
-          <KeyboardShortcuts />
-          <CommandPalette />
-          <Header />
-          <Breadcrumbs className="bg-shell-900/50 border-b border-shell-800" />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-          <PWAInstallPrompt />
-          <BackToTop />
+          <A11yProvider>
+            <SkipLinks />
+            <OfflineIndicator />
+            <KeyboardShortcuts />
+            <CommandPalette />
+            <Header />
+            <Breadcrumbs className="bg-shell-900/50 border-b border-shell-800" />
+            <main id="main-content" className="flex-grow" role="main" tabIndex={-1} aria-label="Main content">
+              {children}
+            </main>
+            <Footer />
+            <PWAInstallPrompt />
+            <BackToTop />
+          </A11yProvider>
         </ThemeProvider>
       </body>
     </html>

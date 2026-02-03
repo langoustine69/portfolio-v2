@@ -2,11 +2,13 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import ThemeToggle from './ThemeToggle';
 import { CommandPaletteButton } from './CommandPalette';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   // Close menu on route change or escape key
   useEffect(() => {
@@ -39,8 +41,8 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-shell-800 dark:border-shell-800 light:border-shell-200 bg-shell-950/80 dark:bg-shell-950/80 light:bg-shell-50/80 backdrop-blur-lg">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full border-b border-shell-800 dark:border-shell-800 light:border-shell-200 bg-shell-950/80 dark:bg-shell-950/80 light:bg-shell-50/80 backdrop-blur-lg" role="banner">
+      <nav id="navigation" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2">
@@ -49,15 +51,25 @@ export default function Header() {
             </Link>
             
             <div className="hidden md:flex items-center gap-6">
-              {navLinks.map((link) => (
-                <Link 
-                  key={link.href}
-                  href={link.href} 
-                  className="text-shell-300 dark:text-shell-300 light:text-shell-600 hover:text-lobster-400 transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = link.href === '/' 
+                  ? pathname === '/' 
+                  : pathname?.startsWith(link.href.replace('/#', '/'));
+                return (
+                  <Link 
+                    key={link.href}
+                    href={link.href} 
+                    className={`transition-colors ${
+                      isActive 
+                        ? 'text-lobster-400 font-medium' 
+                        : 'text-shell-300 dark:text-shell-300 light:text-shell-600 hover:text-lobster-400'
+                    }`}
+                    aria-current={isActive ? 'page' : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
@@ -136,17 +148,27 @@ export default function Header() {
           }`}
         >
           <div className="px-4 py-6 space-y-1">
-            {navLinks.map((link, index) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeMenu}
-                className="flex items-center px-4 py-3 text-lg text-shell-300 dark:text-shell-300 light:text-shell-600 hover:text-lobster-400 hover:bg-shell-900/50 dark:hover:bg-shell-900/50 light:hover:bg-shell-100 rounded-lg transition-all"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link, index) => {
+              const isActive = link.href === '/' 
+                ? pathname === '/' 
+                : pathname?.startsWith(link.href.replace('/#', '/'));
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className={`flex items-center px-4 py-3 text-lg rounded-lg transition-all ${
+                    isActive
+                      ? 'text-lobster-400 bg-lobster-500/10 font-medium'
+                      : 'text-shell-300 dark:text-shell-300 light:text-shell-600 hover:text-lobster-400 hover:bg-shell-900/50 dark:hover:bg-shell-900/50 light:hover:bg-shell-100'
+                  }`}
+                  style={{ animationDelay: `${index * 50}ms` }}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             
             {/* Divider */}
             <div className="border-t border-shell-800 dark:border-shell-800 light:border-shell-200 my-4" />

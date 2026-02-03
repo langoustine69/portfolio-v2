@@ -2,6 +2,7 @@ import { agents, Agent } from '@/data/agents';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import ShareButtons from '@/components/ShareButtons';
+import AgentChangelog from '@/components/AgentChangelog';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -205,6 +206,11 @@ export default async function AgentPage({ params }: Props) {
             ))}
           </div>
         </div>
+
+        {/* Version History / Changelog */}
+        {agent.changelog && agent.changelog.length > 0 && (
+          <AgentChangelog changelog={agent.changelog} agentName={agent.name} />
+        )}
 
         {/* Data Source */}
         <div className="mb-8">

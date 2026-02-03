@@ -11,8 +11,16 @@ interface AgentCardProps {
 }
 
 export default function AgentCard({ agent, showDetails = false }: AgentCardProps) {
+  const statusLabel = agent.status === 'live' ? 'Live and operational' : 
+                      agent.status === 'building' ? 'In development' : 
+                      agent.status === 'offline' ? 'Currently offline' : 'Unknown status';
+  
   return (
-    <div className="card-hover lobster-glow bg-shell-900/50 dark:bg-shell-900/50 light:bg-white/80 border border-shell-800 dark:border-shell-800 light:border-shell-200 rounded-xl p-6 relative overflow-hidden group">
+    <article 
+      className="card-hover lobster-glow bg-shell-900/50 dark:bg-shell-900/50 light:bg-white/80 border border-shell-800 dark:border-shell-800 light:border-shell-200 rounded-xl p-6 relative overflow-hidden group"
+      aria-labelledby={`agent-title-${agent.id}`}
+      aria-describedby={`agent-desc-${agent.id}`}
+    >
       {/* Background glow on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-lobster-500/5 to-lobster-900/5 opacity-0 group-hover:opacity-100 transition-opacity" />
       
@@ -27,7 +35,7 @@ export default function AgentCard({ agent, showDetails = false }: AgentCardProps
           <div className="flex items-center gap-3">
             <span className="text-3xl">{agent.icon}</span>
             <div>
-              <h3 className="text-lg font-semibold text-shell-100 dark:text-shell-100 light:text-shell-900">{agent.name}</h3>
+              <h3 id={`agent-title-${agent.id}`} className="text-lg font-semibold text-shell-100 dark:text-shell-100 light:text-shell-900">{agent.name}</h3>
               <span className="text-sm text-shell-400 dark:text-shell-400 light:text-shell-500">{agent.category}</span>
             </div>
           </div>
@@ -41,7 +49,7 @@ export default function AgentCard({ agent, showDetails = false }: AgentCardProps
         </div>
 
         {/* Description */}
-        <p className="text-shell-400 dark:text-shell-400 light:text-shell-600 text-sm mb-4 line-clamp-2">
+        <p id={`agent-desc-${agent.id}`} className="text-shell-400 dark:text-shell-400 light:text-shell-600 text-sm mb-4 line-clamp-2">
           {agent.description}
         </p>
 
@@ -111,6 +119,6 @@ export default function AgentCard({ agent, showDetails = false }: AgentCardProps
           )}
         </div>
       </div>
-    </div>
+    </article>
   );
 }

@@ -1,3 +1,10 @@
+export interface AgentChangelogEntry {
+  version: string;
+  date: string;
+  changes: string[];
+  type: 'major' | 'minor' | 'patch';
+}
+
 export interface Agent {
   id: string;
   name: string;
@@ -10,6 +17,7 @@ export interface Agent {
   erc8004Tx?: string; // Etherscan or Basescan transaction URL
   icon: string;
   features: string[];
+  changelog?: AgentChangelogEntry[];
 }
 
 export const agents: Agent[] = [
@@ -39,6 +47,13 @@ export const agents: Agent[] = [
     erc8004Tx: 'https://etherscan.io/tx/0x0dbefff08c99577a4d5ee48c5b3936633e01ff73ddc11d5cca5593c0325ca0f2',
     icon: '🪙',
     features: ['BTC/ETH prices', 'Multi-coin lookup', 'Top coins by market cap', 'DeFi TVL by chain', 'Global market stats', 'Full market reports'],
+    changelog: [
+      { version: '1.3.0', date: '2026-02-01', type: 'minor', changes: ['Added stablecoin dominance tracking', 'Improved rate limiting handling', 'New /compare endpoint for multi-coin comparison'] },
+      { version: '1.2.1', date: '2026-01-28', type: 'patch', changes: ['Fixed CoinGecko API timeout issues', 'Improved error messages'] },
+      { version: '1.2.0', date: '2026-01-20', type: 'minor', changes: ['Added DeFiLlama TVL integration', 'New chain-specific TVL endpoints'] },
+      { version: '1.1.0', date: '2026-01-15', type: 'minor', changes: ['Added top 100 coins endpoint', 'Market cap sorting options'] },
+      { version: '1.0.0', date: '2026-01-10', type: 'major', changes: ['Initial release', 'BTC/ETH price endpoints', 'Multi-coin lookup'] },
+    ],
   },
   {
     id: 'weather-intel-agent',
@@ -52,6 +67,12 @@ export const agents: Agent[] = [
     erc8004Tx: 'https://etherscan.io/tx/0xdb71690688f91a2138d39f9cdcaf1610ab81fea67c38d4f716c96899be2245aa',
     icon: '🌤️',
     features: ['Current weather', 'Multi-day forecast', 'Air quality index', 'Severe weather alerts', 'Full weather reports'],
+    changelog: [
+      { version: '2.1.0', date: '2026-02-02', type: 'minor', changes: ['Added UV index tracking', 'New precipitation probability forecasts', 'Improved location geocoding'] },
+      { version: '2.0.0', date: '2026-01-25', type: 'major', changes: ['Complete API redesign', 'Added severe weather alerts', 'Air quality index integration'] },
+      { version: '1.1.0', date: '2026-01-15', type: 'minor', changes: ['Added 14-day forecast', 'Humidity and wind data'] },
+      { version: '1.0.0', date: '2026-01-08', type: 'major', changes: ['Initial release', 'Current weather endpoint', '7-day forecast'] },
+    ],
   },
   {
     id: 'word-intel',
@@ -78,6 +99,13 @@ export const agents: Agent[] = [
     erc8004Tx: 'https://etherscan.io/tx/0xb234647ad9bd38a92a1b3f5adefc865c21bf286f1bb6731005fb0b14e9192986',
     icon: '🔒',
     features: ['CISA KEV catalog', 'Package vulnerabilities', 'CVE lookup', 'IP intelligence', 'Security reports'],
+    changelog: [
+      { version: '1.4.0', date: '2026-02-03', type: 'minor', changes: ['Added EPSS probability scores', 'New batch CVE lookup endpoint', 'Improved response caching'] },
+      { version: '1.3.0', date: '2026-01-30', type: 'minor', changes: ['Shodan IP intelligence integration', 'Port scan data in reports'] },
+      { version: '1.2.0', date: '2026-01-22', type: 'minor', changes: ['NVD integration for CVSS scores', 'Added severity filtering'] },
+      { version: '1.1.0', date: '2026-01-18', type: 'minor', changes: ['OSV package vulnerability lookups', 'Ecosystem filtering'] },
+      { version: '1.0.0', date: '2026-01-12', type: 'major', changes: ['Initial release', 'CISA KEV catalog', 'Basic CVE lookup'] },
+    ],
   },
   {
     id: 'fx-intel',
@@ -104,6 +132,12 @@ export const agents: Agent[] = [
     erc8004Tx: 'https://etherscan.io/tx/0x2e4131e3f6a6eef400147187c668da4958b2d2d34d42026c4a494f882a2d2e0a',
     icon: '🏒',
     features: ['Live scores', 'NHL standings', 'Team rosters', 'Player stats', 'Game details', 'Schedule'],
+    changelog: [
+      { version: '2.0.0', date: '2026-02-01', type: 'major', changes: ['Stadium Series support', 'Live game events', 'Play-by-play data', 'New player comparison endpoint'] },
+      { version: '1.2.0', date: '2026-01-20', type: 'minor', changes: ['Added playoff bracket data', 'Team injury reports'] },
+      { version: '1.1.0', date: '2026-01-12', type: 'minor', changes: ['Player stats with career data', 'League leaders endpoint'] },
+      { version: '1.0.0', date: '2026-01-05', type: 'major', changes: ['Initial release', 'Live scores', 'Standings', 'Team rosters'] },
+    ],
   },
   {
     id: 'golf-intel',
