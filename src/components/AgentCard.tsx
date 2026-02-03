@@ -3,6 +3,7 @@
 import { Agent } from '@/data/agents';
 import Link from 'next/link';
 import HealthIndicator from './HealthIndicator';
+import FavoriteButton from './FavoriteButton';
 
 interface AgentCardProps {
   agent: Agent;
@@ -15,9 +16,14 @@ export default function AgentCard({ agent, showDetails = false }: AgentCardProps
       {/* Background glow on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-lobster-500/5 to-lobster-900/5 opacity-0 group-hover:opacity-100 transition-opacity" />
       
+      {/* Favorite button - top right corner */}
+      <div className="absolute top-3 right-3 z-20">
+        <FavoriteButton agentId={agent.id} size="md" />
+      </div>
+      
       <div className="relative z-10">
         {/* Header */}
-        <div className="flex items-start justify-between mb-4">
+        <div className="flex items-start justify-between mb-4 pr-8">
           <div className="flex items-center gap-3">
             <span className="text-3xl">{agent.icon}</span>
             <div>

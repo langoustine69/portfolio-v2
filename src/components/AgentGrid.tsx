@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { agents, categories, Agent } from '@/data/agents';
 import AgentCard from './AgentCard';
 import CategoryNav from './CategoryNav';
+import { useFavorites } from '@/hooks/useFavorites';
 
 interface AgentGridProps {
   showFilters?: boolean;
@@ -60,10 +61,12 @@ export default function AgentGrid({
   syncWithUrl = false,
 }: AgentGridProps) {
   const { urlCategory, updateUrl } = useUrlSync(syncWithUrl, initialCategory);
+  const { favoritesSet, hasFavorites, count: favoritesCount, mounted: favoritesMounted } = useFavorites();
   
   const [selectedCategory, setSelectedCategory] = useState<string>(urlCategory);
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState<boolean>(false);
 
   // Sync with URL changes
   useEffect(() => {
@@ -82,6 +85,11 @@ export default function AgentGrid({
 
   const filteredAgents = useMemo(() => {
     let result = agents;
+
+    // Favorites filter
+    if (showFavoritesOnly && favoritesMounted) {
+      result = result.filter(agent => favoritesSet.has(agent.id));
+    }
 
     // Search filter - matches name, description, category, apiSource, and features
     if (searchQuery.trim()) {
@@ -108,7 +116,7 @@ export default function AgentGrid({
     }
 
     return result;
-  }, [searchQuery, selectedCategory, selectedStatus, limit]);
+  }, [searchQuery, selectedCategory, selectedStatus, limit, showFavoritesOnly, favoritesSet, favoritesMounted]);
 
   const liveCount = agents.filter(a => a.status === 'live').length;
   const buildingCount = agents.filter(a => a.status === 'building').length;
@@ -197,15 +205,49 @@ export default function AgentGrid({
                 <option value="offline">Offline</option>
               </select>
             </div>
+
+            {/* Favorites filter */}
+            {favoritesMounted && (
+              <button
+                onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
+                className={`
+                  flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm transition-all
+                  border focus:outline-none focus:ring-2 focus:ring-lobster-500
+                  ${showFavoritesOnly
+                    ? 'bg-lobster-500/20 border-lobster-500 text-lobster-300 hover:bg-lobster-500/30'
+                    : 'bg-shell-800 dark:bg-shell-800 light:bg-white border-shell-700 dark:border-shell-700 light:border-shell-200 text-shell-400 hover:text-shell-200 hover:border-shell-600'
+                  }
+                  ${!hasFavorites && !showFavoritesOnly ? 'opacity-50 cursor-not-allowed' : ''}
+                `}
+                disabled={!hasFavorites && !showFavoritesOnly}
+                title={hasFavorites ? `Show ${favoritesCount} favorite${favoritesCount !== 1 ? 's' : ''}` : 'No favorites saved yet'}
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill={showFavoritesOnly ? 'currentColor' : 'none'}
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+                <span>Favorites{hasFavorites ? ` (${favoritesCount})` : ''}</span>
+              </button>
+            )}
           </div>
         </div>
       )}
 
       {/* Results count */}
-      {showFilters && (searchQuery || selectedCategory !== 'all' || selectedStatus !== 'all') && (
+      {showFilters && (searchQuery || selectedCategory !== 'all' || selectedStatus !== 'all' || showFavoritesOnly) && (
         <div className="mb-4 flex items-center justify-between">
           <p className="text-sm text-shell-400 dark:text-shell-400 light:text-shell-600">
             Showing {filteredAgents.length} of {agents.length} agents
+            {showFavoritesOnly && <span className="text-lobster-400"> (favorites only)</span>}
             {searchQuery && <span className="text-lobster-400"> matching "{searchQuery}"</span>}
           </p>
           <button
@@ -213,6 +255,7 @@ export default function AgentGrid({
               setSearchQuery('');
               handleCategoryChange('all');
               setSelectedStatus('all');
+              setShowFavoritesOnly(false);
             }}
             className="text-sm text-lobster-400 hover:text-lobster-300 transition-colors"
           >
@@ -243,14 +286,18 @@ export default function AgentGrid({
 
       {filteredAgents.length === 0 && (
         <div className="text-center py-12">
-          <div className="text-4xl mb-4">🔍</div>
+          <div className="text-4xl mb-4">{showFavoritesOnly ? '❤️' : '🔍'}</div>
           <p className="text-shell-400 dark:text-shell-400 light:text-shell-600 mb-2">
-            {searchQuery 
-              ? `No agents found matching "${searchQuery}"`
-              : 'No agents found matching your filters.'}
+            {showFavoritesOnly && !hasFavorites
+              ? 'No favorites yet!'
+              : searchQuery 
+                ? `No agents found matching "${searchQuery}"`
+                : 'No agents found matching your filters.'}
           </p>
           <p className="text-sm text-shell-500">
-            Try adjusting your search or filters.
+            {showFavoritesOnly && !hasFavorites
+              ? 'Click the heart icon on any agent to save it as a favorite.'
+              : 'Try adjusting your search or filters.'}
           </p>
         </div>
       )}
