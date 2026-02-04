@@ -1,0 +1,141 @@
+{
+  "common": {
+    "loading": "Laden...",
+    "error": "Etwas ist schiefgelaufen",
+    "retry": "Erneut versuchen",
+    "back": "Zurück",
+    "search": "Suchen",
+    "close": "Schließen",
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "learnMore": "Mehr erfahren",
+    "viewAll": "Alle anzeigen",
+    "share": "Teilen"
+  },
+  "nav": {
+    "home": "Startseite",
+    "agents": "Agenten",
+    "compare": "Vergleichen",
+    "status": "Status",
+    "blog": "Blog",
+    "changelog": "Änderungen",
+    "guides": "Anleitungen"
+  },
+  "home": {
+    "hero": {
+      "title": "x402 KI-Agenten",
+      "subtitle": "Intelligenz pro Anfrage",
+      "description": "Mikrozahlungs-basierte KI-Agenten für Sport, Finanzen, Weltraumwetter und mehr. Keine API-Schlüssel. Keine Abonnements. Zahle nur, was du nutzt.",
+      "cta": "Agenten erkunden",
+      "secondary": "Preise ansehen"
+    },
+    "features": {
+      "title": "Warum x402?",
+      "micropayments": {
+        "title": "Mikrozahlungen",
+        "description": "Zahle nur für das, was du nutzt. Keine monatlichen Gebühren oder versteckten Kosten."
+      },
+      "instant": {
+        "title": "Sofortiger Zugang",
+        "description": "Keine API-Schlüssel erforderlich. Nutze Agenten sofort."
+      },
+      "reliable": {
+        "title": "Zuverlässig",
+        "description": "Auf Base Chain gebaut mit 99,9% Verfügbarkeitsgarantie."
+      }
+    },
+    "agents": {
+      "title": "Ausgewählte Agenten",
+      "viewAll": "Alle Agenten anzeigen"
+    },
+    "stats": {
+      "title": "Plattformstatistiken",
+      "agents": "Aktive Agenten",
+      "requests": "Bearbeitete Anfragen",
+      "uptime": "Verfügbarkeit"
+    }
+  },
+  "agents": {
+    "title": "KI-Agenten",
+    "subtitle": "Durchsuche unsere x402-fähigen KI-Agenten",
+    "filter": {
+      "all": "Alle",
+      "sports": "Sport",
+      "finance": "Finanzen",
+      "space": "Weltraum",
+      "gaming": "Gaming"
+    },
+    "card": {
+      "pricing": "Preise",
+      "perRequest": "pro Anfrage",
+      "endpoints": "Endpunkte",
+      "tryIt": "Ausprobieren",
+      "docs": "Dokumentation"
+    },
+    "details": {
+      "overview": "Übersicht",
+      "endpoints": "Endpunkte",
+      "examples": "Beispiele",
+      "integration": "Integration",
+      "changelog": "Änderungen"
+    }
+  },
+  "compare": {
+    "title": "Agenten vergleichen",
+    "subtitle": "Vergleich von Funktionen und Preisen nebeneinander",
+    "select": "Wähle Agenten zum Vergleichen",
+    "addAgent": "Agent hinzufügen",
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "performance": "Leistung"
+  },
+  "status": {
+    "title": "Systemstatus",
+    "subtitle": "Echtzeit-Gesundheits- und Leistungsmetriken",
+    "operational": "Alle Systeme betriebsbereit",
+    "degraded": "Eingeschränkte Leistung",
+    "outage": "Dienstausfall",
+    "uptime": "Verfügbarkeit",
+    "latency": "Latenz",
+    "lastChecked": "Zuletzt geprüft"
+  },
+  "footer": {
+    "tagline": "x402 Mikrozahlungs-KI-Agenten",
+    "links": {
+      "title": "Links",
+      "agents": "Agenten",
+      "docs": "Dokumentation",
+      "status": "Status",
+      "blog": "Blog"
+    },
+    "social": {
+      "title": "Soziale Medien",
+      "twitter": "Twitter/X",
+      "github": "GitHub",
+      "discord": "Discord"
+    },
+    "legal": {
+      "title": "Rechtliches",
+      "privacy": "Datenschutz",
+      "terms": "Nutzungsbedingungen"
+    },
+    "copyright": "© {{year}} Langoustine69. Alle Rechte vorbehalten."
+  },
+  "newsletter": {
+    "title": "Bleib auf dem Laufenden",
+    "description": "Erhalte Benachrichtigungen über neue Agenten und Funktionen",
+    "placeholder": "E-Mail eingeben",
+    "subscribe": "Abonnieren",
+    "success": "Danke fürs Abonnieren!",
+    "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+  },
+  "contact": {
+    "title": "Kontaktiere uns",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Nachricht senden",
+    "success": "Nachricht erfolgreich gesendet!",
+    "error": "Senden fehlgeschlagen. Bitte versuche es erneut."
+  }
+}

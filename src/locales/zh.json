@@ -1,0 +1,141 @@
+{
+  "common": {
+    "loading": "加载中...",
+    "error": "出错了",
+    "retry": "重试",
+    "back": "返回",
+    "search": "搜索",
+    "close": "关闭",
+    "copy": "复制",
+    "copied": "已复制！",
+    "learnMore": "了解更多",
+    "viewAll": "查看全部",
+    "share": "分享"
+  },
+  "nav": {
+    "home": "首页",
+    "agents": "代理",
+    "compare": "对比",
+    "status": "状态",
+    "blog": "博客",
+    "changelog": "更新日志",
+    "guides": "指南"
+  },
+  "home": {
+    "hero": {
+      "title": "x402 AI 代理",
+      "subtitle": "按需付费的智能服务",
+      "description": "支持微支付的 AI 代理，涵盖体育、金融、空间天气等领域。无需 API 密钥，无需订阅，按使用付费。",
+      "cta": "探索代理",
+      "secondary": "查看价格"
+    },
+    "features": {
+      "title": "为什么选择 x402？",
+      "micropayments": {
+        "title": "微支付",
+        "description": "按使用付费，无月费，无隐藏成本。"
+      },
+      "instant": {
+        "title": "即时访问",
+        "description": "无需 API 密钥，立即开始使用代理。"
+      },
+      "reliable": {
+        "title": "可靠稳定",
+        "description": "基于 Base 链构建，99.9% 正常运行时间保证。"
+      }
+    },
+    "agents": {
+      "title": "精选代理",
+      "viewAll": "查看所有代理"
+    },
+    "stats": {
+      "title": "平台统计",
+      "agents": "活跃代理",
+      "requests": "已处理请求",
+      "uptime": "正常运行时间"
+    }
+  },
+  "agents": {
+    "title": "AI 代理",
+    "subtitle": "浏览我们的 x402 代理集合",
+    "filter": {
+      "all": "全部",
+      "sports": "体育",
+      "finance": "金融",
+      "space": "太空",
+      "gaming": "游戏"
+    },
+    "card": {
+      "pricing": "价格",
+      "perRequest": "每次请求",
+      "endpoints": "个端点",
+      "tryIt": "试用",
+      "docs": "文档"
+    },
+    "details": {
+      "overview": "概览",
+      "endpoints": "端点",
+      "examples": "示例",
+      "integration": "集成",
+      "changelog": "更新日志"
+    }
+  },
+  "compare": {
+    "title": "对比代理",
+    "subtitle": "代理功能和价格的并排比较",
+    "select": "选择要对比的代理",
+    "addAgent": "添加代理",
+    "features": "功能",
+    "pricing": "价格",
+    "performance": "性能"
+  },
+  "status": {
+    "title": "系统状态",
+    "subtitle": "实时健康和性能指标",
+    "operational": "所有系统正常运行",
+    "degraded": "性能下降",
+    "outage": "服务中断",
+    "uptime": "正常运行时间",
+    "latency": "延迟",
+    "lastChecked": "上次检查"
+  },
+  "footer": {
+    "tagline": "x402 微支付 AI 代理",
+    "links": {
+      "title": "链接",
+      "agents": "代理",
+      "docs": "文档",
+      "status": "状态",
+      "blog": "博客"
+    },
+    "social": {
+      "title": "社交",
+      "twitter": "Twitter/X",
+      "github": "GitHub",
+      "discord": "Discord"
+    },
+    "legal": {
+      "title": "法律",
+      "privacy": "隐私",
+      "terms": "条款"
+    },
+    "copyright": "© {{year}} Langoustine69。保留所有权利。"
+  },
+  "newsletter": {
+    "title": "保持更新",
+    "description": "获取新代理和功能的通知",
+    "placeholder": "输入您的邮箱",
+    "subscribe": "订阅",
+    "success": "感谢订阅！",
+    "error": "出错了，请重试。"
+  },
+  "contact": {
+    "title": "联系我们",
+    "name": "姓名",
+    "email": "邮箱",
+    "message": "消息",
+    "send": "发送消息",
+    "success": "消息发送成功！",
+    "error": "发送失败，请重试。"
+  }
+}

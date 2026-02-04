@@ -1,0 +1,141 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "back": "Retour",
+    "search": "Rechercher",
+    "close": "Fermer",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "learnMore": "En savoir plus",
+    "viewAll": "Voir tout",
+    "share": "Partager"
+  },
+  "nav": {
+    "home": "Accueil",
+    "agents": "Agents",
+    "compare": "Comparer",
+    "status": "Statut",
+    "blog": "Blog",
+    "changelog": "Historique",
+    "guides": "Guides"
+  },
+  "home": {
+    "hero": {
+      "title": "Agents IA x402",
+      "subtitle": "Intelligence à la demande",
+      "description": "Agents IA avec micropaiements pour le sport, la finance, la météo spatiale et plus. Pas de clés API. Pas d'abonnement. Payez uniquement ce que vous utilisez.",
+      "cta": "Explorer les agents",
+      "secondary": "Voir les tarifs"
+    },
+    "features": {
+      "title": "Pourquoi x402 ?",
+      "micropayments": {
+        "title": "Micropaiements",
+        "description": "Payez uniquement ce que vous utilisez. Pas de frais mensuels ni de coûts cachés."
+      },
+      "instant": {
+        "title": "Accès instantané",
+        "description": "Pas de clé API nécessaire. Commencez à utiliser les agents immédiatement."
+      },
+      "reliable": {
+        "title": "Fiable",
+        "description": "Construit sur Base chain avec une garantie de disponibilité de 99,9%."
+      }
+    },
+    "agents": {
+      "title": "Agents en vedette",
+      "viewAll": "Voir tous les agents"
+    },
+    "stats": {
+      "title": "Statistiques",
+      "agents": "Agents actifs",
+      "requests": "Requêtes traitées",
+      "uptime": "Disponibilité"
+    }
+  },
+  "agents": {
+    "title": "Agents IA",
+    "subtitle": "Parcourez notre collection d'agents x402",
+    "filter": {
+      "all": "Tous",
+      "sports": "Sports",
+      "finance": "Finance",
+      "space": "Espace",
+      "gaming": "Jeux"
+    },
+    "card": {
+      "pricing": "Tarifs",
+      "perRequest": "par requête",
+      "endpoints": "points d'accès",
+      "tryIt": "Essayer",
+      "docs": "Documentation"
+    },
+    "details": {
+      "overview": "Aperçu",
+      "endpoints": "Points d'accès",
+      "examples": "Exemples",
+      "integration": "Intégration",
+      "changelog": "Historique"
+    }
+  },
+  "compare": {
+    "title": "Comparer les agents",
+    "subtitle": "Comparaison côte à côte des fonctionnalités et tarifs",
+    "select": "Sélectionnez les agents à comparer",
+    "addAgent": "Ajouter un agent",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "performance": "Performance"
+  },
+  "status": {
+    "title": "Statut du système",
+    "subtitle": "Métriques de santé et de performance en temps réel",
+    "operational": "Tous les systèmes opérationnels",
+    "degraded": "Performance dégradée",
+    "outage": "Interruption de service",
+    "uptime": "Disponibilité",
+    "latency": "Latence",
+    "lastChecked": "Dernière vérification"
+  },
+  "footer": {
+    "tagline": "Agents IA micropaiement x402",
+    "links": {
+      "title": "Liens",
+      "agents": "Agents",
+      "docs": "Documentation",
+      "status": "Statut",
+      "blog": "Blog"
+    },
+    "social": {
+      "title": "Réseaux sociaux",
+      "twitter": "Twitter/X",
+      "github": "GitHub",
+      "discord": "Discord"
+    },
+    "legal": {
+      "title": "Légal",
+      "privacy": "Confidentialité",
+      "terms": "Conditions"
+    },
+    "copyright": "© {{year}} Langoustine69. Tous droits réservés."
+  },
+  "newsletter": {
+    "title": "Restez informé",
+    "description": "Recevez des notifications sur les nouveaux agents et fonctionnalités",
+    "placeholder": "Entrez votre email",
+    "subscribe": "S'abonner",
+    "success": "Merci pour votre abonnement !",
+    "error": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "success": "Message envoyé avec succès !",
+    "error": "Échec de l'envoi. Veuillez réessayer."
+  }
+}

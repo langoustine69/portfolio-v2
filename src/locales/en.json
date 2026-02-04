@@ -1,0 +1,141 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "back": "Back",
+    "search": "Search",
+    "close": "Close",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "share": "Share"
+  },
+  "nav": {
+    "home": "Home",
+    "agents": "Agents",
+    "compare": "Compare",
+    "status": "Status",
+    "blog": "Blog",
+    "changelog": "Changelog",
+    "guides": "Guides"
+  },
+  "home": {
+    "hero": {
+      "title": "x402 AI Agents",
+      "subtitle": "Pay-per-request intelligence",
+      "description": "Micropayment-powered AI agents for sports, finance, space weather, and more. No API keys. No subscriptions. Just pay for what you use.",
+      "cta": "Explore Agents",
+      "secondary": "View Pricing"
+    },
+    "features": {
+      "title": "Why x402?",
+      "micropayments": {
+        "title": "Micropayments",
+        "description": "Pay only for what you use. No monthly fees or hidden costs."
+      },
+      "instant": {
+        "title": "Instant Access",
+        "description": "No API keys needed. Start using agents immediately."
+      },
+      "reliable": {
+        "title": "Reliable",
+        "description": "Built on Base chain with 99.9% uptime guarantee."
+      }
+    },
+    "agents": {
+      "title": "Featured Agents",
+      "viewAll": "View All Agents"
+    },
+    "stats": {
+      "title": "Platform Stats",
+      "agents": "Active Agents",
+      "requests": "Requests Served",
+      "uptime": "Uptime"
+    }
+  },
+  "agents": {
+    "title": "AI Agents",
+    "subtitle": "Browse our collection of x402-enabled AI agents",
+    "filter": {
+      "all": "All",
+      "sports": "Sports",
+      "finance": "Finance",
+      "space": "Space",
+      "gaming": "Gaming"
+    },
+    "card": {
+      "pricing": "Pricing",
+      "perRequest": "per request",
+      "endpoints": "endpoints",
+      "tryIt": "Try it",
+      "docs": "Documentation"
+    },
+    "details": {
+      "overview": "Overview",
+      "endpoints": "Endpoints",
+      "examples": "Examples",
+      "integration": "Integration",
+      "changelog": "Changelog"
+    }
+  },
+  "compare": {
+    "title": "Compare Agents",
+    "subtitle": "Side-by-side comparison of agent features and pricing",
+    "select": "Select agents to compare",
+    "addAgent": "Add agent",
+    "features": "Features",
+    "pricing": "Pricing",
+    "performance": "Performance"
+  },
+  "status": {
+    "title": "System Status",
+    "subtitle": "Real-time health and performance metrics",
+    "operational": "All Systems Operational",
+    "degraded": "Degraded Performance",
+    "outage": "Service Outage",
+    "uptime": "Uptime",
+    "latency": "Latency",
+    "lastChecked": "Last checked"
+  },
+  "footer": {
+    "tagline": "x402 micropayment AI agents",
+    "links": {
+      "title": "Links",
+      "agents": "Agents",
+      "docs": "Documentation",
+      "status": "Status",
+      "blog": "Blog"
+    },
+    "social": {
+      "title": "Social",
+      "twitter": "Twitter/X",
+      "github": "GitHub",
+      "discord": "Discord"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    },
+    "copyright": "© {{year}} Langoustine69. All rights reserved."
+  },
+  "newsletter": {
+    "title": "Stay Updated",
+    "description": "Get notified about new agents and features",
+    "placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "success": "Thanks for subscribing!",
+    "error": "Something went wrong. Please try again."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message. Please try again."
+  }
+}

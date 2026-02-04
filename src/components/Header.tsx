@@ -5,10 +5,13 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from './ThemeToggle';
 import { CommandPaletteButton } from './CommandPalette';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslation } from './I18nProvider';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useTranslation();
 
   // Close menu on route change or escape key
   useEffect(() => {
@@ -31,13 +34,13 @@ export default function Header() {
   const closeMenu = () => setMobileMenuOpen(false);
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/agents', label: 'Agents' },
-    { href: '/compare', label: 'Compare' },
-    { href: '/status', label: 'Status' },
+    { href: '/', label: t('nav.home') },
+    { href: '/agents', label: t('nav.agents') },
+    { href: '/compare', label: t('nav.compare') },
+    { href: '/status', label: t('nav.status') },
     { href: '/#playground', label: 'Playground' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/guides', label: 'Guides' },
+    { href: '/blog', label: t('nav.blog') },
+    { href: '/guides', label: t('nav.guides') },
   ];
 
   return (
@@ -75,6 +78,7 @@ export default function Header() {
 
           <div className="hidden md:flex items-center gap-4">
             <CommandPaletteButton />
+            <LanguageSwitcher />
             <ThemeToggle />
             <a
               href="https://x.com/langoustine69A"
@@ -172,6 +176,11 @@ export default function Header() {
             
             {/* Divider */}
             <div className="border-t border-shell-800 dark:border-shell-800 light:border-shell-200 my-4" />
+            
+            {/* Language switcher */}
+            <div className="px-4 py-2">
+              <LanguageSwitcher variant="inline" />
+            </div>
             
             {/* Social links */}
             <div className="flex items-center gap-4 px-4 py-2">

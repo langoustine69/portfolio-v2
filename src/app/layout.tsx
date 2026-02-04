@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { I18nProvider } from '@/components/I18nProvider';
 import KeyboardShortcuts from '@/components/KeyboardShortcuts';
 import CommandPalette from '@/components/CommandPalette';
 import BackToTop from '@/components/BackToTop';
@@ -151,20 +152,22 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased min-h-screen flex flex-col`}>
         <ThemeProvider>
-          <A11yProvider>
-            <SkipLinks />
-            <OfflineIndicator />
-            <KeyboardShortcuts />
-            <CommandPalette />
-            <Header />
-            <Breadcrumbs className="bg-shell-900/50 border-b border-shell-800" />
-            <main id="main-content" className="flex-grow" role="main" tabIndex={-1} aria-label="Main content">
-              {children}
-            </main>
-            <Footer />
-            <PWAInstallPrompt />
-            <BackToTop />
-          </A11yProvider>
+          <I18nProvider>
+            <A11yProvider>
+              <SkipLinks />
+              <OfflineIndicator />
+              <KeyboardShortcuts />
+              <CommandPalette />
+              <Header />
+              <Breadcrumbs className="bg-shell-900/50 border-b border-shell-800" />
+              <main id="main-content" className="flex-grow" role="main" tabIndex={-1} aria-label="Main content">
+                {children}
+              </main>
+              <Footer />
+              <PWAInstallPrompt />
+              <BackToTop />
+            </A11yProvider>
+          </I18nProvider>
         </ThemeProvider>
       </body>
     </html>

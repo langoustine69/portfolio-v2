@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "npx ts-node scripts/ping-sitemaps.ts || echo 'Sitemap ping failed - continuing'",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ping-sitemaps": "npx ts-node scripts/ping-sitemaps.ts"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

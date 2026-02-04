@@ -1,0 +1,141 @@
+{
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "retry": "再試行",
+    "back": "戻る",
+    "search": "検索",
+    "close": "閉じる",
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "learnMore": "詳細を見る",
+    "viewAll": "すべて見る",
+    "share": "共有"
+  },
+  "nav": {
+    "home": "ホーム",
+    "agents": "エージェント",
+    "compare": "比較",
+    "status": "ステータス",
+    "blog": "ブログ",
+    "changelog": "更新履歴",
+    "guides": "ガイド"
+  },
+  "home": {
+    "hero": {
+      "title": "x402 AIエージェント",
+      "subtitle": "リクエスト単位の課金",
+      "description": "スポーツ、金融、宇宙天気など、マイクロペイメント対応のAIエージェント。APIキー不要、サブスクリプション不要、使った分だけ支払い。",
+      "cta": "エージェントを探す",
+      "secondary": "料金を見る"
+    },
+    "features": {
+      "title": "なぜx402？",
+      "micropayments": {
+        "title": "マイクロペイメント",
+        "description": "使った分だけ支払い。月額料金や隠れたコストはありません。"
+      },
+      "instant": {
+        "title": "即時アクセス",
+        "description": "APIキー不要。すぐにエージェントを使い始められます。"
+      },
+      "reliable": {
+        "title": "信頼性",
+        "description": "Base chain上に構築、99.9%の稼働率保証。"
+      }
+    },
+    "agents": {
+      "title": "注目のエージェント",
+      "viewAll": "すべてのエージェントを見る"
+    },
+    "stats": {
+      "title": "プラットフォーム統計",
+      "agents": "アクティブエージェント",
+      "requests": "処理済みリクエスト",
+      "uptime": "稼働率"
+    }
+  },
+  "agents": {
+    "title": "AIエージェント",
+    "subtitle": "x402対応AIエージェントコレクション",
+    "filter": {
+      "all": "すべて",
+      "sports": "スポーツ",
+      "finance": "金融",
+      "space": "宇宙",
+      "gaming": "ゲーム"
+    },
+    "card": {
+      "pricing": "料金",
+      "perRequest": "リクエストあたり",
+      "endpoints": "エンドポイント",
+      "tryIt": "試す",
+      "docs": "ドキュメント"
+    },
+    "details": {
+      "overview": "概要",
+      "endpoints": "エンドポイント",
+      "examples": "例",
+      "integration": "統合",
+      "changelog": "更新履歴"
+    }
+  },
+  "compare": {
+    "title": "エージェント比較",
+    "subtitle": "機能と料金の並列比較",
+    "select": "比較するエージェントを選択",
+    "addAgent": "エージェントを追加",
+    "features": "機能",
+    "pricing": "料金",
+    "performance": "パフォーマンス"
+  },
+  "status": {
+    "title": "システムステータス",
+    "subtitle": "リアルタイムの健全性とパフォーマンス指標",
+    "operational": "全システム正常稼働中",
+    "degraded": "パフォーマンス低下",
+    "outage": "サービス停止",
+    "uptime": "稼働率",
+    "latency": "レイテンシ",
+    "lastChecked": "最終確認"
+  },
+  "footer": {
+    "tagline": "x402マイクロペイメントAIエージェント",
+    "links": {
+      "title": "リンク",
+      "agents": "エージェント",
+      "docs": "ドキュメント",
+      "status": "ステータス",
+      "blog": "ブログ"
+    },
+    "social": {
+      "title": "ソーシャル",
+      "twitter": "Twitter/X",
+      "github": "GitHub",
+      "discord": "Discord"
+    },
+    "legal": {
+      "title": "法的情報",
+      "privacy": "プライバシー",
+      "terms": "利用規約"
+    },
+    "copyright": "© {{year}} Langoustine69. All rights reserved."
+  },
+  "newsletter": {
+    "title": "最新情報を受け取る",
+    "description": "新しいエージェントや機能の通知を受け取る",
+    "placeholder": "メールアドレスを入力",
+    "subscribe": "登録",
+    "success": "登録ありがとうございます！",
+    "error": "エラーが発生しました。もう一度お試しください。"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "name": "名前",
+    "email": "メール",
+    "message": "メッセージ",
+    "send": "送信",
+    "success": "メッセージを送信しました！",
+    "error": "送信に失敗しました。もう一度お試しください。"
+  }
+}
