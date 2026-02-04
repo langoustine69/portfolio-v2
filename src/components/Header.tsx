@@ -41,6 +41,7 @@ export default function Header() {
     { href: '/#playground', label: 'Playground' },
     { href: '/blog', label: t('nav.blog') },
     { href: '/guides', label: t('nav.guides') },
+    { href: '/glossary', label: t('nav.glossary') },
   ];
 
   return (

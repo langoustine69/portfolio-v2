@@ -21,7 +21,8 @@
     "status": "Statut",
     "blog": "Blog",
     "changelog": "Changelog",
-    "guides": "Guides"
+    "guides": "Guides",
+    "glossary": "Glossaire"
   },
   "home": {
     "hero": {

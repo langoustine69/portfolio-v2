@@ -21,7 +21,8 @@
     "status": "Status",
     "blog": "Blog",
     "changelog": "Changelog",
-    "guides": "Guides"
+    "guides": "Guides",
+    "glossary": "Glossary"
   },
   "home": {
     "hero": {
@@ -154,5 +155,19 @@
     "requestsPerMonth": "Requests per month",
     "estimatedCost": "Estimated monthly cost",
     "perRequest": "per request"
+  },
+  "glossary": {
+    "title": "x402 Glossary",
+    "description": "A comprehensive guide to x402, AI agents, micropayments, and related terminology.",
+    "searchPlaceholder": "Search terms...",
+    "allCategories": "All Categories",
+    "showingTerms": "Showing {{count}} terms",
+    "noResults": "No terms found matching your search.",
+    "cta": {
+      "title": "Ready to build with x402?",
+      "description": "Explore our live agents or learn how to build your own with the Lucid Agents SDK.",
+      "exploreAgents": "Explore Agents",
+      "viewSDK": "View SDK"
+    }
   }
 }
