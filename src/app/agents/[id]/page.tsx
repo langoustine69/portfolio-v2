@@ -8,6 +8,7 @@ import UsageExamplesGallery from '@/components/UsageExamplesGallery';
 import IntegrationGuides from '@/components/IntegrationGuides';
 import RelatedAgents from '@/components/RelatedAgents';
 import RecentlyUpdatedBadge from '@/components/RecentlyUpdatedBadge';
+import UptimeHistoryChart from '@/components/UptimeHistoryChart';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -219,6 +220,15 @@ export default async function AgentPage({ params }: Props) {
             <RateLimitDisplay rateLimit={agent.rateLimit} variant="detailed" />
           </div>
         )}
+
+        {/* Uptime History Chart */}
+        <div className="mb-8">
+          <UptimeHistoryChart 
+            agentId={agent.id} 
+            agentStatus={agent.status}
+            days={30}
+          />
+        </div>
 
         {/* Usage Examples Gallery */}
         {agent.status === 'live' && agent.railwayUrl && (
