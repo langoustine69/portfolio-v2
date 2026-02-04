@@ -1,6 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import UserReviewsList from './UserReviewsList';
+
+type TabType = 'featured' | 'community';
 
 interface Testimonial {
   id: string;
@@ -65,16 +68,17 @@ const testimonials: Testimonial[] = [
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [activeTab, setActiveTab] = useState<TabType>('featured');
 
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || activeTab !== 'featured') return;
     
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
     }, 6000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, activeTab]);
 
   const goToSlide = (index: number) => {
     setActiveIndex(index);
@@ -86,7 +90,7 @@ export default function Testimonials() {
   return (
     <section className="py-16 px-4">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-shell-100 mb-2">
             What Developers Say
           </h2>
@@ -95,73 +99,112 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Featured testimonial */}
-        <div className="relative bg-shell-800/50 border border-shell-700 rounded-2xl p-8 md:p-12 mb-8">
-          <div className="absolute top-6 left-6 text-6xl text-lobster-500/20 font-serif">"</div>
-          
-          <div className="relative z-10">
-            <p className="text-lg md:text-xl text-shell-200 mb-6 leading-relaxed">
-              {testimonials[activeIndex].quote}
-            </p>
-            
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-shell-700 rounded-full flex items-center justify-center text-2xl">
-                {testimonials[activeIndex].avatar}
-              </div>
-              <div>
-                <p className="text-shell-100 font-medium">
-                  {testimonials[activeIndex].author}
-                </p>
-                <p className="text-shell-400 text-sm">
-                  {testimonials[activeIndex].role}
-                </p>
-              </div>
-              {testimonials[activeIndex].platform && (
-                <span className="ml-auto text-xs text-shell-500 bg-shell-800 px-3 py-1 rounded-full border border-shell-700">
-                  via {testimonials[activeIndex].platform}
-                </span>
-              )}
-            </div>
+        {/* Tab Switcher */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex bg-shell-800 rounded-lg p-1 border border-shell-700">
+            <button
+              onClick={() => setActiveTab('featured')}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                activeTab === 'featured'
+                  ? 'bg-lobster-600 text-white shadow-lg'
+                  : 'text-shell-400 hover:text-shell-200'
+              }`}
+            >
+              ⭐ Featured
+            </button>
+            <button
+              onClick={() => setActiveTab('community')}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                activeTab === 'community'
+                  ? 'bg-lobster-600 text-white shadow-lg'
+                  : 'text-shell-400 hover:text-shell-200'
+              }`}
+            >
+              💬 Community Reviews
+            </button>
           </div>
         </div>
 
-        {/* Dots navigation */}
-        <div className="flex justify-center gap-2 mb-8">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                index === activeIndex
-                  ? 'bg-lobster-500 w-6'
-                  : 'bg-shell-600 hover:bg-shell-500'
-              }`}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
-        </div>
-
-        {/* Mini cards preview */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {testimonials
-            .filter((_, i) => i !== activeIndex)
-            .slice(0, 3)
-            .map((t, index) => (
-              <button
-                key={t.id}
-                onClick={() => goToSlide(testimonials.findIndex(test => test.id === t.id))}
-                className="bg-shell-800/30 border border-shell-700/50 rounded-xl p-4 text-left hover:border-lobster-500/30 transition-all group"
-              >
-                <p className="text-shell-400 text-sm line-clamp-2 mb-3 group-hover:text-shell-300">
-                  "{t.quote.slice(0, 80)}..."
+        {/* Featured testimonial tab */}
+        {activeTab === 'featured' && (
+          <>
+            <div className="relative bg-shell-800/50 border border-shell-700 rounded-2xl p-8 md:p-12 mb-8">
+              <div className="absolute top-6 left-6 text-6xl text-lobster-500/20 font-serif">"</div>
+              
+              <div className="relative z-10">
+                <p className="text-lg md:text-xl text-shell-200 mb-6 leading-relaxed">
+                  {testimonials[activeIndex].quote}
                 </p>
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">{t.avatar}</span>
-                  <span className="text-shell-500 text-xs">{t.author}</span>
+                
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-shell-700 rounded-full flex items-center justify-center text-2xl">
+                    {testimonials[activeIndex].avatar}
+                  </div>
+                  <div>
+                    <p className="text-shell-100 font-medium">
+                      {testimonials[activeIndex].author}
+                    </p>
+                    <p className="text-shell-400 text-sm">
+                      {testimonials[activeIndex].role}
+                    </p>
+                  </div>
+                  {testimonials[activeIndex].platform && (
+                    <span className="ml-auto text-xs text-shell-500 bg-shell-800 px-3 py-1 rounded-full border border-shell-700">
+                      via {testimonials[activeIndex].platform}
+                    </span>
+                  )}
                 </div>
-              </button>
-            ))}
-        </div>
+              </div>
+            </div>
+
+            {/* Dots navigation */}
+            <div className="flex justify-center gap-2 mb-8">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    index === activeIndex
+                      ? 'bg-lobster-500 w-6'
+                      : 'bg-shell-600 hover:bg-shell-500'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Mini cards preview */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {testimonials
+                .filter((_, i) => i !== activeIndex)
+                .slice(0, 3)
+                .map((t, index) => (
+                  <button
+                    key={t.id}
+                    onClick={() => goToSlide(testimonials.findIndex(test => test.id === t.id))}
+                    className="bg-shell-800/30 border border-shell-700/50 rounded-xl p-4 text-left hover:border-lobster-500/30 transition-all group"
+                  >
+                    <p className="text-shell-400 text-sm line-clamp-2 mb-3 group-hover:text-shell-300">
+                      "{t.quote.slice(0, 80)}..."
+                    </p>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">{t.avatar}</span>
+                      <span className="text-shell-500 text-xs">{t.author}</span>
+                    </div>
+                  </button>
+                ))}
+            </div>
+          </>
+        )}
+
+        {/* Community Reviews tab */}
+        {activeTab === 'community' && (
+          <UserReviewsList
+            showStats={true}
+            maxReviews={5}
+            showSubmitForm={true}
+          />
+        )}
 
         {/* Social proof stats */}
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">

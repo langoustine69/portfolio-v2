@@ -6,6 +6,7 @@ import PricingCalculator from '@/components/PricingCalculator';
 import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
 import RecentActivity from '@/components/RecentActivity';
+import AgentGraph from '@/components/AgentGraph';
 import { HomePageJsonLd } from '@/components/JsonLd';
 import { agents, getLiveAgents } from '@/data/agents';
 import QuickStartButton from '@/components/QuickStartButton';
@@ -119,6 +120,11 @@ export default function Home() {
           </div>
           <AgentGrid showFilters={false} limit={6} showDetails />
         </div>
+      </section>
+
+      {/* Agent Ecosystem Graph */}
+      <section className="bg-shell-900/30">
+        <AgentGraph />
       </section>
 
       {/* Recent Activity Feed */}
