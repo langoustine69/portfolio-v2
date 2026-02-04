@@ -96,6 +96,16 @@
   animation: pulse-live 2s ease-in-out infinite;
 }
 
+/* Subtle pulse for recently updated badges */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
 /* Modal animations */
 @keyframes fade-in {
   from { opacity: 0; }

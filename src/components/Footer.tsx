@@ -52,6 +52,11 @@ export default function Footer() {
                   Changelog
                 </Link>
               </li>
+              <li>
+                <Link href="/errors" className="text-shell-400 dark:text-shell-400 light:text-shell-600 hover:text-lobster-400 transition-colors">
+                  Error Reference
+                </Link>
+              </li>
             </ul>
           </div>
 

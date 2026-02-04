@@ -26,6 +26,7 @@ const pages: CommandItem[] = [
   { id: 'changelog', title: 'Changelog', subtitle: 'Release history', icon: '📋', type: 'page', href: '/changelog' },
   { id: 'blog', title: 'Blog', subtitle: 'Articles & updates', icon: '📝', type: 'page', href: '/blog' },
   { id: 'contact', title: 'Contact', subtitle: 'Get in touch', icon: '📧', type: 'page', href: '/contact' },
+  { id: 'errors', title: 'Error Reference', subtitle: 'API error codes & solutions', icon: '🚨', type: 'page', href: '/errors' },
 ];
 
 // Fuzzy search scoring

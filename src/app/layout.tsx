@@ -12,6 +12,7 @@ import BackToTop from '@/components/BackToTop';
 import PWAInstallPrompt, { OfflineIndicator } from '@/components/PWAInstallPrompt';
 import SkipLinks from '@/components/SkipLinks';
 import A11yProvider from '@/components/A11yProvider';
+import CookieConsent from '@/components/CookieConsent';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -166,6 +167,7 @@ export default function RootLayout({
               <Footer />
               <PWAInstallPrompt />
               <BackToTop />
+              <CookieConsent />
             </A11yProvider>
           </I18nProvider>
         </ThemeProvider>

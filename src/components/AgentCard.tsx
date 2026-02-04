@@ -5,6 +5,7 @@ import Link from 'next/link';
 import HealthIndicator from './HealthIndicator';
 import FavoriteButton from './FavoriteButton';
 import RateLimitDisplay from './RateLimitDisplay';
+import RecentlyUpdatedBadge from './RecentlyUpdatedBadge';
 
 interface AgentCardProps {
   agent: Agent;
@@ -36,7 +37,10 @@ export default function AgentCard({ agent, showDetails = false }: AgentCardProps
           <div className="flex items-center gap-3">
             <span className="text-3xl">{agent.icon}</span>
             <div>
-              <h3 id={`agent-title-${agent.id}`} className="text-lg font-semibold text-shell-100 dark:text-shell-100 light:text-shell-900">{agent.name}</h3>
+              <div className="flex items-center gap-2">
+                <h3 id={`agent-title-${agent.id}`} className="text-lg font-semibold text-shell-100 dark:text-shell-100 light:text-shell-900">{agent.name}</h3>
+                <RecentlyUpdatedBadge changelog={agent.changelog} daysThreshold={7} />
+              </div>
               <span className="text-sm text-shell-400 dark:text-shell-400 light:text-shell-500">{agent.category}</span>
             </div>
           </div>

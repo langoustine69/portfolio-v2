@@ -6,6 +6,8 @@ import AgentChangelog from '@/components/AgentChangelog';
 import RateLimitDisplay from '@/components/RateLimitDisplay';
 import UsageExamplesGallery from '@/components/UsageExamplesGallery';
 import IntegrationGuides from '@/components/IntegrationGuides';
+import RelatedAgents from '@/components/RelatedAgents';
+import RecentlyUpdatedBadge from '@/components/RecentlyUpdatedBadge';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -188,6 +190,7 @@ export default async function AgentPage({ params }: Props) {
                 <span className={`px-3 py-1 rounded-full text-xs font-medium border ${statusColors[agent.status]}`}>
                   {agent.status.toUpperCase()}
                 </span>
+                <RecentlyUpdatedBadge changelog={agent.changelog} daysThreshold={7} size="md" />
                 <span className="text-[#666] text-sm">{agent.category}</span>
               </div>
             </div>
@@ -308,6 +311,9 @@ export default async function AgentPage({ params }: Props) {
             </a>
           )}
         </div>
+
+        {/* Related Agents */}
+        <RelatedAgents currentAgent={agent} maxAgents={3} />
 
         {/* Share Buttons */}
         <div className="mb-8">
