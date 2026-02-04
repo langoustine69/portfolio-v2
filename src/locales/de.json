@@ -10,7 +10,9 @@
     "copied": "Kopiert!",
     "learnMore": "Mehr erfahren",
     "viewAll": "Alle anzeigen",
-    "share": "Teilen"
+    "share": "Teilen",
+    "agent": "Agent",
+    "agents": "Agenten"
   },
   "nav": {
     "home": "Startseite",
@@ -18,72 +20,70 @@
     "compare": "Vergleichen",
     "status": "Status",
     "blog": "Blog",
-    "changelog": "Änderungen",
+    "changelog": "Changelog",
     "guides": "Anleitungen"
   },
   "home": {
     "hero": {
-      "title": "x402 KI-Agenten",
-      "subtitle": "Intelligenz pro Anfrage",
-      "description": "Mikrozahlungs-basierte KI-Agenten für Sport, Finanzen, Weltraumwetter und mehr. Keine API-Schlüssel. Keine Abonnements. Zahle nur, was du nutzt.",
+      "agentsBadge": "x402-Agenten live",
+      "portfolioTitle": "AI-Agenten Portfolio",
+      "description": "Spezialisierte x402-Mikrozahlungsagenten für Sport, Finanzen, Weltraumwetter und mehr. Entwickelt mit dem Lucid Agents SDK. Bezahlen Sie pro Anfrage.",
       "cta": "Agenten erkunden",
-      "secondary": "Preise ansehen"
+      "github": "Auf GitHub ansehen"
     },
-    "features": {
-      "title": "Warum x402?",
-      "micropayments": {
-        "title": "Mikrozahlungen",
-        "description": "Zahle nur für das, was du nutzt. Keine monatlichen Gebühren oder versteckten Kosten."
-      },
-      "instant": {
-        "title": "Sofortiger Zugang",
-        "description": "Keine API-Schlüssel erforderlich. Nutze Agenten sofort."
-      },
-      "reliable": {
-        "title": "Zuverlässig",
-        "description": "Auf Base Chain gebaut mit 99,9% Verfügbarkeitsgarantie."
-      }
+    "categories": {
+      "title": "Kategorien",
+      "viewAll": "Alle Kategorien anzeigen →"
     },
-    "agents": {
-      "title": "Ausgewählte Agenten",
-      "viewAll": "Alle Agenten anzeigen"
+    "liveAgents": {
+      "title": "Live-Agenten",
+      "subtitle": "Auf Railway bereitgestellt mit x402-Zahlungen",
+      "viewAll": "Alle anzeigen →"
     },
-    "stats": {
-      "title": "Plattformstatistiken",
-      "agents": "Aktive Agenten",
-      "requests": "Bearbeitete Anfragen",
-      "uptime": "Verfügbarkeit"
+    "techStack": {
+      "title": "Entwickelt mit"
+    },
+    "cta": {
+      "title": "Möchten Sie x402-Agenten erstellen?",
+      "description": "Alle Agenten sind Open Source. Entwickelt mit dem Lucid Agents SDK für sofortige Mikrozahlungen.",
+      "github": "Auf GitHub erkunden",
+      "sdk": "Lucid Agents SDK"
     }
   },
   "agents": {
-    "title": "KI-Agenten",
-    "subtitle": "Durchsuche unsere x402-fähigen KI-Agenten",
+    "title": "AI-Agenten",
+    "subtitle": "Durchsuchen Sie unsere Sammlung von x402-Agenten",
     "filter": {
       "all": "Alle",
       "sports": "Sport",
       "finance": "Finanzen",
       "space": "Weltraum",
-      "gaming": "Gaming"
+      "gaming": "Gaming",
+      "techNews": "Tech-News",
+      "motorsport": "Motorsport",
+      "defi": "DeFi"
     },
     "card": {
       "pricing": "Preise",
       "perRequest": "pro Anfrage",
       "endpoints": "Endpunkte",
       "tryIt": "Ausprobieren",
-      "docs": "Dokumentation"
+      "docs": "Dokumentation",
+      "live": "Live",
+      "offline": "Offline"
     },
     "details": {
       "overview": "Übersicht",
       "endpoints": "Endpunkte",
       "examples": "Beispiele",
       "integration": "Integration",
-      "changelog": "Änderungen"
+      "changelog": "Changelog"
     }
   },
   "compare": {
     "title": "Agenten vergleichen",
-    "subtitle": "Vergleich von Funktionen und Preisen nebeneinander",
-    "select": "Wähle Agenten zum Vergleichen",
+    "subtitle": "Direkter Vergleich von Funktionen und Preisen",
+    "select": "Agenten zum Vergleichen auswählen",
     "addAgent": "Agent hinzufügen",
     "features": "Funktionen",
     "pricing": "Preise",
@@ -100,7 +100,7 @@
     "lastChecked": "Zuletzt geprüft"
   },
   "footer": {
-    "tagline": "x402 Mikrozahlungs-KI-Agenten",
+    "tagline": "x402-Mikrozahlungs-AI-Agenten",
     "links": {
       "title": "Links",
       "agents": "Agenten",
@@ -109,7 +109,7 @@
       "blog": "Blog"
     },
     "social": {
-      "title": "Soziale Medien",
+      "title": "Social",
       "twitter": "Twitter/X",
       "github": "GitHub",
       "discord": "Discord"
@@ -117,25 +117,42 @@
     "legal": {
       "title": "Rechtliches",
       "privacy": "Datenschutz",
-      "terms": "Nutzungsbedingungen"
+      "terms": "AGB"
     },
     "copyright": "© {{year}} Langoustine69. Alle Rechte vorbehalten."
   },
   "newsletter": {
-    "title": "Bleib auf dem Laufenden",
-    "description": "Erhalte Benachrichtigungen über neue Agenten und Funktionen",
+    "title": "Auf dem Laufenden bleiben",
+    "description": "Erhalten Sie Benachrichtigungen über neue Agenten und Funktionen",
     "placeholder": "E-Mail eingeben",
     "subscribe": "Abonnieren",
-    "success": "Danke fürs Abonnieren!",
-    "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+    "success": "Danke für die Anmeldung!",
+    "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen."
   },
   "contact": {
-    "title": "Kontaktiere uns",
+    "title": "Kontakt",
+    "subtitle": "Fragen, Feedback oder Partnerschaftsanfragen",
     "name": "Name",
     "email": "E-Mail",
     "message": "Nachricht",
     "send": "Nachricht senden",
     "success": "Nachricht erfolgreich gesendet!",
-    "error": "Senden fehlgeschlagen. Bitte versuche es erneut."
+    "error": "Senden fehlgeschlagen. Bitte erneut versuchen."
+  },
+  "playground": {
+    "title": "API-Playground",
+    "subtitle": "APIs live testen",
+    "selectAgent": "Agent auswählen",
+    "selectEndpoint": "Endpunkt auswählen",
+    "sendRequest": "Anfrage senden",
+    "response": "Antwort",
+    "cost": "Kosten"
+  },
+  "calculator": {
+    "title": "Preisrechner",
+    "subtitle": "Schätzen Sie Ihre monatlichen Kosten",
+    "requestsPerMonth": "Anfragen pro Monat",
+    "estimatedCost": "Geschätzte monatliche Kosten",
+    "perRequest": "pro Anfrage"
   }
 }

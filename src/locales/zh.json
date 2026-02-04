@@ -10,7 +10,9 @@
     "copied": "已复制！",
     "learnMore": "了解更多",
     "viewAll": "查看全部",
-    "share": "分享"
+    "share": "分享",
+    "agent": "代理",
+    "agents": "代理"
   },
   "nav": {
     "home": "首页",
@@ -23,54 +25,52 @@
   },
   "home": {
     "hero": {
-      "title": "x402 AI 代理",
-      "subtitle": "按需付费的智能服务",
-      "description": "支持微支付的 AI 代理，涵盖体育、金融、空间天气等领域。无需 API 密钥，无需订阅，按使用付费。",
+      "agentsBadge": "个x402代理在线",
+      "portfolioTitle": "AI代理作品集",
+      "description": "专业x402微支付代理，覆盖体育、金融、太空天气等领域。基于Lucid Agents SDK构建。按请求付费。",
       "cta": "探索代理",
-      "secondary": "查看价格"
+      "github": "在GitHub查看"
     },
-    "features": {
-      "title": "为什么选择 x402？",
-      "micropayments": {
-        "title": "微支付",
-        "description": "按使用付费，无月费，无隐藏成本。"
-      },
-      "instant": {
-        "title": "即时访问",
-        "description": "无需 API 密钥，立即开始使用代理。"
-      },
-      "reliable": {
-        "title": "可靠稳定",
-        "description": "基于 Base 链构建，99.9% 正常运行时间保证。"
-      }
+    "categories": {
+      "title": "分类",
+      "viewAll": "查看所有分类 →"
     },
-    "agents": {
-      "title": "精选代理",
-      "viewAll": "查看所有代理"
+    "liveAgents": {
+      "title": "在线代理",
+      "subtitle": "已在Railway部署，支持x402支付",
+      "viewAll": "查看全部 →"
     },
-    "stats": {
-      "title": "平台统计",
-      "agents": "活跃代理",
-      "requests": "已处理请求",
-      "uptime": "正常运行时间"
+    "techStack": {
+      "title": "技术栈"
+    },
+    "cta": {
+      "title": "想要构建x402代理？",
+      "description": "所有代理均开源。基于Lucid Agents SDK实现即时微支付。",
+      "github": "在GitHub探索",
+      "sdk": "Lucid Agents SDK"
     }
   },
   "agents": {
-    "title": "AI 代理",
-    "subtitle": "浏览我们的 x402 代理集合",
+    "title": "AI代理",
+    "subtitle": "浏览我们的x402代理集合",
     "filter": {
       "all": "全部",
       "sports": "体育",
       "finance": "金融",
       "space": "太空",
-      "gaming": "游戏"
+      "gaming": "游戏",
+      "techNews": "科技新闻",
+      "motorsport": "赛车运动",
+      "defi": "DeFi"
     },
     "card": {
-      "pricing": "价格",
+      "pricing": "定价",
       "perRequest": "每次请求",
-      "endpoints": "个端点",
+      "endpoints": "端点",
       "tryIt": "试用",
-      "docs": "文档"
+      "docs": "文档",
+      "live": "在线",
+      "offline": "离线"
     },
     "details": {
       "overview": "概览",
@@ -82,11 +82,11 @@
   },
   "compare": {
     "title": "对比代理",
-    "subtitle": "代理功能和价格的并排比较",
+    "subtitle": "功能和定价的并排对比",
     "select": "选择要对比的代理",
     "addAgent": "添加代理",
     "features": "功能",
-    "pricing": "价格",
+    "pricing": "定价",
     "performance": "性能"
   },
   "status": {
@@ -100,7 +100,7 @@
     "lastChecked": "上次检查"
   },
   "footer": {
-    "tagline": "x402 微支付 AI 代理",
+    "tagline": "x402微支付AI代理",
     "links": {
       "title": "链接",
       "agents": "代理",
@@ -119,23 +119,40 @@
       "privacy": "隐私",
       "terms": "条款"
     },
-    "copyright": "© {{year}} Langoustine69。保留所有权利。"
+    "copyright": "© {{year}} Langoustine69. 保留所有权利。"
   },
   "newsletter": {
     "title": "保持更新",
     "description": "获取新代理和功能的通知",
     "placeholder": "输入您的邮箱",
     "subscribe": "订阅",
-    "success": "感谢订阅！",
-    "error": "出错了，请重试。"
+    "success": "感谢您的订阅！",
+    "error": "出错了。请重试。"
   },
   "contact": {
     "title": "联系我们",
+    "subtitle": "问题、反馈或合作咨询",
     "name": "姓名",
     "email": "邮箱",
     "message": "消息",
     "send": "发送消息",
     "success": "消息发送成功！",
-    "error": "发送失败，请重试。"
+    "error": "发送失败。请重试。"
+  },
+  "playground": {
+    "title": "API演练场",
+    "subtitle": "实时测试API",
+    "selectAgent": "选择代理",
+    "selectEndpoint": "选择端点",
+    "sendRequest": "发送请求",
+    "response": "响应",
+    "cost": "费用"
+  },
+  "calculator": {
+    "title": "价格计算器",
+    "subtitle": "估算您的月度费用",
+    "requestsPerMonth": "每月请求数",
+    "estimatedCost": "预计月费用",
+    "perRequest": "每次请求"
   }
 }

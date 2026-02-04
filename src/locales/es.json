@@ -10,7 +10,9 @@
     "copied": "¡Copiado!",
     "learnMore": "Más información",
     "viewAll": "Ver todo",
-    "share": "Compartir"
+    "share": "Compartir",
+    "agent": "agente",
+    "agents": "agentes"
   },
   "nav": {
     "home": "Inicio",
@@ -18,66 +20,64 @@
     "compare": "Comparar",
     "status": "Estado",
     "blog": "Blog",
-    "changelog": "Historial",
+    "changelog": "Cambios",
     "guides": "Guías"
   },
   "home": {
     "hero": {
-      "title": "Agentes IA x402",
-      "subtitle": "Inteligencia de pago por uso",
-      "description": "Agentes de IA con micropagos para deportes, finanzas, clima espacial y más. Sin claves API. Sin suscripciones. Solo paga por lo que usas.",
+      "agentsBadge": "agentes x402 activos",
+      "portfolioTitle": "Portafolio de Agentes IA",
+      "description": "Agentes especializados x402 con micropagos para deportes, finanzas, clima espacial y más. Construido con Lucid Agents SDK. Paga por solicitud.",
       "cta": "Explorar Agentes",
-      "secondary": "Ver Precios"
+      "github": "Ver en GitHub"
     },
-    "features": {
-      "title": "¿Por qué x402?",
-      "micropayments": {
-        "title": "Micropagos",
-        "description": "Paga solo por lo que usas. Sin cuotas mensuales ni costos ocultos."
-      },
-      "instant": {
-        "title": "Acceso Instantáneo",
-        "description": "Sin necesidad de claves API. Comienza a usar agentes inmediatamente."
-      },
-      "reliable": {
-        "title": "Confiable",
-        "description": "Construido en Base chain con garantía de 99.9% de disponibilidad."
-      }
+    "categories": {
+      "title": "Categorías",
+      "viewAll": "Ver todas las categorías →"
     },
-    "agents": {
-      "title": "Agentes Destacados",
-      "viewAll": "Ver Todos los Agentes"
+    "liveAgents": {
+      "title": "Agentes Activos",
+      "subtitle": "Desplegados en Railway con pagos x402",
+      "viewAll": "Ver todos →"
     },
-    "stats": {
-      "title": "Estadísticas",
-      "agents": "Agentes Activos",
-      "requests": "Solicitudes Servidas",
-      "uptime": "Disponibilidad"
+    "techStack": {
+      "title": "Desarrollado Con"
+    },
+    "cta": {
+      "title": "¿Quieres crear agentes x402?",
+      "description": "Todos los agentes son de código abierto. Construidos con Lucid Agents SDK para micropagos instantáneos.",
+      "github": "Explorar en GitHub",
+      "sdk": "Lucid Agents SDK"
     }
   },
   "agents": {
     "title": "Agentes IA",
-    "subtitle": "Explora nuestra colección de agentes habilitados para x402",
+    "subtitle": "Explora nuestra colección de agentes x402",
     "filter": {
       "all": "Todos",
       "sports": "Deportes",
       "finance": "Finanzas",
       "space": "Espacio",
-      "gaming": "Juegos"
+      "gaming": "Juegos",
+      "techNews": "Noticias Tech",
+      "motorsport": "Motorsport",
+      "defi": "DeFi"
     },
     "card": {
-      "pricing": "Precios",
+      "pricing": "Precio",
       "perRequest": "por solicitud",
       "endpoints": "endpoints",
       "tryIt": "Probar",
-      "docs": "Documentación"
+      "docs": "Documentación",
+      "live": "Activo",
+      "offline": "Inactivo"
     },
     "details": {
       "overview": "Resumen",
       "endpoints": "Endpoints",
       "examples": "Ejemplos",
       "integration": "Integración",
-      "changelog": "Historial"
+      "changelog": "Cambios"
     }
   },
   "compare": {
@@ -131,11 +131,28 @@
   },
   "contact": {
     "title": "Contáctanos",
+    "subtitle": "Preguntas, comentarios o consultas de asociación",
     "name": "Nombre",
     "email": "Email",
     "message": "Mensaje",
     "send": "Enviar Mensaje",
-    "success": "¡Mensaje enviado exitosamente!",
-    "error": "Error al enviar mensaje. Por favor intenta de nuevo."
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Error al enviar el mensaje. Por favor intenta de nuevo."
+  },
+  "playground": {
+    "title": "Playground API",
+    "subtitle": "Prueba las APIs en vivo",
+    "selectAgent": "Selecciona un agente",
+    "selectEndpoint": "Selecciona un endpoint",
+    "sendRequest": "Enviar Solicitud",
+    "response": "Respuesta",
+    "cost": "Costo"
+  },
+  "calculator": {
+    "title": "Calculadora de Precios",
+    "subtitle": "Estima tus costos mensuales",
+    "requestsPerMonth": "Solicitudes por mes",
+    "estimatedCost": "Costo mensual estimado",
+    "perRequest": "por solicitud"
   }
 }

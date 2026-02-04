@@ -10,7 +10,9 @@
     "copied": "コピーしました！",
     "learnMore": "詳細を見る",
     "viewAll": "すべて見る",
-    "share": "共有"
+    "share": "共有",
+    "agent": "エージェント",
+    "agents": "エージェント"
   },
   "nav": {
     "home": "ホーム",
@@ -18,66 +20,64 @@
     "compare": "比較",
     "status": "ステータス",
     "blog": "ブログ",
-    "changelog": "更新履歴",
+    "changelog": "変更履歴",
     "guides": "ガイド"
   },
   "home": {
     "hero": {
-      "title": "x402 AIエージェント",
-      "subtitle": "リクエスト単位の課金",
-      "description": "スポーツ、金融、宇宙天気など、マイクロペイメント対応のAIエージェント。APIキー不要、サブスクリプション不要、使った分だけ支払い。",
-      "cta": "エージェントを探す",
-      "secondary": "料金を見る"
+      "agentsBadge": "個のx402エージェントが稼働中",
+      "portfolioTitle": "AIエージェントポートフォリオ",
+      "description": "スポーツ、金融、宇宙天気などに特化したx402マイクロペイメントエージェント。Lucid Agents SDKで構築。リクエストごとに支払い。",
+      "cta": "エージェントを探索",
+      "github": "GitHubで見る"
     },
-    "features": {
-      "title": "なぜx402？",
-      "micropayments": {
-        "title": "マイクロペイメント",
-        "description": "使った分だけ支払い。月額料金や隠れたコストはありません。"
-      },
-      "instant": {
-        "title": "即時アクセス",
-        "description": "APIキー不要。すぐにエージェントを使い始められます。"
-      },
-      "reliable": {
-        "title": "信頼性",
-        "description": "Base chain上に構築、99.9%の稼働率保証。"
-      }
+    "categories": {
+      "title": "カテゴリ",
+      "viewAll": "すべてのカテゴリを見る →"
     },
-    "agents": {
-      "title": "注目のエージェント",
-      "viewAll": "すべてのエージェントを見る"
+    "liveAgents": {
+      "title": "稼働中のエージェント",
+      "subtitle": "Railwayにデプロイ済み、x402決済対応",
+      "viewAll": "すべて見る →"
     },
-    "stats": {
-      "title": "プラットフォーム統計",
-      "agents": "アクティブエージェント",
-      "requests": "処理済みリクエスト",
-      "uptime": "稼働率"
+    "techStack": {
+      "title": "使用技術"
+    },
+    "cta": {
+      "title": "x402エージェントを構築したいですか？",
+      "description": "すべてのエージェントはオープンソースです。Lucid Agents SDKで即時マイクロペイメントを実現。",
+      "github": "GitHubで探索",
+      "sdk": "Lucid Agents SDK"
     }
   },
   "agents": {
     "title": "AIエージェント",
-    "subtitle": "x402対応AIエージェントコレクション",
+    "subtitle": "x402対応AIエージェントコレクションを閲覧",
     "filter": {
       "all": "すべて",
       "sports": "スポーツ",
       "finance": "金融",
       "space": "宇宙",
-      "gaming": "ゲーム"
+      "gaming": "ゲーム",
+      "techNews": "テックニュース",
+      "motorsport": "モータースポーツ",
+      "defi": "DeFi"
     },
     "card": {
       "pricing": "料金",
-      "perRequest": "リクエストあたり",
+      "perRequest": "リクエストごと",
       "endpoints": "エンドポイント",
       "tryIt": "試す",
-      "docs": "ドキュメント"
+      "docs": "ドキュメント",
+      "live": "稼働中",
+      "offline": "オフライン"
     },
     "details": {
       "overview": "概要",
       "endpoints": "エンドポイント",
-      "examples": "例",
+      "examples": "サンプル",
       "integration": "統合",
-      "changelog": "更新履歴"
+      "changelog": "変更履歴"
     }
   },
   "compare": {
@@ -126,16 +126,33 @@
     "description": "新しいエージェントや機能の通知を受け取る",
     "placeholder": "メールアドレスを入力",
     "subscribe": "登録",
-    "success": "登録ありがとうございます！",
+    "success": "ご登録ありがとうございます！",
     "error": "エラーが発生しました。もう一度お試しください。"
   },
   "contact": {
     "title": "お問い合わせ",
-    "name": "名前",
-    "email": "メール",
+    "subtitle": "ご質問、フィードバック、パートナーシップのお問い合わせ",
+    "name": "お名前",
+    "email": "メールアドレス",
     "message": "メッセージ",
-    "send": "送信",
+    "send": "メッセージを送信",
     "success": "メッセージを送信しました！",
     "error": "送信に失敗しました。もう一度お試しください。"
+  },
+  "playground": {
+    "title": "APIプレイグラウンド",
+    "subtitle": "APIをライブでテスト",
+    "selectAgent": "エージェントを選択",
+    "selectEndpoint": "エンドポイントを選択",
+    "sendRequest": "リクエストを送信",
+    "response": "レスポンス",
+    "cost": "コスト"
+  },
+  "calculator": {
+    "title": "料金計算機",
+    "subtitle": "月額費用を見積もる",
+    "requestsPerMonth": "月間リクエスト数",
+    "estimatedCost": "推定月額費用",
+    "perRequest": "リクエストごと"
   }
 }

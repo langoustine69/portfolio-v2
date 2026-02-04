@@ -10,7 +10,9 @@
     "copied": "Copied!",
     "learnMore": "Learn more",
     "viewAll": "View all",
-    "share": "Share"
+    "share": "Share",
+    "agent": "agent",
+    "agents": "agents"
   },
   "nav": {
     "home": "Home",
@@ -23,36 +25,29 @@
   },
   "home": {
     "hero": {
-      "title": "x402 AI Agents",
-      "subtitle": "Pay-per-request intelligence",
-      "description": "Micropayment-powered AI agents for sports, finance, space weather, and more. No API keys. No subscriptions. Just pay for what you use.",
+      "agentsBadge": "x402 agents live",
+      "portfolioTitle": "AI Agent Portfolio",
+      "description": "Specialized x402 micropayment agents for sports, finance, space weather, and more. Built with Lucid Agents SDK. Pay per request.",
       "cta": "Explore Agents",
-      "secondary": "View Pricing"
+      "github": "View on GitHub"
     },
-    "features": {
-      "title": "Why x402?",
-      "micropayments": {
-        "title": "Micropayments",
-        "description": "Pay only for what you use. No monthly fees or hidden costs."
-      },
-      "instant": {
-        "title": "Instant Access",
-        "description": "No API keys needed. Start using agents immediately."
-      },
-      "reliable": {
-        "title": "Reliable",
-        "description": "Built on Base chain with 99.9% uptime guarantee."
-      }
+    "categories": {
+      "title": "Categories",
+      "viewAll": "View all categories →"
     },
-    "agents": {
-      "title": "Featured Agents",
-      "viewAll": "View All Agents"
+    "liveAgents": {
+      "title": "Live Agents",
+      "subtitle": "Currently deployed on Railway with x402 payments",
+      "viewAll": "View all →"
     },
-    "stats": {
-      "title": "Platform Stats",
-      "agents": "Active Agents",
-      "requests": "Requests Served",
-      "uptime": "Uptime"
+    "techStack": {
+      "title": "Powered By"
+    },
+    "cta": {
+      "title": "Want to build x402 agents?",
+      "description": "All agents are open source. Built with Lucid Agents SDK for instant micropayments.",
+      "github": "Explore on GitHub",
+      "sdk": "Lucid Agents SDK"
     }
   },
   "agents": {
@@ -63,14 +58,19 @@
       "sports": "Sports",
       "finance": "Finance",
       "space": "Space",
-      "gaming": "Gaming"
+      "gaming": "Gaming",
+      "techNews": "Tech News",
+      "motorsport": "Motorsport",
+      "defi": "DeFi"
     },
     "card": {
       "pricing": "Pricing",
       "perRequest": "per request",
       "endpoints": "endpoints",
       "tryIt": "Try it",
-      "docs": "Documentation"
+      "docs": "Documentation",
+      "live": "Live",
+      "offline": "Offline"
     },
     "details": {
       "overview": "Overview",
@@ -131,11 +131,28 @@
   },
   "contact": {
     "title": "Get in Touch",
+    "subtitle": "Questions, feedback, or partnership inquiries",
     "name": "Name",
     "email": "Email",
     "message": "Message",
     "send": "Send Message",
     "success": "Message sent successfully!",
     "error": "Failed to send message. Please try again."
+  },
+  "playground": {
+    "title": "API Playground",
+    "subtitle": "Try the APIs live",
+    "selectAgent": "Select an agent",
+    "selectEndpoint": "Select an endpoint",
+    "sendRequest": "Send Request",
+    "response": "Response",
+    "cost": "Cost"
+  },
+  "calculator": {
+    "title": "Pricing Calculator",
+    "subtitle": "Estimate your monthly costs",
+    "requestsPerMonth": "Requests per month",
+    "estimatedCost": "Estimated monthly cost",
+    "perRequest": "per request"
   }
 }
