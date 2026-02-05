@@ -5,7 +5,7 @@ import { useState, FormEvent } from 'react';
 type SubscribeStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 interface NewsletterProps {
-  variant?: 'inline' | 'card';
+  variant?: 'inline' | 'card' | 'brutal';
 }
 
 export default function Newsletter({ variant = 'inline' }: NewsletterProps) {
@@ -38,6 +38,59 @@ export default function Newsletter({ variant = 'inline' }: NewsletterProps) {
       setErrorMessage(err instanceof Error ? err.message : 'Something went wrong');
     }
   };
+
+  // Brutal variant
+  if (variant === 'brutal') {
+    if (status === 'success') {
+      return (
+        <div className="p-4 bg-brutal-lime border-2 border-black" style={{ boxShadow: '4px 4px 0px 0px #000000' }}>
+          <div className="flex items-center gap-2 text-black font-bold uppercase">
+            <span className="text-xl">✓</span>
+            <span>SUBSCRIBED! 🦞</span>
+          </div>
+          <button
+            onClick={() => setStatus('idle')}
+            className="text-black/70 hover:text-black text-xs mt-2 font-bold uppercase"
+          >
+            → ADD ANOTHER
+          </button>
+        </div>
+      );
+    }
+
+    return (
+      <div>
+        <h3 className="text-black dark:text-white font-black uppercase mb-2 text-lg">
+          NEWSLETTER
+        </h3>
+        <p className="text-black dark:text-shell-300 font-medium text-sm mb-3">
+          New agent launches & updates
+        </p>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            placeholder="YOUR@EMAIL.COM"
+            className="px-3 py-2 bg-white dark:bg-black text-black dark:text-white border-2 border-black dark:border-white placeholder-shell-500 focus:outline-none font-bold uppercase text-sm"
+            style={{ boxShadow: '2px 2px 0px 0px #000000' }}
+          />
+          <button
+            type="submit"
+            disabled={status === 'submitting'}
+            className="px-4 py-2 bg-lobster-500 hover:bg-lobster-600 disabled:bg-shell-400 text-white font-bold uppercase text-sm border-2 border-black transition-colors"
+            style={{ boxShadow: '2px 2px 0px 0px #000000' }}
+          >
+            {status === 'submitting' ? 'SUBSCRIBING...' : 'SUBSCRIBE →'}
+          </button>
+        </form>
+        {status === 'error' && (
+          <p className="text-red-600 dark:text-red-400 text-xs mt-2 font-bold uppercase">{errorMessage}</p>
+        )}
+      </div>
+    );
+  }
 
   if (status === 'success') {
     return (

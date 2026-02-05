@@ -13,7 +13,6 @@ export default function Header() {
   const pathname = usePathname();
   const { t } = useTranslation();
 
-  // Close menu on route change or escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setMobileMenuOpen(false);
@@ -21,7 +20,6 @@ export default function Header() {
     
     if (mobileMenuOpen) {
       document.addEventListener('keydown', handleEscape);
-      // Prevent body scroll when menu is open
       document.body.style.overflow = 'hidden';
     }
     
@@ -45,16 +43,21 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-shell-800 dark:border-shell-800 light:border-shell-200 bg-shell-950/80 dark:bg-shell-950/80 light:bg-shell-50/80 backdrop-blur-lg" role="banner">
+    <header 
+      className="sticky top-0 z-50 w-full border-b-4 border-black dark:border-white bg-brutal-yellow dark:bg-black" 
+      role="banner"
+    >
       <nav id="navigation" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl">🦞</span>
-              <span className="text-xl font-bold gradient-text">langoustine69</span>
+            <Link href="/" className="flex items-center gap-2 group">
+              <span className="text-3xl group-hover:animate-brutal-shake">🦞</span>
+              <span className="text-xl font-black uppercase tracking-tight text-black dark:text-white">
+                LANGOUSTINE69
+              </span>
             </Link>
             
-            <div className="hidden md:flex items-center gap-6">
+            <div className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => {
                 const isActive = link.href === '/' 
                   ? pathname === '/' 
@@ -63,10 +66,10 @@ export default function Header() {
                   <Link 
                     key={link.href}
                     href={link.href} 
-                    className={`transition-colors ${
+                    className={`px-3 py-2 font-bold uppercase text-sm tracking-wide transition-all border-2 ${
                       isActive 
-                        ? 'text-lobster-400 font-medium' 
-                        : 'text-shell-300 dark:text-shell-300 light:text-shell-600 hover:text-lobster-400'
+                        ? 'bg-lobster-500 text-white border-black dark:border-white' 
+                        : 'text-black dark:text-white border-transparent hover:border-black dark:hover:border-white hover:bg-white dark:hover:bg-shell-900'
                     }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
@@ -77,7 +80,7 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
             <CommandPaletteButton />
             <LanguageSwitcher />
             <ThemeToggle />
@@ -85,7 +88,7 @@ export default function Header() {
               href="https://x.com/langoustine69A"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-shell-400 dark:text-shell-400 light:text-shell-500 hover:text-lobster-400 transition-colors"
+              className="p-2 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
               aria-label="Follow on X"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -96,10 +99,10 @@ export default function Header() {
               href="https://github.com/langoustine69"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-shell-400 dark:text-shell-400 light:text-shell-500 hover:text-lobster-400 transition-colors"
+              className="p-2 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
               aria-label="View on GitHub"
             >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
               </svg>
             </a>
@@ -107,26 +110,27 @@ export default function Header() {
               href="https://github.com/langoustine69"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-lobster-600 hover:bg-lobster-500 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+              className="bg-black dark:bg-white text-white dark:text-black px-4 py-2 font-bold uppercase text-sm border-2 border-black dark:border-white hover:bg-lobster-500 hover:text-white transition-colors"
+              style={{ boxShadow: '3px 3px 0px 0px currentColor' }}
             >
-              View GitHub
+              GitHub →
             </a>
           </div>
 
-          {/* Mobile menu button + theme toggle */}
+          {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-shell-400 dark:text-shell-400 light:text-shell-500 hover:text-lobster-400 transition-colors"
+              className="p-2 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileMenuOpen}
             >
-              <svg className="w-6 h-6 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
             </button>
@@ -136,24 +140,22 @@ export default function Header() {
 
       {/* Mobile menu overlay */}
       <div
-        className={`fixed inset-0 top-16 z-40 md:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 top-16 z-40 md:hidden transition-opacity duration-200 ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        {/* Backdrop */}
         <div 
-          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/70"
           onClick={closeMenu}
         />
         
-        {/* Menu panel */}
         <div
-          className={`absolute top-0 left-0 right-0 bg-shell-950 dark:bg-shell-950 light:bg-shell-50 border-b border-shell-800 dark:border-shell-800 light:border-shell-200 shadow-xl transition-transform duration-300 ${
+          className={`absolute top-0 left-0 right-0 bg-brutal-yellow dark:bg-black border-b-4 border-black dark:border-white transition-transform duration-200 ${
             mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
           }`}
         >
-          <div className="px-4 py-6 space-y-1">
-            {navLinks.map((link, index) => {
+          <div className="px-4 py-6 space-y-2">
+            {navLinks.map((link) => {
               const isActive = link.href === '/' 
                 ? pathname === '/' 
                 : pathname?.startsWith(link.href.replace('/#', '/'));
@@ -162,62 +164,47 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={closeMenu}
-                  className={`flex items-center px-4 py-3 text-lg rounded-lg transition-all ${
+                  className={`block px-4 py-3 text-lg font-bold uppercase border-2 transition-all ${
                     isActive
-                      ? 'text-lobster-400 bg-lobster-500/10 font-medium'
-                      : 'text-shell-300 dark:text-shell-300 light:text-shell-600 hover:text-lobster-400 hover:bg-shell-900/50 dark:hover:bg-shell-900/50 light:hover:bg-shell-100'
+                      ? 'bg-lobster-500 text-white border-black dark:border-white'
+                      : 'text-black dark:text-white border-transparent hover:border-black dark:hover:border-white hover:bg-white dark:hover:bg-shell-900'
                   }`}
-                  style={{ animationDelay: `${index * 50}ms` }}
                   aria-current={isActive ? 'page' : undefined}
                 >
-                  {link.label}
+                  → {link.label}
                 </Link>
               );
             })}
             
-            {/* Divider */}
-            <div className="border-t border-shell-800 dark:border-shell-800 light:border-shell-200 my-4" />
+            <div className="border-t-2 border-black dark:border-white my-4" />
             
-            {/* Language switcher */}
             <div className="px-4 py-2">
               <LanguageSwitcher variant="inline" />
             </div>
             
-            {/* Social links */}
             <div className="flex items-center gap-4 px-4 py-2">
               <a
                 href="https://x.com/langoustine69A"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-shell-400 dark:text-shell-400 light:text-shell-500 hover:text-lobster-400 transition-colors"
+                className="flex items-center gap-2 font-bold text-black dark:text-white hover:text-lobster-500"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
-                <span className="text-sm">@langoustine69A</span>
-              </a>
-              <a
-                href="https://github.com/langoustine69"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-shell-400 dark:text-shell-400 light:text-shell-500 hover:text-lobster-400 transition-colors"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">GitHub</span>
+                @LANGOUSTINE69A
               </a>
             </div>
             
-            {/* CTA button */}
             <div className="px-4 pt-2">
               <a
                 href="https://github.com/langoustine69"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center bg-lobster-600 hover:bg-lobster-500 text-white px-4 py-3 rounded-lg font-medium transition-colors"
+                className="block w-full text-center bg-black dark:bg-white text-white dark:text-black px-4 py-3 font-bold uppercase border-2 border-black dark:border-white hover:bg-lobster-500 hover:text-white transition-colors"
+                style={{ boxShadow: '4px 4px 0px 0px #e11d48' }}
               >
-                View GitHub
+                VIEW GITHUB →
               </a>
             </div>
           </div>

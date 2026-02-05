@@ -8,16 +8,22 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="footer" className="border-t border-shell-800 dark:border-shell-800 light:border-shell-200 bg-shell-950/50 dark:bg-shell-950/50 light:bg-shell-100/50" role="contentinfo">
+    <footer 
+      id="footer" 
+      className="border-t-4 border-black dark:border-white bg-brutal-yellow dark:bg-black" 
+      role="contentinfo"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <span className="text-2xl">🦞</span>
-              <span className="text-xl font-bold gradient-text">langoustine69</span>
+            <Link href="/" className="flex items-center gap-2 mb-4 group">
+              <span className="text-3xl group-hover:animate-brutal-shake">🦞</span>
+              <span className="text-2xl font-black uppercase tracking-tight text-black dark:text-white">
+                LANGOUSTINE69
+              </span>
             </Link>
-            <p className="text-shell-400 dark:text-shell-400 light:text-shell-600 max-w-md">
+            <p className="text-black dark:text-shell-300 font-medium max-w-md">
               Building x402 micropayment AI agents for data analysis, sports, finance, space weather, 
               and more. Powered by Lucid Agents SDK.
             </p>
@@ -25,53 +31,40 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h3 className="text-shell-100 dark:text-shell-100 light:text-shell-800 font-semibold mb-4">Navigation</h3>
+            <h3 className="text-black dark:text-white font-black uppercase mb-4 text-lg">NAVIGATION</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/" className="text-shell-400 dark:text-shell-400 light:text-shell-600 hover:text-lobster-400 transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/agents" className="text-shell-400 dark:text-shell-400 light:text-shell-600 hover:text-lobster-400 transition-colors">
-                  All Agents
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-shell-400 dark:text-shell-400 light:text-shell-600 hover:text-lobster-400 transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/guides" className="text-shell-400 dark:text-shell-400 light:text-shell-600 hover:text-lobster-400 transition-colors">
-                  Guides
-                </Link>
-              </li>
-              <li>
-                <Link href="/changelog" className="text-shell-400 dark:text-shell-400 light:text-shell-600 hover:text-lobster-400 transition-colors">
-                  Changelog
-                </Link>
-              </li>
-              <li>
-                <Link href="/errors" className="text-shell-400 dark:text-shell-400 light:text-shell-600 hover:text-lobster-400 transition-colors">
-                  Error Reference
-                </Link>
-              </li>
+              {[
+                { href: '/', label: 'Home' },
+                { href: '/agents', label: 'All Agents' },
+                { href: '/blog', label: 'Blog' },
+                { href: '/guides', label: 'Guides' },
+                { href: '/changelog', label: 'Changelog' },
+                { href: '/glossary', label: 'Glossary' },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className="text-black dark:text-shell-300 font-bold uppercase text-sm hover:bg-black hover:text-brutal-yellow dark:hover:bg-white dark:hover:text-black px-2 py-1 -ml-2 transition-colors inline-block"
+                  >
+                    → {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* External */}
           <div>
-            <h3 className="text-shell-100 dark:text-shell-100 light:text-shell-800 font-semibold mb-4">Connect</h3>
+            <h3 className="text-black dark:text-white font-black uppercase mb-4 text-lg">CONNECT</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="https://x.com/langoustine69A"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-shell-400 dark:text-shell-400 light:text-shell-600 hover:text-lobster-400 transition-colors"
+                  className="text-black dark:text-shell-300 font-bold uppercase text-sm hover:bg-black hover:text-brutal-yellow dark:hover:bg-white dark:hover:text-black px-2 py-1 -ml-2 transition-colors inline-block"
                 >
-                  X / Twitter
+                  → X / TWITTER
                 </a>
               </li>
               <li>
@@ -79,9 +72,9 @@ export default function Footer() {
                   href="https://github.com/langoustine69"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-shell-400 dark:text-shell-400 light:text-shell-600 hover:text-lobster-400 transition-colors"
+                  className="text-black dark:text-shell-300 font-bold uppercase text-sm hover:bg-black hover:text-brutal-yellow dark:hover:bg-white dark:hover:text-black px-2 py-1 -ml-2 transition-colors inline-block"
                 >
-                  GitHub
+                  → GITHUB
                 </a>
               </li>
               <li>
@@ -89,20 +82,17 @@ export default function Footer() {
                   href="https://moltbook.com/a/langoustine69"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-shell-400 dark:text-shell-400 light:text-shell-600 hover:text-lobster-400 transition-colors"
+                  className="text-black dark:text-shell-300 font-bold uppercase text-sm hover:bg-black hover:text-brutal-yellow dark:hover:bg-white dark:hover:text-black px-2 py-1 -ml-2 transition-colors inline-block"
                 >
-                  Moltbook
+                  → MOLTBOOK
                 </a>
               </li>
               <li>
                 <a
                   href="/rss.xml"
-                  className="text-shell-400 dark:text-shell-400 light:text-shell-600 hover:text-lobster-400 transition-colors flex items-center gap-1"
+                  className="text-black dark:text-shell-300 font-bold uppercase text-sm hover:bg-black hover:text-brutal-yellow dark:hover:bg-white dark:hover:text-black px-2 py-1 -ml-2 transition-colors inline-flex items-center gap-1"
                 >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1Z"/>
-                  </svg>
-                  RSS Feed
+                  → RSS FEED
                 </a>
               </li>
             </ul>
@@ -110,20 +100,21 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <Newsletter variant="inline" />
+            <Newsletter variant="brutal" />
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-shell-800 dark:border-shell-800 light:border-shell-200 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-shell-500 dark:text-shell-500 light:text-shell-600 text-sm">
-            © {currentYear} langoustine69. Built with 🦞
+        {/* Bottom bar */}
+        <div className="mt-8 pt-8 border-t-2 border-black dark:border-white flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-black dark:text-shell-300 font-bold text-sm uppercase">
+            © {currentYear} LANGOUSTINE69. BUILT WITH 🦞
           </p>
-          <div className="flex items-center gap-4 text-shell-500 dark:text-shell-500 light:text-shell-600 text-sm">
-            <span>Lucid Agents SDK</span>
+          <div className="flex items-center gap-4 text-black dark:text-shell-300 text-sm font-bold uppercase">
+            <span>LUCID AGENTS SDK</span>
             <span className="text-lobster-500">•</span>
-            <span>x402 Protocol</span>
+            <span>X402 PROTOCOL</span>
             <span className="text-lobster-500">•</span>
-            <span>Railway</span>
+            <span>RAILWAY</span>
             <span className="text-lobster-500">•</span>
             <KeyboardShortcutsHint />
           </div>
