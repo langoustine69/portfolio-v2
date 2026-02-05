@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { getPostBySlug, getPostSlugs, formatDate, getAllPosts } from '@/lib/blog';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -13,7 +13,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   
   if (!post) {
     return {
@@ -100,15 +101,16 @@ function renderMarkdown(content: string): string {
   return html;
 }
 
-export default function BlogPost({ params }: Props) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPost({ params }: Props) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
   }
 
   const allPosts = getAllPosts();
-  const currentIndex = allPosts.findIndex(p => p.slug === params.slug);
+  const currentIndex = allPosts.findIndex(p => p.slug === slug);
   const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
   const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
 

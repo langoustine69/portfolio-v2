@@ -1,11 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import { Agent } from '@/data/agents';
 import Link from 'next/link';
 import HealthIndicator from './HealthIndicator';
 import FavoriteButton from './FavoriteButton';
 import RateLimitDisplay from './RateLimitDisplay';
 import RecentlyUpdatedBadge from './RecentlyUpdatedBadge';
+import QuickDemoModal from './QuickDemoModal';
 
 interface AgentCardProps {
   agent: Agent;
@@ -13,6 +15,8 @@ interface AgentCardProps {
 }
 
 export default function AgentCard({ agent, showDetails = false }: AgentCardProps) {
+  const [showQuickDemo, setShowQuickDemo] = useState(false);
+  
   const statusLabel = agent.status === 'live' ? 'Live and operational' : 
                       agent.status === 'building' ? 'In development' : 
                       agent.status === 'offline' ? 'Currently offline' : 'Unknown status';
@@ -115,19 +119,19 @@ export default function AgentCard({ agent, showDetails = false }: AgentCardProps
 
         {/* Links */}
         <div className="flex items-center gap-2 mt-4 pt-4 border-t-2 border-black dark:border-white flex-wrap">
-          {agent.railwayUrl && (
-            <a
-              href={agent.railwayUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+          {agent.railwayUrl && agent.status === 'live' && (
+            <button
+              onClick={() => setShowQuickDemo(true)}
               className="flex items-center gap-1.5 text-sm font-bold uppercase px-3 py-1 bg-lobster-500 text-white border-2 border-black hover:bg-lobster-600 transition-colors"
               style={{ boxShadow: '2px 2px 0px 0px #000000' }}
+              aria-label={`Quick demo for ${agent.name}`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              DEMO
-            </a>
+              TRY IT
+            </button>
           )}
           {agent.githubUrl && (
             <a
@@ -160,6 +164,13 @@ export default function AgentCard({ agent, showDetails = false }: AgentCardProps
           )}
         </div>
       </div>
+
+      {/* Quick Demo Modal */}
+      <QuickDemoModal
+        agent={agent}
+        isOpen={showQuickDemo}
+        onClose={() => setShowQuickDemo(false)}
+      />
     </article>
   );
 }
