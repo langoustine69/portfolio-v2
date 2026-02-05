@@ -18,6 +18,7 @@ interface CommandItem {
 const pages: CommandItem[] = [
   { id: 'home', title: 'Home', subtitle: 'Back to homepage', icon: '🏠', type: 'page', href: '/' },
   { id: 'agents', title: 'All Agents', subtitle: 'Browse all agents', icon: '🤖', type: 'page', href: '/agents' },
+  { id: 'bundles', title: 'Agent Bundles', subtitle: 'Curated agent collections', icon: '📦', type: 'page', href: '/bundles' },
   { id: 'compare', title: 'Compare Agents', subtitle: 'Side-by-side comparison', icon: '⚖️', type: 'page', href: '/compare' },
   { id: 'playground', title: 'API Playground', subtitle: 'Test API endpoints', icon: '🎮', type: 'page', href: '/playground' },
   { id: 'pricing', title: 'Pricing Calculator', subtitle: 'Estimate costs', icon: '💰', type: 'page', href: '/pricing' },
