@@ -38,6 +38,7 @@ export default function Header() {
     { href: '/discover', label: '🎯 Quiz' },
     { href: '/compare', label: t('nav.compare') },
     { href: '/status', label: t('nav.status') },
+    { href: '/badges', label: '🏷️ Badges' },
     { href: '/blog', label: t('nav.blog') },
     { href: '/guides', label: t('nav.guides') },
     { href: '/glossary', label: t('nav.glossary') },

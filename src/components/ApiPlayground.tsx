@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from 'react';
 import { agents, Agent } from '@/data/agents';
+import { usePlaygroundHistory, PlaygroundRequest } from '@/hooks/usePlaygroundHistory';
 
 interface EndpointConfig {
   method: 'GET' | 'POST';
@@ -82,6 +83,9 @@ export default function ApiPlayground() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [responseTime, setResponseTime] = useState<number | null>(null);
+  const [showHistory, setShowHistory] = useState(false);
+  
+  const { history, addRequest, removeRequest, clearHistory, isLoaded } = usePlaygroundHistory();
 
   const endpoints = selectedAgent ? getEndpoints(selectedAgent) : [];
 
@@ -133,9 +137,12 @@ export default function ApiPlayground() {
     setResponseTime(null);
     
     const startTime = performance.now();
+    const url = buildUrl();
+    let success = false;
+    let statusCode: number | undefined;
+    let elapsed: number | undefined;
     
     try {
-      const url = buildUrl();
       const res = await fetch(url, {
         method: selectedEndpoint.method,
         headers: {
@@ -144,7 +151,9 @@ export default function ApiPlayground() {
       });
       
       const endTime = performance.now();
-      setResponseTime(Math.round(endTime - startTime));
+      elapsed = Math.round(endTime - startTime);
+      setResponseTime(elapsed);
+      statusCode = res.status;
       
       const contentType = res.headers.get('content-type');
       let data;
@@ -159,15 +168,47 @@ export default function ApiPlayground() {
       
       if (!res.ok) {
         setError(`HTTP ${res.status}: ${res.statusText}`);
+      } else {
+        success = true;
       }
     } catch (err) {
       const endTime = performance.now();
-      setResponseTime(Math.round(endTime - startTime));
+      elapsed = Math.round(endTime - startTime);
+      setResponseTime(elapsed);
       setError(err instanceof Error ? err.message : 'Request failed');
     } finally {
       setLoading(false);
+      
+      // Save to history
+      addRequest({
+        agentId: selectedAgent.id,
+        agentName: selectedAgent.name,
+        agentIcon: selectedAgent.icon,
+        method: selectedEndpoint.method,
+        path: selectedEndpoint.path,
+        params: { ...params },
+        url,
+        responseTime: elapsed,
+        success,
+        statusCode,
+      });
     }
-  }, [selectedAgent, selectedEndpoint, buildUrl]);
+  }, [selectedAgent, selectedEndpoint, buildUrl, params, addRequest]);
+
+  const replayRequest = useCallback((request: PlaygroundRequest) => {
+    const agent = liveAgents.find(a => a.id === request.agentId);
+    if (!agent) return;
+    
+    setSelectedAgent(agent);
+    const agentEndpoints = getEndpoints(agent);
+    const endpoint = agentEndpoints.find(e => e.path === request.path);
+    
+    if (endpoint) {
+      setSelectedEndpoint(endpoint);
+      setParams(request.params);
+      setShowHistory(false);
+    }
+  }, [liveAgents]);
 
   const copyToClipboard = useCallback(async (text: string) => {
     try {
@@ -195,12 +236,108 @@ export default function ApiPlayground() {
   return (
     <section id="playground" className="py-16 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-2 text-gray-900 dark:text-white">
-          🧪 API Playground
-        </h2>
+        <div className="flex items-center justify-center gap-4 mb-2">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+            🧪 API Playground
+          </h2>
+          {isLoaded && history.length > 0 && (
+            <button
+              onClick={() => setShowHistory(!showHistory)}
+              className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all ${
+                showHistory
+                  ? 'bg-purple-600 text-white'
+                  : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+              }`}
+            >
+              📜 History ({history.length})
+            </button>
+          )}
+        </div>
         <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
           Test agent endpoints in real-time. All requests use x402 micropayments.
         </p>
+
+        {/* Request History Panel */}
+        {showHistory && isLoaded && history.length > 0 && (
+          <div className="max-w-5xl mx-auto mb-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+            <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+              <h3 className="font-semibold text-gray-900 dark:text-white">
+                📜 Request History
+              </h3>
+              <button
+                onClick={clearHistory}
+                className="text-xs text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300"
+              >
+                Clear All
+              </button>
+            </div>
+            <div className="max-h-80 overflow-y-auto">
+              {history.map((req) => (
+                <div
+                  key={req.id}
+                  className="p-4 border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors group"
+                >
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-3 min-w-0 flex-1">
+                      <span className="text-xl">{req.agentIcon}</span>
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2">
+                          <span className={`px-1.5 py-0.5 text-xs font-mono font-bold rounded ${
+                            req.method === 'GET' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400'
+                          }`}>
+                            {req.method}
+                          </span>
+                          <code className="text-sm text-gray-700 dark:text-gray-300 font-mono truncate">
+                            {req.path}
+                          </code>
+                          {req.success ? (
+                            <span className="text-green-500 text-xs">✓</span>
+                          ) : (
+                            <span className="text-red-500 text-xs">✗</span>
+                          )}
+                        </div>
+                        <div className="flex items-center gap-2 mt-1 text-xs text-gray-500 dark:text-gray-400">
+                          <span>{req.agentName}</span>
+                          <span>•</span>
+                          <span>{new Date(req.timestamp).toLocaleTimeString()}</span>
+                          {req.responseTime && (
+                            <>
+                              <span>•</span>
+                              <span>{req.responseTime}ms</span>
+                            </>
+                          )}
+                          {Object.keys(req.params).length > 0 && (
+                            <>
+                              <span>•</span>
+                              <span className="text-purple-500 dark:text-purple-400">
+                                {Object.keys(req.params).length} params
+                              </span>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <button
+                        onClick={() => replayRequest(req)}
+                        className="px-3 py-1.5 text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors"
+                      >
+                        ▶ Replay
+                      </button>
+                      <button
+                        onClick={() => removeRequest(req.id)}
+                        className="p-1.5 text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition-colors"
+                        title="Remove from history"
+                      >
+                        ×
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="max-w-5xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
           {/* Agent & Endpoint Selection */}
