@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useI18n } from './I18nProvider';
 import QuickStartButton from './QuickStartButton';
+import { AgentDiscoveryQuizCompact } from './AgentDiscoveryQuiz';
 
 interface HomeHeroProps {
   liveAgentCount: number;
@@ -35,6 +36,7 @@ export default function HomeHero({ liveAgentCount }: HomeHeroProps) {
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <QuickStartButton />
+          <AgentDiscoveryQuizCompact />
           <Link
             href="/agents"
             className="bg-shell-800 hover:bg-shell-700 text-white px-6 py-3 rounded-lg font-medium transition-colors border border-shell-700"

@@ -34,9 +34,9 @@ export default function Header() {
   const navLinks = [
     { href: '/', label: t('nav.home') },
     { href: '/agents', label: t('nav.agents') },
+    { href: '/discover', label: '🎯 Quiz' },
     { href: '/compare', label: t('nav.compare') },
     { href: '/status', label: t('nav.status') },
-    { href: '/#playground', label: 'Playground' },
     { href: '/blog', label: t('nav.blog') },
     { href: '/guides', label: t('nav.guides') },
     { href: '/glossary', label: t('nav.glossary') },
