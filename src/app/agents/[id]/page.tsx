@@ -9,6 +9,7 @@ import IntegrationGuides from '@/components/IntegrationGuides';
 import RelatedAgents from '@/components/RelatedAgents';
 import RecentlyUpdatedBadge from '@/components/RecentlyUpdatedBadge';
 import UptimeHistoryChart from '@/components/UptimeHistoryChart';
+import SdkGenerator from '@/components/SdkGenerator';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -247,6 +248,13 @@ export default async function AgentPage({ params }: Props) {
             agentId={agent.id}
             railwayUrl={agent.railwayUrl}
           />
+        )}
+
+        {/* SDK Generator */}
+        {agent.status === 'live' && agent.railwayUrl && (
+          <div className="mb-8">
+            <SdkGenerator agent={agent} />
+          </div>
         )}
 
         {/* Version History / Changelog */}
