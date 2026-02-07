@@ -7,6 +7,7 @@ import ContactForm from '@/components/ContactForm';
 import RecentActivity from '@/components/RecentActivity';
 import AgentGraph from '@/components/AgentGraph';
 import BadgeGenerator from '@/components/BadgeGenerator';
+import CommunityShowcase from '@/components/CommunityShowcase';
 import { HomePageJsonLd } from '@/components/JsonLd';
 import { agents, getLiveAgents } from '@/data/agents';
 import HomeHero from '@/components/HomeHero';
@@ -74,6 +75,11 @@ export default function Home() {
 
       {/* Testimonials */}
       <Testimonials />
+
+      {/* Community Showcase */}
+      <section className="bg-shell-900/30">
+        <CommunityShowcase limit={3} showFilters={false} compact />
+      </section>
 
       {/* Tech Stack - Translated */}
       <TechStackSection />
