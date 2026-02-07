@@ -38,8 +38,8 @@ export default function Footer() {
                 { href: '/agents', label: 'All Agents' },
                 { href: '/blog', label: 'Blog' },
                 { href: '/guides', label: 'Guides' },
+                { href: '/preflight', label: 'Preflight Check' },
                 { href: '/changelog', label: 'Changelog' },
-                { href: '/glossary', label: 'Glossary' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link 
