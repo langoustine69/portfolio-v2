@@ -361,6 +361,29 @@ export default function EarningsDashboard() {
         )}
       </div>
       
+      {/* Export Metrics CTA */}
+      <div className="bg-white dark:bg-zinc-800 rounded-xl p-6 border border-zinc-200 dark:border-zinc-700">
+        <div className="flex items-center justify-between">
+          <div>
+            <h3 className="text-lg font-semibold text-zinc-900 dark:text-white flex items-center gap-2">
+              <span>📊</span> Export Your Data
+            </h3>
+            <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+              Download metrics in CSV, JSON, or Parquet format for analysis
+            </p>
+          </div>
+          <Link
+            href="/metrics-export"
+            className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
+          >
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Export Metrics
+          </Link>
+        </div>
+      </div>
+      
       {/* $DREAMS Progress */}
       <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 rounded-xl p-6 text-white">
         <div className="flex items-center justify-between">

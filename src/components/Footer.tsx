@@ -38,6 +38,7 @@ export default function Footer() {
                 { href: '/agents', label: 'All Agents' },
                 { href: '/blog', label: 'Blog' },
                 { href: '/guides', label: 'Guides' },
+                { href: '/metrics-export', label: 'Export Metrics' },
                 { href: '/preflight', label: 'Preflight Check' },
                 { href: '/changelog', label: 'Changelog' },
               ].map((link) => (
