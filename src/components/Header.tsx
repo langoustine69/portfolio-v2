@@ -7,6 +7,7 @@ import ThemeToggle from './ThemeToggle';
 import { CommandPaletteButton } from './CommandPalette';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslation } from './I18nProvider';
+import NotificationsCenter, { NotificationsBadge } from './NotificationsCenter';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -35,12 +36,17 @@ export default function Header() {
     { href: '/', label: t('nav.home') },
     { href: '/agents', label: t('nav.agents') },
     { href: '/bundles', label: '📦 Bundles' },
+    { href: '/use-cases', label: '💡 Use Cases' },
     { href: '/leaderboard', label: '🏆 Top' },
+    { href: '/earnings', label: '💰 Earnings' },
     { href: '/x402-flow', label: '⚡ x402' },
     { href: '/sdk', label: '🔧 SDK' },
+    { href: '/templates', label: '📦 Templates' },
     { href: '/compare', label: t('nav.compare') },
     { href: '/status', label: t('nav.status') },
+    { href: '/benchmarks', label: '⚡ Perf' },
     { href: '/widgets', label: '📦 Widgets' },
+    { href: '/export', label: '📤 Export' },
     { href: '/badges', label: '🏷️ Badges' },
     { href: '/blog', label: t('nav.blog') },
     { href: '/guides', label: t('nav.guides') },
@@ -87,6 +93,7 @@ export default function Header() {
 
           <div className="hidden lg:flex items-center gap-2">
             <CommandPaletteButton />
+            <NotificationsCenter />
             <ThemeToggle />
             <a
               href="https://github.com/langoustine69"
@@ -101,6 +108,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center gap-2">
+            <NotificationsCenter />
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

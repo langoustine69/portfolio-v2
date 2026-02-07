@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import AgentGrid from '@/components/AgentGrid';
+import { ExportCollectionButton } from '@/components/CollectionExport';
 import { agents } from '@/data/agents';
 
 export const metadata: Metadata = {
@@ -49,7 +50,10 @@ export default function AgentsPage() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-shell-100 mb-4">All Agents</h1>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+            <h1 className="text-4xl font-bold text-shell-100">All Agents</h1>
+            <ExportCollectionButton />
+          </div>
           <p className="text-xl text-shell-400 max-w-2xl">
             Explore all {agents.length} x402 micropayment agents. Filter by category or status.
           </p>
