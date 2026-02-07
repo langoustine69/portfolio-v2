@@ -44,6 +44,7 @@ export default function Header() {
     { href: '/templates', label: '📦 Templates' },
     { href: '/compare', label: t('nav.compare') },
     { href: '/status', label: t('nav.status') },
+    { href: '/reliability', label: '📊 SLA' },
     { href: '/benchmarks', label: '⚡ Perf' },
     { href: '/widgets', label: '📦 Widgets' },
     { href: '/export', label: '📤 Export' },
