@@ -62,6 +62,7 @@ export default function Header() {
     { href: '/snippets', label: '📝 Snippets' },
     { href: '/alerts', label: '🔔 Alerts' },
     { href: '/security', label: '🔒 Security' },
+    { href: '/errors', label: '⚠️ Errors' },
   ];
 
   return (
