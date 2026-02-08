@@ -57,6 +57,7 @@ export default function Header() {
     { href: '/qa', label: '💬 Q&A' },
     { href: '/debugger', label: '🔬 Debug' },
     { href: '/checklist', label: '✅ Checklist' },
+    { href: '/cheatsheet', label: '📋 Reference' },
   ];
 
   return (
