@@ -59,6 +59,7 @@ export default function Header() {
     { href: '/checklist', label: '✅ Checklist' },
     { href: '/cheatsheet', label: '📋 Reference' },
     { href: '/snippets', label: '📝 Snippets' },
+    { href: '/alerts', label: '🔔 Alerts' },
   ];
 
   return (
