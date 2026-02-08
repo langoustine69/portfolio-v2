@@ -39,6 +39,28 @@ module.exports = {
           light: '#e0e0e0',
           white: '#f5f5f5',
         },
+        // Legacy aliases for shell-* and brutal-* classes
+        shell: {
+          50: '#f5f5f5',
+          100: '#e0e0e0',
+          200: '#a0a0a0',
+          300: '#a0a0a0',
+          400: '#666666',
+          500: '#666666',
+          600: '#2a2a2a',
+          700: '#1a1a1a',
+          800: '#121212',
+          900: '#0a0a0a',
+          950: '#0a0a0a',
+        },
+        brutal: {
+          yellow: '#f43f5e',
+          cyan: '#f43f5e',
+          lime: '#a0a0a0',
+          pink: '#f43f5e',
+          orange: '#f43f5e',
+          purple: '#f43f5e',
+        },
       },
       boxShadow: {
         'none': 'none',

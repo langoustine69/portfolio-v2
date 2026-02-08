@@ -53,12 +53,12 @@ export default function Home() {
       </section>
 
       {/* Agent Ecosystem Graph */}
-      <section className="bg-shell-900/30">
+      <section className="bg-term-dark">
         <AgentGraph />
       </section>
 
       {/* Recent Activity Feed */}
-      <section className="bg-shell-900/30">
+      <section className="bg-term-dark">
         <RecentActivity limit={6} />
       </section>
 
@@ -66,7 +66,7 @@ export default function Home() {
       <ApiPlayground />
 
       {/* Pricing Calculator */}
-      <section className="bg-shell-900/30">
+      <section className="bg-term-dark">
         <PricingCalculator />
       </section>
 
@@ -77,7 +77,7 @@ export default function Home() {
       <Testimonials />
 
       {/* Community Showcase */}
-      <section className="bg-shell-900/30">
+      <section className="bg-term-dark">
         <CommunityShowcase limit={3} showFilters={false} compact />
       </section>
 
@@ -88,7 +88,7 @@ export default function Home() {
       <CTASection />
 
       {/* Contact Form */}
-      <section className="bg-shell-900/30">
+      <section className="bg-term-dark">
         <ContactForm />
       </section>
     </div>

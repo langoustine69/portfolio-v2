@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -14,7 +14,7 @@ import SkipLinks from '@/components/SkipLinks';
 import A11yProvider from '@/components/A11yProvider';
 import CookieConsent from '@/components/CookieConsent';
 
-const inter = Inter({ subsets: ['latin'] });
+const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export const viewport: Viewport = {
   themeColor: [
@@ -151,7 +151,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} antialiased min-h-screen flex flex-col`}>
+      <body className={`${mono.className} ${mono.variable} antialiased min-h-screen flex flex-col bg-term-black text-term-text`}>
         <ThemeProvider>
           <I18nProvider>
             <A11yProvider>
@@ -160,7 +160,7 @@ export default function RootLayout({
               <KeyboardShortcuts />
               <CommandPalette />
               <Header />
-              <Breadcrumbs className="bg-shell-900/50 border-b border-shell-800" />
+              <Breadcrumbs className="bg-term-dark border-b border-term-border" />
               <main id="main-content" className="flex-grow" role="main" tabIndex={-1} aria-label="Main content">
                 {children}
               </main>

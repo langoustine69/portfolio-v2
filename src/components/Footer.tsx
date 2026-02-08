@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer 
       id="footer" 
-      className="border-t-4 border-black dark:border-white bg-brutal-yellow dark:bg-black" 
+      className="border-t border-term-border bg-term-dark" 
       role="contentinfo"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -18,36 +18,36 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <span className="text-3xl group-hover:animate-brutal-shake">🦞</span>
-              <span className="text-2xl font-black uppercase tracking-tight text-black dark:text-white">
-                LANGOUSTINE69
+              <span className="text-2xl">🦞</span>
+              <span className="text-lg font-medium text-term-light">
+                langoustine69
               </span>
             </Link>
-            <p className="text-black dark:text-shell-300 font-medium max-w-md">
-              Building x402 micropayment AI agents for data analysis, sports, finance, space weather, 
+            <p className="text-term-muted text-sm max-w-md leading-relaxed">
+              x402 micropayment AI agents for sports, finance, space weather, 
               and more. Powered by Lucid Agents SDK.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h3 className="text-black dark:text-white font-black uppercase mb-4 text-lg">NAVIGATION</h3>
+            <h3 className="text-term-light text-xs uppercase tracking-wider mb-4">navigation</h3>
             <ul className="space-y-2">
               {[
-                { href: '/', label: 'Home' },
-                { href: '/agents', label: 'All Agents' },
-                { href: '/blog', label: 'Blog' },
-                { href: '/guides', label: 'Guides' },
-                { href: '/metrics-export', label: 'Export Metrics' },
-                { href: '/preflight', label: 'Preflight Check' },
-                { href: '/changelog', label: 'Changelog' },
+                { href: '/', label: 'home' },
+                { href: '/agents', label: 'agents' },
+                { href: '/blog', label: 'blog' },
+                { href: '/guides', label: 'guides' },
+                { href: '/metrics-export', label: 'export' },
+                { href: '/preflight', label: 'preflight' },
+                { href: '/changelog', label: 'changelog' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link 
                     href={link.href} 
-                    className="text-black dark:text-shell-300 font-bold uppercase text-sm hover:bg-black hover:text-brutal-yellow dark:hover:bg-white dark:hover:text-black px-2 py-1 -ml-2 transition-colors inline-block"
+                    className="text-term-text text-sm hover:text-lobster-500 transition-colors"
                   >
-                    → {link.label}
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -56,16 +56,16 @@ export default function Footer() {
 
           {/* External */}
           <div>
-            <h3 className="text-black dark:text-white font-black uppercase mb-4 text-lg">CONNECT</h3>
+            <h3 className="text-term-light text-xs uppercase tracking-wider mb-4">connect</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="https://x.com/langoustine69A"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black dark:text-shell-300 font-bold uppercase text-sm hover:bg-black hover:text-brutal-yellow dark:hover:bg-white dark:hover:text-black px-2 py-1 -ml-2 transition-colors inline-block"
+                  className="text-term-text text-sm hover:text-lobster-500 transition-colors"
                 >
-                  → X / TWITTER
+                  x / twitter
                 </a>
               </li>
               <li>
@@ -73,9 +73,9 @@ export default function Footer() {
                   href="https://github.com/langoustine69"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black dark:text-shell-300 font-bold uppercase text-sm hover:bg-black hover:text-brutal-yellow dark:hover:bg-white dark:hover:text-black px-2 py-1 -ml-2 transition-colors inline-block"
+                  className="text-term-text text-sm hover:text-lobster-500 transition-colors"
                 >
-                  → GITHUB
+                  github
                 </a>
               </li>
               <li>
@@ -83,17 +83,17 @@ export default function Footer() {
                   href="https://moltbook.com/a/langoustine69"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black dark:text-shell-300 font-bold uppercase text-sm hover:bg-black hover:text-brutal-yellow dark:hover:bg-white dark:hover:text-black px-2 py-1 -ml-2 transition-colors inline-block"
+                  className="text-term-text text-sm hover:text-lobster-500 transition-colors"
                 >
-                  → MOLTBOOK
+                  moltbook
                 </a>
               </li>
               <li>
                 <a
                   href="/rss.xml"
-                  className="text-black dark:text-shell-300 font-bold uppercase text-sm hover:bg-black hover:text-brutal-yellow dark:hover:bg-white dark:hover:text-black px-2 py-1 -ml-2 transition-colors inline-flex items-center gap-1"
+                  className="text-term-text text-sm hover:text-lobster-500 transition-colors"
                 >
-                  → RSS FEED
+                  rss feed
                 </a>
               </li>
             </ul>
@@ -101,22 +101,22 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <Newsletter variant="brutal" />
+            <Newsletter variant="inline" />
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-8 pt-8 border-t-2 border-black dark:border-white flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-black dark:text-shell-300 font-bold text-sm uppercase">
-            © {currentYear} LANGOUSTINE69. BUILT WITH 🦞
+        <div className="mt-8 pt-8 border-t border-term-border flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-term-muted text-xs">
+            © {currentYear} langoustine69
           </p>
-          <div className="flex items-center gap-4 text-black dark:text-shell-300 text-sm font-bold uppercase">
-            <span>LUCID AGENTS SDK</span>
-            <span className="text-lobster-500">•</span>
-            <span>X402 PROTOCOL</span>
-            <span className="text-lobster-500">•</span>
-            <span>RAILWAY</span>
-            <span className="text-lobster-500">•</span>
+          <div className="flex items-center gap-4 text-term-muted text-xs">
+            <span>lucid agents</span>
+            <span className="text-term-border">•</span>
+            <span>x402</span>
+            <span className="text-term-border">•</span>
+            <span>railway</span>
+            <span className="text-term-border">•</span>
             <KeyboardShortcutsHint />
           </div>
         </div>
