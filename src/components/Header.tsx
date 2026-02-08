@@ -56,6 +56,7 @@ export default function Header() {
     { href: '/glossary', label: t('nav.glossary') },
     { href: '/qa', label: '💬 Q&A' },
     { href: '/debugger', label: '🔬 Debug' },
+    { href: '/checklist', label: '✅ Checklist' },
   ];
 
   return (
