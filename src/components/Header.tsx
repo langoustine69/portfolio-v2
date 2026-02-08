@@ -60,6 +60,7 @@ export default function Header() {
     { href: '/cheatsheet', label: '📋 Reference' },
     { href: '/snippets', label: '📝 Snippets' },
     { href: '/alerts', label: '🔔 Alerts' },
+    { href: '/security', label: '🔒 Security' },
   ];
 
   return (
