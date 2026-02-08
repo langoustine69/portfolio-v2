@@ -35,6 +35,7 @@ export default function Header() {
   const navLinks = [
     { href: '/', label: t('nav.home') },
     { href: '/agents', label: t('nav.agents') },
+    { href: '/sandbox', label: '🧪 Sandbox' },
     { href: '/bundles', label: '📦 Bundles' },
     { href: '/use-cases', label: '💡 Use Cases' },
     { href: '/leaderboard', label: '🏆 Top' },
