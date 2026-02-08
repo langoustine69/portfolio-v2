@@ -42,6 +42,7 @@ export default function Header() {
     { href: '/earnings', label: '💰 Earnings' },
     { href: '/x402-flow', label: '⚡ x402' },
     { href: '/sdk', label: '🔧 SDK' },
+    { href: '/simulator', label: '🧪 Simulator' },
     { href: '/templates', label: '📦 Templates' },
     { href: '/compare', label: t('nav.compare') },
     { href: '/status', label: t('nav.status') },
