@@ -58,6 +58,7 @@ export default function Header() {
     { href: '/debugger', label: '🔬 Debug' },
     { href: '/checklist', label: '✅ Checklist' },
     { href: '/cheatsheet', label: '📋 Reference' },
+    { href: '/snippets', label: '📝 Snippets' },
   ];
 
   return (
