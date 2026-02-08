@@ -1,423 +1,307 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   NEO-BRUTALISM THEME - Bold, Raw, Unapologetic
+   LOBSTER TERMINAL - Minimal Mono Theme
    ═══════════════════════════════════════════════════════════════════════════ */
 
 @layer base {
   :root {
-    /* Neo-Brutalist Colors */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
-    --primary: 346.8 77.2% 49.8%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 52 100% 68%;
-    --accent: 187 100% 50%;
-    --muted: 0 0% 96%;
-    --border: 0 0% 0%;
-    --ring: 346.8 77.2% 49.8%;
-    --radius: 0;
-    
-    /* Brutal specific */
-    --brutal-shadow: 4px 4px 0px 0px #000000;
-    --brutal-shadow-hover: 6px 6px 0px 0px #000000;
-    --brutal-shadow-active: 2px 2px 0px 0px #000000;
-    --brutal-border: 3px solid #000000;
+    --background: #0a0a0a;
+    --foreground: #a0a0a0;
+    --card: #121212;
+    --card-foreground: #a0a0a0;
+    --primary: #f43f5e;
+    --primary-foreground: #0a0a0a;
+    --muted: #1a1a1a;
+    --muted-foreground: #666666;
+    --border: #2a2a2a;
+    --ring: #f43f5e;
   }
 
   * {
     border-radius: 0 !important;
+    border-color: var(--border);
   }
-}
 
-@layer base {
-  .dark * {
-    @apply border-white/20;
+  html {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    letter-spacing: -0.01em;
   }
-  .light * {
-    @apply border-black;
-  }
-  
-  /* Dark mode - stark contrast */
-  .dark body {
-    @apply text-white;
-    background: #000000;
-    font-family: 'DM Sans', system-ui, sans-serif;
-  }
-  
-  /* Light mode - paper white */
-  .light body {
-    @apply text-black;
-    background: #FFFEF0;
-    font-family: 'DM Sans', system-ui, sans-serif;
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: 'JetBrains Mono', monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   BRUTAL COMPONENTS
+   TERMINAL COMPONENTS
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Brutal Card - the signature look */
-.brutal-card {
-  @apply border-3 border-black bg-white;
-  box-shadow: var(--brutal-shadow);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+/* Terminal Card */
+.term-card {
+  @apply bg-term-dark border border-term-border;
+  transition: border-color 0.15s ease;
 }
 
-.brutal-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--brutal-shadow-hover);
+.term-card:hover {
+  border-color: #3a3a3a;
 }
 
-.brutal-card:active {
-  transform: translate(2px, 2px);
-  box-shadow: var(--brutal-shadow-active);
+/* Terminal Button */
+.term-btn {
+  @apply px-4 py-2 font-mono text-sm border border-term-border bg-term-dark text-term-light;
+  transition: all 0.15s ease;
 }
 
-.dark .brutal-card {
-  @apply border-white bg-black;
-  box-shadow: 4px 4px 0px 0px #ffffff;
+.term-btn:hover {
+  @apply bg-term-mid border-term-muted;
 }
 
-.dark .brutal-card:hover {
-  box-shadow: 6px 6px 0px 0px #ffffff;
+.term-btn-primary {
+  @apply bg-lobster-600 text-white border-lobster-600;
 }
 
-/* Brutal Button */
-.brutal-btn {
-  @apply px-6 py-3 font-bold uppercase tracking-wider border-3 border-black bg-white text-black;
-  box-shadow: var(--brutal-shadow);
-  transition: all 0.1s ease;
+.term-btn-primary:hover {
+  @apply bg-lobster-500 border-lobster-500;
 }
 
-.brutal-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--brutal-shadow-hover);
+/* Terminal Input */
+.term-input {
+  @apply px-3 py-2 font-mono text-sm border border-term-border bg-term-black text-term-light;
+  transition: border-color 0.15s ease;
 }
 
-.brutal-btn:active {
-  transform: translate(2px, 2px);
-  box-shadow: var(--brutal-shadow-active);
+.term-input:focus {
+  @apply outline-none border-lobster-500;
 }
 
-.brutal-btn-primary {
-  @apply bg-lobster-500 text-white border-black;
+.term-input::placeholder {
+  @apply text-term-muted;
 }
 
-.brutal-btn-yellow {
-  @apply bg-brutal-yellow text-black border-black;
+/* Terminal Badge */
+.term-badge {
+  @apply inline-block px-2 py-0.5 text-xs font-mono border border-term-border text-term-text;
 }
 
-.brutal-btn-cyan {
-  @apply bg-brutal-cyan text-black border-black;
+.term-badge-primary {
+  @apply border-lobster-600 text-lobster-400;
 }
 
-.dark .brutal-btn {
-  @apply border-white;
-  box-shadow: 4px 4px 0px 0px #ffffff;
+.term-badge-success {
+  @apply border-green-600 text-green-400;
 }
 
-/* Brutal Input */
-.brutal-input {
-  @apply px-4 py-3 border-3 border-black bg-white text-black font-medium;
-  box-shadow: var(--brutal-shadow-sm);
-}
-
-.brutal-input:focus {
-  @apply outline-none;
-  box-shadow: var(--brutal-shadow);
-}
-
-.dark .brutal-input {
-  @apply border-white bg-black text-white;
-  box-shadow: 2px 2px 0px 0px #ffffff;
-}
-
-/* Brutal Badge */
-.brutal-badge {
-  @apply inline-block px-3 py-1 text-sm font-bold uppercase border-2 border-black;
-  box-shadow: 2px 2px 0px 0px #000000;
-}
-
-.dark .brutal-badge {
-  @apply border-white;
-  box-shadow: 2px 2px 0px 0px #ffffff;
+.term-badge-warning {
+  @apply border-yellow-600 text-yellow-400;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   SCROLLBAR - Brutal style
+   CURSOR & PROMPT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.cursor {
+  @apply inline-block w-2 h-5 bg-lobster-500 ml-1;
+  animation: blink 1s step-end infinite;
+}
+
+.prompt::before {
+  content: "$ ";
+  @apply text-lobster-500;
+}
+
+.prompt-arrow::before {
+  content: "→ ";
+  @apply text-lobster-500;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SCROLLBAR - Minimal
    ═══════════════════════════════════════════════════════════════════════════ */
 
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
 }
 
-.dark ::-webkit-scrollbar-track {
-  background: #000000;
-  border-left: 3px solid #ffffff;
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
 }
 
-.light ::-webkit-scrollbar-track {
-  background: #FFFEF0;
-  border-left: 3px solid #000000;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: #ffffff;
-  border: 2px solid #000000;
-}
-
-.light ::-webkit-scrollbar-thumb {
-  background: #000000;
-  border: 2px solid #FFFEF0;
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FFDE59;
+  background: #3a3a3a;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   ANIMATIONS - Snappy, mechanical
+   ANIMATIONS
    ═══════════════════════════════════════════════════════════════════════════ */
 
-@keyframes brutal-shake {
-  0%, 100% { transform: translateX(0) rotate(0); }
-  25% { transform: translateX(-4px) rotate(-1deg); }
-  75% { transform: translateX(4px) rotate(1deg); }
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-@keyframes brutal-pop {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-@keyframes brutal-slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes brutal-glitch {
-  0%, 100% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-}
-
-.animate-brutal-shake {
-  animation: brutal-shake 0.4s ease-in-out;
-}
-
-.animate-brutal-pop {
-  animation: brutal-pop 0.3s ease-out;
-}
-
-.animate-brutal-slide-up {
-  animation: brutal-slide-up 0.4s ease-out;
-}
-
-/* Fade and Scale Animations */
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes scale-in {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
   animation: fade-in 0.3s ease-out forwards;
 }
 
-.animate-scale-in {
-  animation: scale-in 0.2s ease-out forwards;
-}
-
 /* ═══════════════════════════════════════════════════════════════════════════
-   CARD HOVER - Brutal lift
+   CARD HOVER - Subtle
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .card-hover {
-  @apply border-3 border-black;
-  box-shadow: var(--brutal-shadow);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  @apply border border-term-border;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .card-hover:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 7px 7px 0px 0px #000000;
+  @apply border-term-muted bg-term-mid;
 }
 
-.dark .card-hover {
-  @apply border-white;
-  box-shadow: 4px 4px 0px 0px #ffffff;
+/* Legacy class support */
+.brutal-card {
+  @apply term-card;
 }
 
-.dark .card-hover:hover {
-  box-shadow: 7px 7px 0px 0px #ffffff;
+.brutal-btn {
+  @apply term-btn;
 }
 
-/* Remove old lobster glow - replace with brutal shadow */
 .lobster-glow {
-  @apply border-3 border-black;
-  box-shadow: var(--brutal-shadow);
+  @apply border border-lobster-600/30;
 }
 
 .lobster-glow:hover {
-  box-shadow: var(--brutal-shadow-hover);
-}
-
-.dark .lobster-glow {
-  @apply border-white;
-  box-shadow: 4px 4px 0px 0px #ffffff;
+  @apply border-lobster-500/50;
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.1);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   GRADIENT TEXT - Brutal solid or highlight
+   TEXT STYLES
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .gradient-text {
-  @apply text-lobster-500 font-black;
-  text-decoration: underline;
-  text-decoration-thickness: 4px;
-  text-decoration-color: #FFDE59;
-  text-underline-offset: 4px;
+  @apply text-lobster-500;
+}
+
+.text-muted {
+  @apply text-term-muted;
+}
+
+.text-accent {
+  @apply text-lobster-500;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   GRID PATTERN - Brutal graph paper
+   CODE BLOCKS
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.grid-pattern {
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.1) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 2px, transparent 2px);
-  background-size: 40px 40px;
+pre {
+  @apply bg-term-black border border-term-border p-4 overflow-x-auto;
 }
 
-.dark .grid-pattern {
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.1) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+code {
+  @apply font-mono text-sm;
+}
+
+:not(pre) > code {
+  @apply bg-term-mid px-1.5 py-0.5 text-lobster-400 border border-term-border;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   MDX PROSE - Brutal typography
+   MDX PROSE - Terminal typography
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .prose-custom {
-  @apply text-shell-800 leading-relaxed;
-}
-
-.dark .prose-custom {
-  @apply text-shell-200;
+  @apply text-term-text leading-relaxed;
 }
 
 .prose-custom h1 {
-  @apply text-4xl font-black text-black mb-6 mt-8 uppercase tracking-tight;
-  text-decoration: underline;
-  text-decoration-thickness: 6px;
-  text-decoration-color: #FFDE59;
-}
-
-.dark .prose-custom h1 {
-  @apply text-white;
+  @apply text-3xl font-semibold text-term-white mb-6 mt-8;
 }
 
 .prose-custom h2 {
-  @apply text-3xl font-bold text-black mb-4 mt-6 uppercase;
-}
-
-.dark .prose-custom h2 {
-  @apply text-white;
+  @apply text-2xl font-semibold text-term-white mb-4 mt-6;
 }
 
 .prose-custom h3 {
-  @apply text-2xl font-bold text-black mb-3 mt-5;
-}
-
-.dark .prose-custom h3 {
-  @apply text-white;
+  @apply text-xl font-medium text-term-light mb-3 mt-5;
 }
 
 .prose-custom p {
-  @apply mb-4 text-lg;
+  @apply mb-4;
 }
 
 .prose-custom a {
-  @apply text-lobster-600 font-bold underline;
-  text-decoration-thickness: 2px;
+  @apply text-lobster-500 border-b border-lobster-500/50;
+  transition: border-color 0.15s ease;
 }
 
 .prose-custom a:hover {
-  @apply bg-brutal-yellow text-black;
-}
-
-.prose-custom code {
-  @apply bg-brutal-yellow px-2 py-1 text-black font-mono font-bold border-2 border-black;
-}
-
-.prose-custom pre {
-  @apply bg-black p-6 overflow-x-auto mb-4 border-3 border-black;
-  box-shadow: var(--brutal-shadow);
-}
-
-.dark .prose-custom pre {
-  @apply bg-shell-900 border-white;
-  box-shadow: 4px 4px 0px 0px #ffffff;
-}
-
-.prose-custom pre code {
-  @apply bg-transparent p-0 border-0 text-brutal-lime;
+  @apply border-lobster-400;
 }
 
 .prose-custom ul {
-  @apply list-none mb-4 space-y-2;
+  @apply list-none mb-4 space-y-1;
 }
 
 .prose-custom ul li::before {
-  content: "→ ";
-  @apply font-bold text-lobster-500;
+  content: "- ";
+  @apply text-term-muted;
 }
 
 .prose-custom ol {
-  @apply list-decimal list-inside mb-4 space-y-2 font-bold;
+  @apply list-decimal list-inside mb-4 space-y-1;
 }
 
 .prose-custom blockquote {
-  @apply border-l-4 border-black pl-4 font-bold text-lg my-4 bg-brutal-yellow py-2;
-}
-
-.dark .prose-custom blockquote {
-  @apply border-white bg-brutal-yellow text-black;
+  @apply border-l-2 border-lobster-500 pl-4 text-term-text my-4;
 }
 
 .prose-custom hr {
-  @apply border-black border-t-4 my-8;
-}
-
-.dark .prose-custom hr {
-  @apply border-white;
+  @apply border-term-border my-8;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   ACCESSIBILITY - Enhanced focus states
+   TABLES - Terminal style
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+table {
+  @apply w-full border border-term-border;
+}
+
+th {
+  @apply bg-term-mid px-4 py-2 text-left text-term-light font-medium border-b border-term-border;
+}
+
+td {
+  @apply px-4 py-2 border-b border-term-border text-term-text;
+}
+
+tr:hover td {
+  @apply bg-term-mid/50;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITY
    ═══════════════════════════════════════════════════════════════════════════ */
 
 @layer base {
@@ -428,18 +312,7 @@
   textarea:focus-visible,
   select:focus-visible,
   [tabindex]:focus-visible {
-    @apply outline-none;
-    box-shadow: 0 0 0 4px #FFDE59, 0 0 0 6px #000000;
-  }
-
-  .dark a:focus-visible,
-  .dark button:focus-visible,
-  .dark [role="button"]:focus-visible,
-  .dark input:focus-visible,
-  .dark textarea:focus-visible,
-  .dark select:focus-visible,
-  .dark [tabindex]:focus-visible {
-    box-shadow: 0 0 0 4px #FFDE59, 0 0 0 6px #ffffff;
+    @apply outline-none ring-1 ring-lobster-500 ring-offset-1 ring-offset-term-black;
   }
 }
 
@@ -454,66 +327,57 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  
-  .card-hover:hover,
-  .brutal-card:hover,
-  .brutal-btn:hover {
-    transform: none;
   }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   SELECTION - Brutal highlight
+   SELECTION
    ═══════════════════════════════════════════════════════════════════════════ */
 
 ::selection {
-  @apply bg-brutal-yellow text-black;
+  @apply bg-lobster-600 text-white;
 }
 
 ::-moz-selection {
-  @apply bg-brutal-yellow text-black;
+  @apply bg-lobster-600 text-white;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    UTILITY CLASSES
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.border-brutal {
-  @apply border-3 border-black;
+.border-subtle {
+  @apply border border-term-border;
 }
 
-.dark .border-brutal {
-  @apply border-white;
+.bg-surface {
+  @apply bg-term-dark;
 }
 
-.shadow-brutal {
-  box-shadow: var(--brutal-shadow);
+.bg-elevated {
+  @apply bg-term-mid;
 }
 
-.dark .shadow-brutal {
-  box-shadow: 4px 4px 0px 0px #ffffff;
+/* Status indicators */
+.status-dot {
+  @apply inline-block w-2 h-2 rounded-full;
 }
 
-.text-brutal-highlight {
-  @apply bg-brutal-yellow text-black px-1;
+.status-dot-live {
+  @apply bg-green-500;
+  animation: blink 2s ease-in-out infinite;
 }
 
-/* Status badges - Brutal style */
-.animate-pulse-live {
-  animation: brutal-glitch 0.5s ease-in-out infinite;
+.status-dot-offline {
+  @apply bg-term-muted;
 }
 
-/* Target sizes for accessibility */
-@layer base {
-  a, button, [role="button"], input, select, textarea {
-    min-height: 44px;
-    min-width: 44px;
-  }
-  
-  p a, li a, .prose-custom a {
-    min-height: auto;
-    min-width: auto;
-  }
+/* ASCII box drawing helper */
+.ascii-box {
+  @apply border border-term-border p-4;
+}
+
+.ascii-box::before {
+  content: "┌─";
+  @apply text-term-muted;
 }

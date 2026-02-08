@@ -9,14 +9,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // Neo-Brutalism: 0 border radius by default
       borderRadius: {
         'none': '0',
-        'brutal': '0',
         DEFAULT: '0',
       },
       colors: {
-        // Neo-Brutalist palette - bold primaries
+        // Lobster accent - the only color
         lobster: {
           50: '#fff1f2',
           100: '#ffe4e6',
@@ -30,132 +28,97 @@ module.exports = {
           900: '#881337',
           950: '#4c0519',
         },
-        // Brutal blacks
-        shell: {
-          50: '#ffffff',
-          100: '#fafafa',
-          200: '#e4e4e7',
-          300: '#d4d4d8',
-          400: '#a1a1aa',
-          500: '#71717a',
-          600: '#52525b',
-          700: '#3f3f46',
-          800: '#27272a',
-          900: '#18181b',
-          950: '#000000',
-        },
-        // Brutal accent colors
-        brutal: {
-          yellow: '#FFDE59',
-          cyan: '#00D9FF',
-          lime: '#B8FF57',
-          pink: '#FF6B9D',
-          orange: '#FF914D',
-          purple: '#9B5DE5',
-        },
-        // Keep coral
-        coral: {
-          400: '#ff6b6b',
-          500: '#ff5252',
-          600: '#ff3838',
+        // Terminal greys
+        term: {
+          black: '#0a0a0a',
+          dark: '#121212',
+          mid: '#1a1a1a',
+          border: '#2a2a2a',
+          muted: '#666666',
+          text: '#a0a0a0',
+          light: '#e0e0e0',
+          white: '#f5f5f5',
         },
       },
       boxShadow: {
-        // Neo-Brutalist hard shadows
-        'brutal': '4px 4px 0px 0px #000000',
-        'brutal-sm': '2px 2px 0px 0px #000000',
-        'brutal-lg': '6px 6px 0px 0px #000000',
-        'brutal-xl': '8px 8px 0px 0px #000000',
-        'brutal-hover': '6px 6px 0px 0px #000000',
-        'brutal-active': '2px 2px 0px 0px #000000',
-        // Colored brutal shadows
-        'brutal-lobster': '4px 4px 0px 0px #e11d48',
-        'brutal-yellow': '4px 4px 0px 0px #FFDE59',
-        'brutal-cyan': '4px 4px 0px 0px #00D9FF',
+        'none': 'none',
+        'glow': '0 0 10px rgba(244, 63, 94, 0.3)',
+        'glow-sm': '0 0 5px rgba(244, 63, 94, 0.2)',
       },
       borderWidth: {
-        '3': '3px',
-        '4': '4px',
+        '1': '1px',
       },
       fontFamily: {
-        sans: ['DM Sans', 'system-ui', 'sans-serif'],
-        mono: ['Space Mono', 'monospace'],
-        display: ['Space Grotesk', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'SF Mono', 'Consolas', 'monospace'],
+      },
+      fontSize: {
+        'xs': ['0.75rem', { lineHeight: '1.5' }],
+        'sm': ['0.875rem', { lineHeight: '1.6' }],
+        'base': ['1rem', { lineHeight: '1.7' }],
+        'lg': ['1.125rem', { lineHeight: '1.7' }],
+        'xl': ['1.25rem', { lineHeight: '1.6' }],
+        '2xl': ['1.5rem', { lineHeight: '1.5' }],
+        '3xl': ['1.875rem', { lineHeight: '1.4' }],
+        '4xl': ['2.25rem', { lineHeight: '1.3' }],
       },
       typography: {
         DEFAULT: {
           css: {
             maxWidth: 'none',
-            color: '#18181b',
+            color: '#a0a0a0',
+            fontFamily: 'JetBrains Mono, monospace',
             a: {
-              color: '#e11d48',
-              fontWeight: '700',
-              textDecoration: 'underline',
-              textDecorationThickness: '2px',
+              color: '#f43f5e',
+              textDecoration: 'none',
+              borderBottom: '1px solid #f43f5e',
               '&:hover': {
-                color: '#f43f5e',
-                backgroundColor: '#FFDE59',
+                color: '#fb7185',
+                borderBottomColor: '#fb7185',
               },
             },
-            h1: { color: '#000000', fontWeight: '900' },
-            h2: { color: '#000000', fontWeight: '800' },
-            h3: { color: '#000000', fontWeight: '700' },
-            h4: { color: '#000000', fontWeight: '700' },
-            strong: { color: '#000000' },
+            h1: { color: '#f5f5f5', fontWeight: '600', fontFamily: 'JetBrains Mono, monospace' },
+            h2: { color: '#f5f5f5', fontWeight: '600', fontFamily: 'JetBrains Mono, monospace' },
+            h3: { color: '#e0e0e0', fontWeight: '500', fontFamily: 'JetBrains Mono, monospace' },
+            h4: { color: '#e0e0e0', fontWeight: '500', fontFamily: 'JetBrains Mono, monospace' },
+            strong: { color: '#f5f5f5' },
             code: { 
-              color: '#e11d48',
-              backgroundColor: '#FFDE59',
-              padding: '2px 4px',
-              fontWeight: '600',
+              color: '#f43f5e',
+              backgroundColor: '#1a1a1a',
+              padding: '2px 6px',
+              borderRadius: '0',
+              border: '1px solid #2a2a2a',
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              padding: '0',
+              border: 'none',
             },
             blockquote: {
-              color: '#18181b',
-              borderLeftColor: '#000000',
-              borderLeftWidth: '4px',
-              fontWeight: '500',
-            },
-          },
-        },
-        dark: {
-          css: {
-            color: '#fafafa',
-            a: {
-              color: '#fb7185',
-              '&:hover': {
-                color: '#000000',
-                backgroundColor: '#FFDE59',
-              },
-            },
-            h1: { color: '#ffffff', fontWeight: '900' },
-            h2: { color: '#ffffff', fontWeight: '800' },
-            h3: { color: '#ffffff', fontWeight: '700' },
-            h4: { color: '#ffffff', fontWeight: '700' },
-            strong: { color: '#ffffff' },
-            code: { 
-              color: '#000000',
-              backgroundColor: '#FFDE59',
-            },
-            blockquote: {
-              color: '#fafafa',
-              borderLeftColor: '#FFDE59',
+              color: '#a0a0a0',
+              borderLeftColor: '#f43f5e',
+              borderLeftWidth: '2px',
+              fontStyle: 'normal',
             },
           },
         },
       },
       animation: {
-        'brutal-shake': 'brutal-shake 0.5s ease-in-out',
-        'brutal-bounce': 'brutal-bounce 0.3s ease-out',
+        'blink': 'blink 1s step-end infinite',
+        'fade-in': 'fade-in 0.3s ease-out',
+        'type': 'type 0.5s steps(10)',
       },
       keyframes: {
-        'brutal-shake': {
-          '0%, 100%': { transform: 'translateX(0)' },
-          '25%': { transform: 'translateX(-4px)' },
-          '75%': { transform: 'translateX(4px)' },
+        'blink': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
         },
-        'brutal-bounce': {
-          '0%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-4px)' },
-          '100%': { transform: 'translateY(0)' },
+        'fade-in': {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        'type': {
+          from: { width: '0' },
+          to: { width: '100%' },
         },
       },
     },
