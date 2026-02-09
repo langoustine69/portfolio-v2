@@ -70,6 +70,7 @@ export default function Header() {
     { href: '/errors', label: 'errors' },
     { href: '/heatmap', label: 'heatmap' },
     { href: '/latency-map', label: 'latency' },
+    { href: '/optimizer', label: 'optimizer' },
   ];
 
   return (
