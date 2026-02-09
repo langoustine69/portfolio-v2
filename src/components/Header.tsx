@@ -73,6 +73,7 @@ export default function Header() {
     { href: '/latency-map', label: 'latency' },
     { href: '/optimizer', label: 'optimizer' },
     { href: '/schemas', label: 'schemas' },
+    { href: '/versioning', label: 'versioning' },
   ];
 
   return (
