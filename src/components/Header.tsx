@@ -72,6 +72,7 @@ export default function Header() {
     { href: '/heatmap', label: 'heatmap' },
     { href: '/latency-map', label: 'latency' },
     { href: '/optimizer', label: 'optimizer' },
+    { href: '/schemas', label: 'schemas' },
   ];
 
   return (
