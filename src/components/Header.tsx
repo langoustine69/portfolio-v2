@@ -75,6 +75,7 @@ export default function Header() {
     { href: '/optimizer', label: 'optimizer' },
     { href: '/schemas', label: 'schemas' },
     { href: '/versioning', label: 'versioning' },
+    { href: '/achievements', label: 'achievements' },
   ];
 
   return (
