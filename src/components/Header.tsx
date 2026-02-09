@@ -64,6 +64,7 @@ export default function Header() {
     { href: '/debugger', label: 'debug' },
     { href: '/diff', label: 'diff' },
     { href: '/checklist', label: 'checklist' },
+    { href: '/health-score', label: 'health-score' },
     { href: '/cheatsheet', label: 'reference' },
     { href: '/snippets', label: 'snippets' },
     { href: '/alerts', label: 'alerts' },
