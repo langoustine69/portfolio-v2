@@ -68,6 +68,7 @@ export default function Header() {
     { href: '/alerts', label: 'alerts' },
     { href: '/security', label: 'security' },
     { href: '/errors', label: 'errors' },
+    { href: '/heatmap', label: 'heatmap' },
   ];
 
   return (
