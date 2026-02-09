@@ -48,6 +48,7 @@ export default function Header() {
     { href: '/x402-flow', label: 'x402' },
     { href: '/simulator', label: 'simulator' },
     { href: '/templates', label: 'templates' },
+    { href: '/starters', label: 'starters' },
     { href: '/compare', label: 'compare' },
     { href: '/reliability', label: 'sla' },
     { href: '/benchmarks', label: 'perf' },
