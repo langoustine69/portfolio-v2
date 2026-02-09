@@ -43,6 +43,7 @@ export default function Header() {
   ];
 
   const moreLinks = [
+    { href: '/collections', label: 'collections' },
     { href: '/use-cases', label: 'use-cases' },
     { href: '/leaderboard', label: 'leaderboard' },
     { href: '/earnings', label: 'earnings' },
