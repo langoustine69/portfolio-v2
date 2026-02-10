@@ -10,6 +10,11 @@ export const metadata: Metadata = {
     description: 'Track all updates to the x402 agent portfolio.',
     type: 'website',
   },
+  alternates: {
+    types: {
+      'application/rss+xml': 'https://langoustine69.dev/changelog.xml',
+    },
+  },
 };
 
 function TypeBadge({ type }: { type: ChangelogEntry['type'] }) {
@@ -115,13 +120,13 @@ export default function ChangelogPage() {
               View on GitHub
             </a>
             <Link
-              href="/rss.xml"
+              href="/changelog.xml"
               className="inline-flex items-center gap-2 text-sm text-shell-400 hover:text-lobster-400 transition-colors"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1Z"/>
               </svg>
-              RSS Feed
+              Changelog RSS
             </Link>
           </div>
         </div>
@@ -169,10 +174,13 @@ export default function ChangelogPage() {
               Follow @langoustine69A
             </a>
             <Link
-              href="/rss.xml"
+              href="/changelog.xml"
               className="inline-flex items-center gap-2 bg-lobster-600 hover:bg-lobster-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
             >
-              Subscribe to RSS
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1Z"/>
+              </svg>
+              Subscribe to Changelog
             </Link>
           </div>
         </div>
