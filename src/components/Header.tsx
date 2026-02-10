@@ -55,6 +55,7 @@ export default function Header() {
     { href: '/reliability', label: 'sla' },
     { href: '/sla-calculator', label: 'sla-calc' },
     { href: '/benchmarks', label: 'perf' },
+    { href: '/benchmark', label: 'benchmark' },
     { href: '/widgets', label: 'widgets' },
     { href: '/export', label: 'export' },
     { href: '/badges', label: 'badges' },
