@@ -78,6 +78,7 @@ export default function Header() {
     { href: '/versioning', label: 'versioning' },
     { href: '/achievements', label: 'achievements' },
     { href: '/mock-server', label: 'mock' },
+    { href: '/teams', label: 'teams' },
     { href: '/request-templates', label: 'req-templates' },
   ];
 
