@@ -53,6 +53,7 @@ export default function Header() {
     { href: '/starters', label: 'starters' },
     { href: '/compare', label: 'compare' },
     { href: '/reliability', label: 'sla' },
+    { href: '/reputation', label: 'reputation' },
     { href: '/sla-calculator', label: 'sla-calc' },
     { href: '/benchmarks', label: 'perf' },
     { href: '/benchmark', label: 'benchmark' },
