@@ -51,6 +51,7 @@ export default function Header() {
     { href: '/simulator', label: 'simulator' },
     { href: '/templates', label: 'templates' },
     { href: '/starters', label: 'starters' },
+    { href: '/env-generator', label: 'env-config' },
     { href: '/compare', label: 'compare' },
     { href: '/reliability', label: 'sla' },
     { href: '/reputation', label: 'reputation' },
