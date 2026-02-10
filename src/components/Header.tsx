@@ -77,6 +77,7 @@ export default function Header() {
     { href: '/schemas', label: 'schemas' },
     { href: '/versioning', label: 'versioning' },
     { href: '/achievements', label: 'achievements' },
+    { href: '/mock-server', label: 'mock' },
   ];
 
   return (
